@@ -3,3 +3,6 @@ obj
 target
 *.exe
 *.dll
+.vs
+.vscode
+.idea
