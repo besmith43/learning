@@ -1,0 +1,5 @@
+must have the export comments in the .go file
+
+see link for more info
+
+https://www.programmersought.com/article/30685326358/

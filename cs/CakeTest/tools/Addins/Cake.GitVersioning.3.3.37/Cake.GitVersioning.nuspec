@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cake.GitVersioning</id>
+    <version>3.3.37</version>
+    <authors>Chris Crutchfield, Andrew Arnott</authors>
+    <owners>Chris Crutchfield, Andrew Arnott</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>cake-contrib-medium.png</icon>
+    <projectUrl>http://github.com/dotnet/Nerdbank.GitVersioning</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
+    <description>Cake wrapper for Nerdbank.GitVersioning.  Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.</description>
+    <releaseNotes>https://github.com/dotnet/Nerdbank.GitVersioning/releases/tag/v3.3.37</releaseNotes>
+    <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
+    <tags>git commit versioning version assemblyinfo</tags>
+    <repository type="git" url="https://github.com/dotnet/Nerdbank.GitVersioning" commit="0989e8fe0cd0e0900173b26decdfb24bc0cc8232" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

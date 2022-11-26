@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.FrontEnd", "src\TodoApp.FrontEnd\TodoApp.FrontEnd.csproj", "{B417CCD8-B63E-4BD6-A383-FF5C3E44E4D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Infrastructure", "src\TodoApp.Infrastructure\TodoApp.Infrastructure.csproj", "{822980F2-40DE-4D60-B7B2-EF89D773C43A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Core", "src\TodoApp.Core\TodoApp.Core.csproj", "{30935DE1-A840-4A0C-9FC5-7F37999D00CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{C6C1C233-9972-46A0-93BB-8F2A13699367}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B417CCD8-B63E-4BD6-A383-FF5C3E44E4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B417CCD8-B63E-4BD6-A383-FF5C3E44E4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B417CCD8-B63E-4BD6-A383-FF5C3E44E4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B417CCD8-B63E-4BD6-A383-FF5C3E44E4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822980F2-40DE-4D60-B7B2-EF89D773C43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822980F2-40DE-4D60-B7B2-EF89D773C43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822980F2-40DE-4D60-B7B2-EF89D773C43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822980F2-40DE-4D60-B7B2-EF89D773C43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30935DE1-A840-4A0C-9FC5-7F37999D00CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30935DE1-A840-4A0C-9FC5-7F37999D00CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30935DE1-A840-4A0C-9FC5-7F37999D00CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30935DE1-A840-4A0C-9FC5-7F37999D00CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C03E23A-0AAB-40AE-9B18-93496C7A420A}
+	EndGlobalSection
+EndGlobal

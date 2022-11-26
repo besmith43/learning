@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "D2qOA8BQYuJWuUG+Fg4tVgyOiXDckmdQf1j+LDp52p5EobtjH4bg/Lq15wrL7TjJCXcPIBVmYwHmnRZOY1ZKtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Besmith\\Development\\Learning-MonoGame\\Step 2 - Moving a Sprite\\Step 2 - Moving a Sprite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Besmith\\.nuget\\packages\\monogame.content.builder\\3.7.0.4\\monogame.content.builder.3.7.0.4.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\monogame.framework.desktopgl.core\\3.7.0.7\\monogame.framework.desktopgl.core.3.7.0.7.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.2\\microsoft.netcore.app.host.win-x64.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

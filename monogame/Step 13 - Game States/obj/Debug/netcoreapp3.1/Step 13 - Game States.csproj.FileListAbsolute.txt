@@ -1,0 +1,27 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Content\Fonts\Font.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Content\Controls\Button.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.exe
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\Step 13 - Game States.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libSDL2-2.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libopenal.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSDL2-2.dylib
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\osx\native\libopenal.dylib
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libSDL2-2.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libopenal.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libSDL2-2.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libopenal.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.csproj.CopyComplete
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 13 - Game States\obj\Debug\netcoreapp3.1\Step 13 - Game States.genruntimeconfig.cache

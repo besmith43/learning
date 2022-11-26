@@ -1,0 +1,9 @@
+this script is mostly complete for a single file copy
+
+however the timing isn't write for the progress bar.
+
+I believe that the python function os.path.getsize() is getting the amount of bits being allocated for the file, not the actual amount of data that is being taken up by the file.
+
+no idea how to fix it and that's why I'm giving it up
+
+

@@ -1,0 +1,8 @@
+I don't think the sln is necessary, but make the source library and then the sln.  finally make the test library, and add it to the sln with the below command 
+
+dotnet sln add .\Addition\Addition.csproj
+
+to add the source library to the test csproj
+
+dotnet add .\Addition.Tests\Addition.Tests.csproj reference .\Addition\Addition.csproj
+

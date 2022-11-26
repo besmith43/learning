@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;netcoreapp3.1;net5.0</TargetFrameworks>
+    <RootNamespace>Hello_World</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="qml.net" Version="0.11.0" />
+    <PackageReference Include="qml.net.windowsbinaries" Version="0.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="qml\**" >
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      <ExcludeFromSingleFile>false</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+</Project>

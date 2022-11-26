@@ -1,0 +1,14 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Content\Box.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Content\Sprite.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\bin\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 5 - Rotating Sprite\obj\Debug\netcoreapp2.0\Step 5 - Rotating Sprite.genruntimeconfig.cache

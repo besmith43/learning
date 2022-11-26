@@ -1,0 +1,2 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 10 - 2-Player Pong Game\bin\Release\netcoreapp3.1\osx-x64\publish\Step 10 - 2-Player Pong Game.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 10 - 2-Player Pong Game\bin\Release\netcoreapp3.1\osx-x64\publish\Step 10 - 2-Player Pong Game

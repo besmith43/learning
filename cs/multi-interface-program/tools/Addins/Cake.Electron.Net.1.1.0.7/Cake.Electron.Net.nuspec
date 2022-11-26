@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cake.Electron.Net</id>
+    <version>1.1.0.7</version>
+    <title>Cake.Electron.Net</title>
+    <authors>Deniz İrgin</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>cake-contrib-medium.png</icon>
+    <projectUrl>https://github.com/Blind-Striker/Cake.Electron.Net</projectUrl>
+    <description>Cake AddIn that extends Cake with Electron.NET</description>
+    <tags>cake, cake-build, cake-contrib, electron, electron-net</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

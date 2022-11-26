@@ -1,0 +1,7 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  base_vs_project.cpp
+  Generating Code...
+  .NETCoreApp,Version=v5.0.AssemblyAttributes.cpp
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  base_vs_project.vcxproj -> C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\Debug\base_vs_project.dll

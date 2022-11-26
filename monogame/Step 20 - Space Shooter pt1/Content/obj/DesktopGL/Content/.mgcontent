@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Background/Game.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Background/MainMenu.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Bullet.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Button.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Explosion.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Font.spritefont</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Ships/Enemy_1.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Ships/Enemy_2.png</File>
+    <File>C:/Users/Besmith/Development/Learning-MonoGame/Step 20 - Space Shooter pt1/Content/Ships/Player.png</File>
+  </SourceFiles>
+</SourceFileCollection>

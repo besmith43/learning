@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/Apple.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/bin/DesktopGL/Apple.xnb","TextureProcessor","Texture2DContent",2950,10085,0.1224243
+"C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/Font.spritefont","C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/bin/DesktopGL/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0.222994
+"C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/Player.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 8 - Sprite Scores/Content/bin/DesktopGL/Player.xnb","TextureProcessor","Texture2DContent",2269,7997,0.0100329

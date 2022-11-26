@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Besmith/Development/Learning-MonoGame/Step 12 - Interface Buttons/Content/Controls/Button.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 12 - Interface Buttons/Content/bin/DesktopGL/Controls/Button.xnb","TextureProcessor","Texture2DContent",279,15085,0.1200411
+"C:/Users/Besmith/Development/Learning-MonoGame/Step 12 - Interface Buttons/Content/Fonts/Font.spritefont","C:/Users/Besmith/Development/Learning-MonoGame/Step 12 - Interface Buttons/Content/bin/DesktopGL/Fonts/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0.2519879

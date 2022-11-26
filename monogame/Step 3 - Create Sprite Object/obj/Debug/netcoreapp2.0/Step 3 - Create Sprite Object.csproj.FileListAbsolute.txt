@@ -1,0 +1,13 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Content\Box.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\bin\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 3 - Create Sprite Object\obj\Debug\netcoreapp2.0\Step 3 - Create Sprite Object.genruntimeconfig.cache

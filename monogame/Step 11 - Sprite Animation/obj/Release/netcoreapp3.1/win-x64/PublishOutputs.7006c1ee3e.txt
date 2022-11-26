@@ -1,0 +1,2 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Release\netcoreapp3.1\win-x64\publish\Step 11 - Sprite Animation.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Release\netcoreapp3.1\win-x64\publish\Step 11 - Sprite Animation.exe

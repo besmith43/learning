@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "5tETJsa2mdAa+jVX91Ldb8ljC1Vj2Taae5CHHzU7Hkzn3EV/oDZOIAncbqQedvD/Qknk1ZPMjhX7+OuE8c6fug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Besmith\\Development\\Learning-MonoGame\\Step 20 - Space Shooter pt1\\Step 20 - Space Shooter pt1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Besmith\\.nuget\\packages\\monogame.content.builder\\3.7.0.4\\monogame.content.builder.3.7.0.4.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\monogame.framework.desktopgl.core\\3.7.0.7\\monogame.framework.desktopgl.core.3.7.0.7.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512",
+    "C:\\Users\\Besmith\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.2\\microsoft.netcore.app.host.win-x64.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

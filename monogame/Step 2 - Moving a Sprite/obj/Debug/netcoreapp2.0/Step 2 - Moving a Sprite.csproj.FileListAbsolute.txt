@@ -1,0 +1,13 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Content\Box.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\bin\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 2 - Moving a Sprite\obj\Debug\netcoreapp2.0\Step 2 - Moving a Sprite.genruntimeconfig.cache

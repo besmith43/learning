@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.GitVersioning</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.GitVersioning.GitVersioningAliases">
+            <summary>
+            Contains functionality for using Nerdbank.GitVersioning.
+            </summary>
+        </member>
+        <member name="M:Cake.GitVersioning.GitVersioningAliases.GitVersioningGetVersion(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Gets the Git Versioning version from the current repo.
+            </summary>
+            <example>
+            Task("GetVersion")
+                .Does(() =>
+            {
+                Information(GetVersioningGetVersion().SemVer2)
+            });
+            </example>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">Directory to start the search for version.json.</param>
+            <returns>The version information from Git Versioning.</returns>
+        </member>
+    </members>
+</doc>

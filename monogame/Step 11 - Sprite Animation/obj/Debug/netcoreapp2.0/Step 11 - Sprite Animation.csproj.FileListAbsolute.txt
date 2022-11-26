@@ -1,0 +1,16 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Content\Player\WalkingDown.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Content\Player\WalkingLeft.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Content\Player\WalkingRight.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Content\Player\WalkingUp.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Step 11 - Sprite Animation.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Step 11 - Sprite Animation.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Step 11 - Sprite Animation.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Step 11 - Sprite Animation.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\bin\Debug\netcoreapp2.0\Step 11 - Sprite Animation.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 11 - Sprite Animation\obj\Debug\netcoreapp2.0\Step 11 - Sprite Animation.genruntimeconfig.cache

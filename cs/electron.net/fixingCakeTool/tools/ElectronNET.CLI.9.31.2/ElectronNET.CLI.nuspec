@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ElectronNET.CLI</id>
+    <version>9.31.2</version>
+    <authors>Gregor Biswanger, Robert Muehsig</authors>
+    <owners>Gregor Biswanger, Robert Muehsig</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>PackageIcon.png</icon>
+    <projectUrl>https://github.com/ElectronNET/Electron.NET/</projectUrl>
+    <description>Building cross platform electron based desktop apps with .NET Core and ASP.NET Core.
+      This package contains the dotnet tooling to electronize your application.</description>
+    <releaseNotes>Changelog: https://github.com/ElectronNET/Electron.NET/blob/master/Changelog.md</releaseNotes>
+    <tags>electron aspnetcore</tags>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/ElectronNET/Electron.NET/" commit="bf8c7c8fa1218b8ec4455c7576ce59ae4f2a697c" />
+  </metadata>
+</package>

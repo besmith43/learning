@@ -1,0 +1,16 @@
+{
+	"configurations": {
+		"launch": {
+			"adapter": "netcoredbg",
+			"filetypes": [ "cs" ],
+			"configuration": {
+				"request": "launch",
+				"program": "${workspaceRoot}/bin/Debug/net6.0/DoWhileLoop.dll",
+				"args": [],
+				"stopAtEntry": true,
+				"cwd": "${workspaceRoot}",
+				"env": {}
+			}
+		}
+	}
+}

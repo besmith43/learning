@@ -1,0 +1,127 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : NerdMini
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter vEthernet (Default Switch):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter #2
+   Physical Address. . . . . . . . . : 00-15-5D-45-4C-F1
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::9d75:d019:79df:10d%43(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 172.17.144.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 721425757
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-26-AF-7D-2A-48-65-EE-10-01-0F
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Npcap Loopback Adapter:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Npcap Loopback Adapter
+   Physical Address. . . . . . . . . : 02-00-4C-4F-4F-50
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::bd82:c3d0:da54:72a3%26(Preferred) 
+   Autoconfiguration IPv4 Address. . : 169.254.114.163(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 1157759052
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-26-AF-7D-2A-48-65-EE-10-01-0F
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter Local Area Connection* 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #3
+   Physical Address. . . . . . . . . : 3C-58-C2-6D-B0-EC
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 12:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #4
+   Physical Address. . . . . . . . . : 3E-58-C2-6D-B0-EB
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650s 160MHz Wireless Network Adapter (201D2W)
+   Physical Address. . . . . . . . . : 3C-58-C2-6D-B0-EB
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::2d22:3ee2:4235:5b70%24(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.0.1.51(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Monday, December 21, 2020 9:25:38 AM
+   Lease Expires . . . . . . . . . . : Wednesday, December 23, 2020 8:40:52 AM
+   Default Gateway . . . . . . . . . : 10.0.1.1
+   DHCP Server . . . . . . . . . . . : 10.0.1.1
+   DHCPv6 IAID . . . . . . . . . . . : 104618178
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-26-AF-7D-2A-48-65-EE-10-01-0F
+   DNS Servers . . . . . . . . . . . : 10.0.1.2
+                                       10.0.1.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : 3C-58-C2-6D-B0-EF
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter vEthernet (Npcap Loopback ):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-15-5D-E8-D7-1E
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::bd2b:6210:d626:3e28%38(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 172.26.192.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 637539677
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-26-AF-7D-2A-48-65-EE-10-01-0F
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter vEthernet (Wi-Fi):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter #3
+   Physical Address. . . . . . . . . : 00-15-5D-B5-AA-E5
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::a953:bbec:b0dc:d3b3%49(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 172.30.96.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 822089053
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-26-AF-7D-2A-48-65-EE-10-01-0F
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled

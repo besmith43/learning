@@ -1,0 +1,54 @@
+@page "/shared"
+
+@using doWorkLib;
+
+<h1>Share Library</h1>
+
+<select class="form-control" size="10" @bind="SelectedValue">
+    @foreach (var operation in Operations)
+    {
+        <option>@operation</option>
+    }
+</select>
+<br>
+
+<label>Operand 1: </label>
+<input @bind="Operand1" />
+<br>
+<label>Operand 2: </label>
+<input @bind="Operand2" />
+<br>
+<button @onclick="run_function">Do Math</button>
+<br>
+
+@if (Solution != null)
+{
+    <p>Solution: <b>@Solution</b></p>
+}
+
+@code {
+    string[] Operations = new string[] {"add", "sub", "mul", "div"};
+    string SelectedValue = String.Empty;
+    int Operand1;
+    int Operand2;
+    int? Solution = null;
+
+    public void run_function()
+    {
+        switch (SelectedValue)
+        {
+            case "add":
+                Solution = SharedClass.add(Operand1, Operand2);
+                break;
+            case "sub":
+                Solution = SharedClass.sub(Operand1, Operand2);
+                break;
+            case "mul":
+                Solution = SharedClass.mul(Operand1, Operand2);
+                break;
+            case "div":
+                Solution = SharedClass.div(Operand1, Operand2);
+                break;
+        }
+    }
+}

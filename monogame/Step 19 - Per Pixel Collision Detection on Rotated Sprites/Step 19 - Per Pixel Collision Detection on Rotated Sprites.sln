@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Step 19 - Per Pixel Collision Detection on Rotated Sprites", "Step 19 - Per Pixel Collision Detection on Rotated Sprites.csproj", "{771F42C5-7FED-4ED2-AEF7-E6ECCB77B824}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{771F42C5-7FED-4ED2-AEF7-E6ECCB77B824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771F42C5-7FED-4ED2-AEF7-E6ECCB77B824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771F42C5-7FED-4ED2-AEF7-E6ECCB77B824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771F42C5-7FED-4ED2-AEF7-E6ECCB77B824}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B61A63A-0835-4BD7-A00A-BF246EB677C1}
+	EndGlobalSection
+EndGlobal

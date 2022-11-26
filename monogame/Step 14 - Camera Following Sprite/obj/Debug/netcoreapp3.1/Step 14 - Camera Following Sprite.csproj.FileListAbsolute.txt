@@ -1,0 +1,28 @@
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.csprojAssemblyReference.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.AssemblyInfoInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.AssemblyInfo.cs
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.csproj.CoreCompileInputs.cache
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Content\Background.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Content\NPC.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Content\Player.xnb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.exe
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.deps.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.runtimeconfig.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.runtimeconfig.dev.json
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libSDL2-2.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libopenal.so
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSDL2-2.dylib
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\osx\native\libopenal.dylib
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libSDL2-2.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libopenal.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libSDL2-2.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libopenal.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.csproj.CopyComplete
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.dll
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.pdb
+C:\Users\Besmith\Development\Learning-MonoGame\Step 14 - Camera Following Sprite\obj\Debug\netcoreapp3.1\Step 14 - Camera Following Sprite.genruntimeconfig.cache
