@@ -1,3 +1,0 @@
-#! /bin/sh
-
-ruby $1 2>&1 | grep -v '/sandbox/' | grep -v '/Frameworks/'

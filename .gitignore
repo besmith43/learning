@@ -6,3 +6,4 @@ target
 .vs
 .vscode
 .idea
+node_modules

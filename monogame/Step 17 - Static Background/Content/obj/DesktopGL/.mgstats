@@ -1,3 +1,0 @@
-Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Besmith/Development/Learning-MonoGame/Step 17 - Static Background/Content/Background.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 17 - Static Background/Content/bin/DesktopGL/Background.xnb","TextureProcessor","Texture2DContent",2637,1536085,0.168995
-"C:/Users/Besmith/Development/Learning-MonoGame/Step 17 - Static Background/Content/Square.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 17 - Static Background/Content/bin/DesktopGL/Square.xnb","TextureProcessor","Texture2DContent",216,10085,0.0110033

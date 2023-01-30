@@ -1,3 +1,0 @@
-Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Besmith/Development/Learning-MonoGame/Step 15 - Store HighScore/Content/Button.png","C:/Users/Besmith/Development/Learning-MonoGame/Step 15 - Store HighScore/Content/bin/DesktopGL/Button.xnb","TextureProcessor","Texture2DContent",280,14485,0.1290019
-"C:/Users/Besmith/Development/Learning-MonoGame/Step 15 - Store HighScore/Content/Font.spritefont","C:/Users/Besmith/Development/Learning-MonoGame/Step 15 - Store HighScore/Content/bin/DesktopGL/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0.1610357
