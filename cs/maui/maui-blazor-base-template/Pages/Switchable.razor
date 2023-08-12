@@ -1,0 +1,19 @@
+@page "/switchable"
+@inject IJSRuntime JS
+
+<h3>Switchable</h3>
+
+<p id="SwitchableParagraph">
+	The Switchable component is a container component that can be used to switch between multiple components.
+</p>
+
+<button id="switchTextButton">Click to Update Text</button>
+
+@code {
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		var module = await JS.InvokeAsync<IJSObjectReference>(
+			"import", "./Pages/Switchable.razor.js"
+		);
+	}
+}

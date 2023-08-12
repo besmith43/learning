@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cake.Kubectl</id>
+    <version>1.0.0</version>
+    <title>Cake.Kubectl</title>
+    <authors>Miha Markic, Roman Marusyk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/cake-contrib/Cake.Kubectl</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
+    <description>Kubectl Addin for Cake Deployment Automation System.</description>
+    <tags>Cake Script Deploy Kubectl Deployment cake-addin</tags>
+    <repository type="git" url="https://github.com/cake-contrib/Cake.Kubectl.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework="net5.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

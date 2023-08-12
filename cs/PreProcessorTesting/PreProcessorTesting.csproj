@@ -2,7 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net4.8;netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>net4.8;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
+    <WindowsBuilt Condition="'$(RuntimeIdentifier)' == 'win-arm64'">true</WindowsBuilt>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsWindows)'=='true'">
+    <DefineConstants>Windows</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(WindowsBuilt)'=='true'">
+    <DefineConstants>WindowsBuilt</DefineConstants>
   </PropertyGroup>
 
 </Project>

@@ -1,0 +1,13 @@
+[package]
+name = "static_assets"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.70"
+async-std = { version = "1.12.0", features = ["attributes"] }
+serde = "1.0.160"
+thiserror = "1.0.40"
+tide = "0.16.0"

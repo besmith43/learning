@@ -1,0 +1,38 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+<h4>Data from backend (public) api</h4>
+@if (@text is null)
+{
+    <p>Awaiting Response</p>
+}
+else
+{
+    <p>@text.PersonName</p>
+    <p>@text.BuildingName</p>
+    <p>@text.JobTitle</p>
+}
+
+@code {
+
+    // private string text = "Awaiting Response";
+    private Combined? text = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // curl from within container needs to use port 80
+        // request from outside the container needs to use port 8081
+        // but it gets a cors denial
+        text = await Http.GetFromJsonAsync<Combined>("http://localhost:8081/Data");
+        // text = await Http.GetFromJsonAsync<string>("http://localhost:8081/Data");
+    }
+}

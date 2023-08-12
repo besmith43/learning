@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.001.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "langExtTest", "langExtTest.csproj", "{91273659-8573-4D31-82DA-BC8416C79BD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91273659-8573-4D31-82DA-BC8416C79BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91273659-8573-4D31-82DA-BC8416C79BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91273659-8573-4D31-82DA-BC8416C79BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91273659-8573-4D31-82DA-BC8416C79BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {816B9E83-F2E2-4E35-9ECB-F991C72494BB}
+	EndGlobalSection
+EndGlobal

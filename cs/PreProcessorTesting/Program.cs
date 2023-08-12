@@ -25,7 +25,9 @@ namespace PreProcessorTesting
                 #warning Throwing a compiler warning error
             #endif
 
-            #if NET5_0
+            #if NET6_0
+                Console.WriteLine("This is running in .Net 6.0");
+            #elif NET5_0
                 Console.WriteLine("This is running in .Net 5.0");
             #elif NETCOREAPP
                 Console.WriteLine("This is running in .Net Core");
@@ -33,6 +35,19 @@ namespace PreProcessorTesting
                 Console.WriteLine("This is running in .Net Framework");
             #else
                 Console.WriteLine("No idea if this will ever run");
+            #endif
+
+
+            #if Windows
+                Console.WriteLine("This was built on Windows");
+            #else
+                Console.WriteLine("This was not built on Windows");
+            #endif
+
+            #if WindowsBuilt
+                Console.WriteLine("This was built for Windows");
+            #else
+                Console.WriteLine("This was not built for Windows");
             #endif
         }
     }
