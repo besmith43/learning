@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="SQeUMuPo0GI8sWHA47xz" name="Page-1">
+        <mxGraphModel dx="916" dy="815" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="280" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/compute/Virtual_Machine.svg;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="280" width="69" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/other/Fiji.svg;" vertex="1" parent="1">
+                    <mxGeometry x="371" y="278" width="54" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/other/Fiji.svg;" vertex="1" parent="1">
+                    <mxGeometry x="548" y="278" width="54" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;flipH=1;notch=0;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="277" width="170" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;" vertex="1" parent="1">
+                    <mxGeometry x="610" y="282" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="get frontend source files" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="297" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="get data from DB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="607" y="297" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.956;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="6">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="160" y="350" as="sourcePoint"/>
+                        <mxPoint x="240" y="380" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="390" y="440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="call backend to get data from DB for view" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="336" y="425" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Concerns:&lt;br&gt;1. can htmx on the frontend handle getting raw json from the backend or does it need to run through either javscript in the browser or a templating service like a go template server first?&lt;br&gt;2. assuming it needs an additional server in between the client and the backend server, does that make sense from an architecture design perspective or is that serialization of data into json just to deserialize it, and have it restructured/serialized into form specific html worth the extra complexity?&lt;br&gt;3. can a non-node based frontend really handle authentication? (see how TechExpress works with SSO and SAML for comparison)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="40" width="730" height="200" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
