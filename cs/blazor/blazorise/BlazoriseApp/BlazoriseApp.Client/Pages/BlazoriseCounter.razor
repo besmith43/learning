@@ -1,0 +1,17 @@
+@page "/blazorisecounter"
+@rendermode InteractiveAuto
+
+<Heading Size="HeadingSize.Is1">Counter</Heading>
+
+<Paragraph>Current count: @currentCount</Paragraph>
+
+<Blazorise.Button Color="Color.Primary" Clicked="IncrementCount">Click me</Blazorise.Button>
+
+@code {
+    int currentCount = 0;
+
+    void IncrementCount()
+    {
+        currentCount++;
+    }
+}

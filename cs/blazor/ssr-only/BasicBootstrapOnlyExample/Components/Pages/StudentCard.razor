@@ -1,0 +1,56 @@
+@page "/studentCard"
+
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Student Card</h5>
+        <h6 class="card-subtitle text-muted">Student Card Subtitle</h6>
+        <div class="card-tools float-right">
+            <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#StudentCardCollapse"
+                aria-expanded="false" aria-controls="StudentCardCollapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <ul class="dropdown-menu" >
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-body">
+        <ul class="nav nav-tabs" id="StudentTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="Classes-tab" data-bs-toggle="tab" data-bs-target="#Classes-tab-pane"
+                    type="button" role="tab" aria-controls="Classes-tab-pane" aria-selected="true">Classes</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Courses-tab" data-bs-toggle="tab" data-bs-target="#Courses-tab-pane"
+                    type="button" role="tab" aria-controls="Courses-tab-pane" aria-selected="false">Courses</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Advisor-tab" data-bs-toggle="tab" data-bs-target="#Advisor-tab-pane"
+                    type="button" role="tab" aria-controls="Advisor-tab-pane" aria-selected="false">Advisor</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="StudentTabContent">
+            <div class="tab-pane fade show active" id="Classes-tab-pane" role="tabpanel" aria-labelledby="Classes-tab" tabindex="0">
+                Classes Tab Content
+            </div>
+            <div class="tab-pane fade" id="Courses-tab-pane" role="tabpanel" aria-labelledby="Courses-tab" tabindex="0">
+                Courses Tab Content
+            </div>
+            <div class="tab-pane fade" id="Advisor-tab-pane" role="tabpanel" aria-labelledby="Advisor-tab" tabindex="0">
+                Advisor Tab Content
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+
+}

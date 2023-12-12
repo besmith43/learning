@@ -1,0 +1,87 @@
+@page "/profile"
+@attribute [StreamRendering(true)]
+
+<div class="card">
+    <div class="card-body">
+        <h1>Profile</h1>
+
+        <div id="ProfileFirstHalf">
+            <p>First Name: @person.FirstName</p>
+            <p>Last Name: @person.LastName</p>
+
+            @* this is to replicate TechExpress's reactive buttons in the middle of the profile card *@
+            <BlazorApp.Client.Pages.ProfileButton />
+            @* <dialog id="ProfileDialog">
+                <button autofocus>Close</button>
+                <p>This modal dialog has a groovy backdrop!</p>
+            </dialog>
+            <button class="btn btn-primary" id="btnProfileDialog">Show Dialog</button> *@
+            <br />
+            <br />
+            <button class="btn btn-primary" id="btnShowMore">Show More Info</button>
+        </div>
+        <div id="ProfileSecondHalf" style="display:none">
+            @if (person is Employee employee)
+            {
+                <p>Job Title: @employee.JobTitle</p>
+            }
+            else if (person is Student student)
+            {
+                <p>Major: @student.Major</p>
+            }
+            <button class="btn btn-primary" id="btnHide">Back</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btnShowMore").on("click", function () {
+        console.log("hiding first half and showing second half");
+        $("#ProfileSecondHalf").slideToggle();
+        $("#ProfileFirstHalf").slideToggle();
+    });
+
+    $("#btnHide").on("click", function () {
+        console.log("showing first half and hiding second half");
+        $("#ProfileFirstHalf").slideToggle();
+        $("#ProfileSecondHalf").slideToggle();
+    });
+
+    $("#btnProfileDialog").on("click", function () {
+        console.log("showing dialog");
+        $("#ProfileDialog").show();
+    });
+</script>
+
+
+
+@code {
+    private Person person;
+
+    protected override void OnInitialized()
+    {
+        person = new Employee
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                JobTitle = "Software Developer"
+            };
+    }
+
+    private class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
+    private class Employee : Person
+    {
+        public string JobTitle { get; set; }
+    }
+
+    private class Student : Person
+    {
+        public string Major { get; set; }
+    }
+
+}

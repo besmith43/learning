@@ -1,0 +1,86 @@
+@page "/table"
+@rendermode InteractiveAuto
+
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" AllowSorting="true" PageSize="5" AllowPaging="true" ShowPagingSummary="true"
+    Data="@employees" TItem="Employee" ColumnWidth="300px" >
+    <Columns>
+        <RadzenDataGridColumn TItem="Employee" Property="EmployeeID" Filterable="false" Title="ID" Frozen="true" Width="80px" />
+        <RadzenDataGridColumn TItem="Employee" Property="FirstName" Title="First Name" Frozen="true" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="LastName" Title="Last Name" Width="160px"/>
+        <RadzenDataGridColumn TItem="Employee" Property="Title" Title="Job Title" Width="200px" />
+        <RadzenDataGridColumn TItem="Employee" Property="TitleOfCourtesy" Title="Title" Width="120px" />
+        <RadzenDataGridColumn TItem="Employee" Property="BirthDate" Title="Birth Date" FormatString="{0:d}" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="HireDate" Title="Hire Date" FormatString="{0:d}" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="Address" Title="Address" Width="200px" />
+        <RadzenDataGridColumn TItem="Employee" Property="City" Title="City" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="Region" Title="Region" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="PostalCode" Title="Postal Code" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="Country" Title="Country" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="HomePhone" Title="Home Phone" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="Extension" Title="Extension" Width="160px" />
+        <RadzenDataGridColumn TItem="Employee" Property="Notes" Title="Notes" Width="300px" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    IEnumerable<Employee> employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = new List<Employee> {
+            new Employee {
+                FirstName = "Nancy",
+                LastName = "Davolio",
+                Title = "Sales Representative",
+                TitleOfCourtesy = "Ms.",
+                BirthDate = new DateTime(1948, 12, 8),
+                HireDate = new DateTime(1992, 5, 1),
+                Address = "507 - 20th Ave. E.Apt. 2A",
+                City = "Seattle",
+                Region = "WA",
+                PostalCode = "98122",
+                Country = "USA",
+                HomePhone = "(206) 555-9857",
+                Extension = "5467",
+                Notes = "Education includes a BA in psychology from Colorado State University in 1970.She also completed 'The Art of the Cold Call.' Nancy is a member of Toastmasters International.",
+                EmployeeID = 1
+            },
+            new Employee {
+                FirstName = "Andrew",
+                LastName = "Fuller",
+                Title = "Vice President, Sales",
+                TitleOfCourtesy = "Dr.",
+                BirthDate = new DateTime(1952, 2, 19),
+                HireDate = new DateTime(1992, 8, 14),
+                Address = "908 W. Capital Way",
+                City = "Tacoma",
+                Region = "WA",
+                PostalCode = "98401",
+                Country = "USA",
+                HomePhone = "(206) 555-9482",
+                Extension = "3457",
+                Notes = "Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the University of Dallas in 1981.He is fluent in French and Italian and reads German.He joined the company as a sales representative was promoted to sales manager - 1992 and to vice president of sales - 1993. Andrew is a member of the Sales Management Roundtable, the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.",
+                EmployeeID = 2
+            }
+        };
+    }
+
+    public class Employee
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Title { get; set; }
+        public string TitleOfCourtesy { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public DateTime? HireDate { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public string HomePhone { get; set; }
+        public string Extension { get; set; }
+        public string Notes { get; set; }
+        public int EmployeeID { get; set; }
+    }
+}

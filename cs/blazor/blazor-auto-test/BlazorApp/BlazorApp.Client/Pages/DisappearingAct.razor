@@ -1,0 +1,38 @@
+@page "/DisappearingAct"
+@rendermode InteractiveAuto
+
+<PageTitle>DisappearingAct</PageTitle>
+
+<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ToggleDisabled">@DiableButtonText</MudButton>
+
+<br/>
+<br/>
+
+@if (!_isDisabled)
+{
+    <div>
+        <BlazorApp.Client.Pages.Tab />
+    </div>
+}
+@code {
+    [Parameter]
+    public bool _isDisabled { get; set; } = true;
+    private string DiableButtonText { get; set; }
+
+    protected override void OnInitialized()
+    {
+        SetButtonText();
+    }
+
+    private void ToggleDisabled()
+    {
+        _isDisabled = !_isDisabled;
+        SetButtonText();
+    }
+
+    private void SetButtonText()
+    {
+        DiableButtonText = _isDisabled ? "Enable" : "Disable";
+        StateHasChanged();
+    }
+}
