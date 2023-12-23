@@ -1,0 +1,48 @@
+@page "/campusResourcesTab"
+@rendermode InteractiveAuto
+
+<MudPaper Class="d-flex-inline">
+    <MudCard>
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">Campus Resources</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+                @foreach (var tabContent in _tabContents)
+                {
+                    <MudTabPanel Text="@tabContent.Title">
+                        <MudText>@tabContent.Content</MudText>
+                        @if (tabContent.Component != null)
+                        {
+                            <DynamicComponent Type="@tabContent.Component" />
+                        }
+                    </MudTabPanel>
+                }
+            </MudTabs>
+        </MudCardContent>
+    </MudCard>
+</MudPaper>
+
+@code {
+    private List<TabContent> _tabContents = new List<TabContent>
+{
+new TabContent { Title = "Tab One", Content = "Content One", Component =
+Type.GetType("BasicAutoExample.Client.Pages.Counter") },
+new TabContent { Title = "Tab Two", Content = "Content Two", Component =
+Type.GetType("BasicAutoExample.Client.Pages.MudTest") },
+new TabContent { Title = "Tab Three", Content = "Content Three" },
+new TabContent { Title = "Tab Four", Content = "Content Four" },
+};
+
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+    public class TabContent
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public Type? Component { get; set; }
+    }
+}

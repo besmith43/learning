@@ -1,0 +1,47 @@
+@page "/home2"
+@* @rendermode InteractiveAuto *@
+@rendermode InteractiveServer
+@* this is working with auto mode, but the state isn't working...? *@
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
+<div class="row">
+
+    <div class="m-2 col-auto">
+        <DropdownButton ButtonText="My Dropdown" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </DropdownButton>
+
+    </div>
+
+    <div class="m-2 col-auto">
+        <div class="dropdown">
+            <a @onclick=this.ToggleDropDown class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Manage
+            </a>
+            @if (state)
+            {
+                <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool state = false;
+
+    private void ToggleDropDown()
+        => this.state = !this.state;
+}

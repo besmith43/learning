@@ -1,0 +1,15 @@
+@page "/dropdown"
+
+<PageTitle>Drop Down</PageTitle>
+
+<MudSelect T="string" Label="Coffee" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var coffee in _coffee)
+    {
+        <MudSelectItem Value="@coffee" />
+    }
+</MudSelect>
+
+
+@code {
+    List<string> _coffee = new List<string> { "Cappuccino", "Cafe Latte", "Espresso" };
+}

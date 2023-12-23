@@ -1,0 +1,84 @@
+@page "/profile"
+@rendermode InteractiveAuto
+
+<PageTitle>Profile</PageTitle>
+
+<MudPaper Class="d-flex-inline">
+    @if (!_showMore)
+    {
+        <MudCard Class="border-2 border-solid mud-border-primary pa-4">
+            <MudCardContent>
+                <MudText Typo="Typo.h6">User Profile</MudText>
+                <MudText>Name: @_person.FirstName @_person.LastName</MudText>
+                <MudText>TNumber: @_person.TNumber</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="TogglePanel">Show More</MudButton>
+            </MudCardActions>
+        </MudCard>
+    }
+    else
+    {
+        <MudCard Class="border-2 border-solid mud-border-primary pa-4">
+            <MudCardContent>
+                <MudText Typo="Typo.h6">More Info</MudText>
+                @if (_person is Employee)
+                {
+                    <MudText>Department: @((_person as Employee).Department)</MudText>
+                }
+                else if (_person is Student)
+                {
+                    <MudText>Major: @((_person as Student).Major)</MudText>
+                }
+                else
+                {
+                    <MudText>Unknown</MudText>
+                }
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="TogglePanel">Go Back</MudButton>
+            </MudCardActions>
+        </MudCard>
+    }
+    </MudPaper>
+
+
+    @code {
+    private Person _person;
+    private bool _showMore = false;
+
+    protected override void OnInitialized()
+    {
+        _person = new Employee
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                TNumber = "T00000000",
+                Department = "IT"
+            };
+    }
+
+    private void TogglePanel()
+    {
+        _showMore = !_showMore;
+        StateHasChanged();
+    }
+
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string TNumber { get; set; }
+    }
+
+    public class Employee : Person
+    {
+        public string Department { get; set; }
+    }
+
+    public class Student : Person
+    {
+        public string Major { get; set; }
+    }
+
+}

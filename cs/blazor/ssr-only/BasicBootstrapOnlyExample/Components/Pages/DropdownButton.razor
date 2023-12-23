@@ -1,0 +1,29 @@
+
+@* this example won't work in this project as it's an SSR only app *@
+
+
+<div class="dropdown">
+    <a @attributes=UserAttributes @onclick=this.ToggleDropDown>
+        @ButtonText
+    </a>
+    <div class="@this.dropdownCss" aria-labelledby="dropdownMenuButton">
+        @ChildContent
+    </div>
+
+</div>
+
+@code {
+    private bool show = false;
+    private string dropdownCss => show
+        ? "dropdown-menu show"
+        : "dropdown-menu";
+
+    [Parameter, EditorRequired] public RenderFragment? ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)] public IDictionary<string, object> UserAttributes { get; set; } = new Dictionary<string, object>();
+
+    [Parameter, EditorRequired] public string ButtonText { get; set; } = "DropDown Button";
+
+    private void ToggleDropDown()
+        => this.show = !this.show;
+}
