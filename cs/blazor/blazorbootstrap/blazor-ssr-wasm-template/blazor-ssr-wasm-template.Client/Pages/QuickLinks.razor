@@ -1,0 +1,81 @@
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+
+<Card>
+    <CardHeader>
+        <h1 class="card-title">
+            Quick Links
+        </h1>
+        <div class="card-tools" style="float: right;">
+            <Button Type="ButtonType.Button" Color="ButtonColor.Primary" @onclick="ToggleContentAsync">Toggle content</Button>
+        </div>
+    </CardHeader>
+    <CardBody>
+        <div class="container">
+            <div class="row">
+                @foreach (var quickLink in quickLinks)
+                {
+                    <QuickLink IconName="@quickLink.IconName" CardText="@quickLink.CardText"
+                        CardLink="@quickLink.CardLink" />
+                }
+            </div>
+        </div>
+
+        <Collapse @ref="collapse1">
+            <Card>
+                <CardBody>
+                    Some placeholder content for the collapse component. This panel is hidden by default but revealed
+                    when the user activates the relevant trigger.
+                </CardBody>
+            </Card>
+        </Collapse>
+
+    </CardBody>
+</Card>
+
+@code {
+    List<QuickLinkInfo> quickLinks = new List<QuickLinkInfo>();
+    Collapse collapse1 = default!;
+    private Lazy<IJSObjectReference> _jsmodule = new();
+
+
+    private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
+    protected override void OnInitialized()
+    {
+        quickLinks.Add(new QuickLinkInfo
+            {
+                IconName = "Google",
+                CardText = "Google",
+                CardLink = "https://www.google.com"
+            });
+        quickLinks.Add(new QuickLinkInfo
+            {
+                IconName = "Apple",
+                CardText = "Apple",
+                CardLink = "https://www.apple.com"
+            });
+        quickLinks.Add(new QuickLinkInfo
+            {
+                IconName = "Youtube",
+                CardText = "Youtube",
+                CardLink = "https://www.youtube.com"
+            });
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_jsmodule.IsValueCreated)
+        {
+            await _jsmodule.Value.DisposeAsync();
+        }
+    }
+
+
+    public class QuickLinkInfo
+    {
+        public string IconName { get; set; }
+        public string CardText { get; set; }
+        public string CardLink { get; set; }
+    }
+}

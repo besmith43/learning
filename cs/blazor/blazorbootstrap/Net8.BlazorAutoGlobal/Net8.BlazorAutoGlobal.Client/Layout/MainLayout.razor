@@ -2,12 +2,15 @@
 
 <div class="bb-page">
 
-    <Sidebar @ref="sidebar"
+    @* <Sidebar @ref="sidebar"
              IconName="IconName.BootstrapFill"
              Title="Blazor Bootstrap"
              DataProvider="SidebarDataProvider" />
+ *@
+
 
     <main>
+        @* <Net8.BlazorAutoGlobal.Client.Pages.Header /> *@
         <div class="bb-top-row px-4 d-flex justify-content-end">
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
@@ -15,6 +18,11 @@
         <article class="content px-4">
             <div class="py-2">@Body</div>
         </article>
+
+
+        <footer class="footer px-4">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </footer>
     </main>
 
 </div>

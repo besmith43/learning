@@ -1,0 +1,47 @@
+<div>
+    @* <h1>@_renderLocation</h1> *@
+    <h2>Render Mode: @handler</h2>
+</div>
+
+
+@code {
+    // private string _renderLocation = "Home";
+    private string handler = "";
+
+    protected override void OnInitialized()
+    {
+        // _renderLocation = "OnInitialized";
+        RenderModeCheck();
+    }
+
+    protected override void OnParametersSet()
+    {
+        // _renderLocation = "OnParametersSet";
+        RenderModeCheck();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // _renderLocation = "OnAfterRender";
+        RenderModeCheck();
+    }
+/*
+    protected override bool ShouldRender()
+    {
+        // _renderLocation = "ShouldRender";
+        return true;
+    }
+*/
+    private void RenderModeCheck()
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            handler = "WASM";
+        }
+        else
+        {
+            handler = "Server";
+        }
+        StateHasChanged();
+    }
+}

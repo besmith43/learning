@@ -1,5 +1,10 @@
 @page "/newhome"
 @rendermode InteractiveAuto
+@inject IJSRuntime JS
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
 <MudToggleIconButton Toggled="@_draggable" ToggledChanged="OnToggledChanged" Icon="@Icons.Material.Filled.AlarmOff"
     Color="@Color.Error" Title="Off" ToggledIcon="@Icons.Material.Filled.AlarmOn" ToggledColor="@Color.Success"
@@ -49,35 +54,41 @@
 
     private void OnToggledChanged(bool value)
     {
+        await JS.InvokeVoidAsync()
         _draggable = value;
         StateHasChanged();
     }
 
     protected override void OnInitialized()
     {
-        DropZoneItems.Add(new DropZoneItem() { Name = "Employee Tab", Order = "OnlyDZ", Component = typeof(EmployeeTab) });
+        DropZoneItems.Add(new DropZoneItem() { Name = "Employee Tab", Order = "OnlyDZ", OrderIndex = 5, Component = typeof(EmployeeTab) });
         DropZoneItems.Add(new DropZoneItem()
             {
                 Name = "Student Support Tab",
                 Order = "OnlyDZ",
+                OrderIndex = 2,
                 Component =
             typeof(StudentSupportTab)
             });
-        DropZoneItems.Add(new DropZoneItem() { Name = "Campus News Tab", Order = "OnlyDZ", Component = typeof(CampusNewsTab) });
+        DropZoneItems.Add(new DropZoneItem() { Name = "Campus News Tab", Order = "OnlyDZ", OrderIndex = 4, Component = typeof(CampusNewsTab) });
         DropZoneItems.Add(new DropZoneItem()
             {
                 Name = "Campus Resources Tab",
                 Order = "OnlyDZ",
+                OrderIndex = 3,
                 Component =
             typeof(CampusResourcesTab)
             });
-        DropZoneItems.Add(new DropZoneItem() { Name = "Work Life Tab", Order = "OnlyDZ", Component = typeof(WorkLifeTab) });
+        DropZoneItems.Add(new DropZoneItem() { Name = "Work Life Tab", Order = "OnlyDZ", OrderIndex = 1, Component = typeof(WorkLifeTab) });
+
+        DropZoneItems.Sort((x, y) => x.OrderIndex.CompareTo(y.OrderIndex));
     }
 
     public class DropZoneItem
     {
         public string Name { get; set; }
-        public string Order { get; set; }
+        public string Order { get; set; } = "OnlyDZ";
+        public int OrderIndex { get; set; }
         public Type Component { get; set; }
     }
 }

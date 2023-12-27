@@ -3,12 +3,13 @@ using Net8.BlazorAutoGlobal.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddBlazorBootstrap(); // Add this line
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddBlazorBootstrap(); // Add this line
 
 var app = builder.Build();
 
@@ -32,6 +33,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Home).Assembly);
+    .AddAdditionalAssemblies(typeof(Counter).Assembly);
 
 app.Run();
