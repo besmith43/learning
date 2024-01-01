@@ -8,7 +8,8 @@
             Quick Links
         </h1>
         <div class="card-tools" style="float: right;">
-            <Button Type="ButtonType.Button" Color="ButtonColor.Primary" @onclick="ToggleContentAsync">Toggle content</Button>
+            <Button id="btnToggle" Type="ButtonType.Button" Color="@BtnColor"
+                @onclick="ToggleContentAsync">@ToggleText</Button>
         </div>
     </CardHeader>
     <CardBody>
@@ -16,8 +17,10 @@
             <div class="row">
                 @foreach (var quickLink in quickLinks)
                 {
-                    <QuickLink IconName="@quickLink.IconName" CardText="@quickLink.CardText"
-                        CardLink="@quickLink.CardLink" />
+                    <li class="quicklink-item col-lg">
+                        <QuickLink IconName="@quickLink.IconName" CardText="@quickLink.CardText"
+                            CardLink="@quickLink.CardLink" CardSize="large" />
+                    </li>
                 }
             </div>
         </div>
@@ -38,9 +41,27 @@
     List<QuickLinkInfo> quickLinks = new List<QuickLinkInfo>();
     Collapse collapse1 = default!;
     private Lazy<IJSObjectReference> _jsmodule = new();
+    private string ToggleText = "Unlock";
+    private ButtonColor BtnColor = ButtonColor.Primary;
 
+    private async Task ToggleContentAsync()
+    {
+        if (ToggleText == "Unlock")
+        {
+            ToggleText = "Lock";
+            BtnColor = ButtonColor.Danger;
+        }
+        else
+        {
+            ToggleText = "Unlock";
+            BtnColor = ButtonColor.Primary;
+        }
 
-    private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
+        _jsmodule = new(await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/QuickLinks.razor.js"));
+        await _jsmodule.Value.InvokeVoidAsync("ToggleQuickLinks");
+
+        await collapse1.ToggleAsync();
+    }
     protected override void OnInitialized()
     {
         quickLinks.Add(new QuickLinkInfo
@@ -60,6 +81,12 @@
                 IconName = "Youtube",
                 CardText = "Youtube",
                 CardLink = "https://www.youtube.com"
+            });
+        quickLinks.Add(new QuickLinkInfo
+            {
+                IconName = "PlusSquare",
+                CardText = "Counter",
+                CardLink = "/counter"
             });
     }
 

@@ -2,17 +2,21 @@
 
 <div class="page">
     @* <div class="sidebar">
-        <NavMenu />
+    <NavMenu />
     </div> *@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <blazor_ssr_wasm_template.Client.Pages.Header />
         </div>
 
         <article class="content px-4">
             @Body
         </article>
+
+        <footer class="footer border-top px-4">
+            <blazor_ssr_wasm_template.Client.Pages.Footer />
+        </footer>
     </main>
 </div>
 

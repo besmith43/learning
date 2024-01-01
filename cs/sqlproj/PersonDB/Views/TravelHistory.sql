@@ -1,0 +1,17 @@
+CREATE VIEW TRAVEL_HISTORY
+AS
+    SELECT
+        P.ID AS PERSON_ID,
+        P.FIRST_NAME,
+        P.LAST_NAME,
+        L.NAME AS LOCATION_NAME,
+        L.CITY,
+        L.STATE,
+        V.VISIT_DATE
+    FROM
+        PERSON P
+        JOIN VISIT V ON P.ID = V.PERSON_ID
+        JOIN LOCATION L ON V.LOCATION_ID = L.ID
+    ORDER BY
+        P.ID,
+        V.VISIT_DATE;
