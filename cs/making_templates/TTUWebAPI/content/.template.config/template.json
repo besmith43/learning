@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "BlakeSmith",
+    "classifications": [ "WebAPI" ],
+    "identity": "TTUWebAPI",
+    "name": "TTUWebAPI",
+    "shortName": "ttuwebapi",
+    "tags": {
+      "language": "C#",
+      "type": "item"
+    },
+    "sourceName": "TTUWebAPI",
+    "preferNameDirectory":true
+}

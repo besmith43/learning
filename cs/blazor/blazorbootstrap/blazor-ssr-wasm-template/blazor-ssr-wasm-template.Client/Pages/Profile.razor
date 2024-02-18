@@ -40,7 +40,7 @@
     private Lazy<IJSObjectReference> _jsmodule = new();
     private string ButtonText = "Show More";
 
-    protected override async void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         _person = new Employee
             {
@@ -50,11 +50,12 @@
                 Department = "IT",
                 Address = "123 Main St"
             };
+
+        _jsmodule = new(await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/Profile.razor.js"));
     }
 
     protected async Task TogglePanel(EventArgs args)
     {
-        _jsmodule = new(await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/Profile.razor.js"));
         await _jsmodule.Value.InvokeVoidAsync("SlidePanels");
 
         if (ButtonText == "Show More")

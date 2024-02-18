@@ -1,0 +1,37 @@
+[
+  {
+    "location": "Auckland",
+    "date": "2024-02-11",
+    "temperatureC": 27,
+    "summary": "Cool",
+    "temperatureF": 80
+  },
+  {
+    "location": "Tokyo",
+    "date": "2024-02-12",
+    "temperatureC": 37,
+    "summary": "Bracing",
+    "temperatureF": 98
+  },
+  {
+    "location": "Tokyo",
+    "date": "2024-02-13",
+    "temperatureC": 36,
+    "summary": "Mild",
+    "temperatureF": 96
+  },
+  {
+    "location": "Auckland",
+    "date": "2024-02-14",
+    "temperatureC": 42,
+    "summary": "Balmy",
+    "temperatureF": 107
+  },
+  {
+    "location": "New York",
+    "date": "2024-02-15",
+    "temperatureC": 46,
+    "summary": "Freezing",
+    "temperatureF": 114
+  }
+]

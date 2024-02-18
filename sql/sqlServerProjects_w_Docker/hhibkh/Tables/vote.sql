@@ -1,0 +1,6 @@
+CREATE TABLE vote (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    poll_id INT NOT NULL,
+    answer_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

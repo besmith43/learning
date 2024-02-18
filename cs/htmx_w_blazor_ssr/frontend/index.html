@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Testing, is this thing on?</h1>
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-Template"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">HTMLTemplate+HTMX</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-WebComponent"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">WebComponent</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-Junk"
+                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Junk</button>
+            <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+                type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-Template" role="tabpanel" aria-labelledby="nav-home-tab"
+            tabindex="0">
+            <div id="parent-div">
+                <p>The button hasn't been clicked</p>
+            </div>
+
+            <button id="button" hx-get="/templates/counter.html" hx-trigger="click" hx-target="#parent-div">Click me first</button>
+        </div>
+        <div class="tab-pane fade" id="nav-WebComponent" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+            <counter-component></counter-component>
+        </div>
+        <div class="tab-pane fade" id="nav-Junk" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+            <my-custom-element></my-custom-element>
+            <current-date></current-date>
+        </div>
+    </div>
+
+    <p id="thingy">This is a test of the emergency broadcast system</p>
+    <thingy-component></thingy-component>
+    <!-- web components are confined to themselves on a per initialized basis -->
+    <thingy-component></thingy-component>
+
+    <p id="phpAPI">text</p>
+
+    <button id="btnGetPHPAPI" hx-get="http://localhost:8000/thingy.php" hx-trigger="click" hx-target="#phpAPI">get method</button>
+    <button id="btnPostPHPAPI" hx-post="http://localhost:8000/thingy.php" hx-trigger="click" hx-target="#phpAPI">post method</button>
+    <button id="btnPutPHPAPI" hx-put="http://localhost:8000/thingy.php" hx-trigger="click" hx-target="#phpAPI">put method</button>
+    <button id="btnDeletePHPAPI" hx-delete="http://localhost:8000/thingy.php" hx-trigger="click" hx-target="#phpAPI">delete method</button>
+
+
+    <div hx-get="/templates/counter.html" hx-trigger="load"></div>
+
+    <script src="/js/CounterComponent.js"></script>
+    <script src="/js/MyCustomElement.js"></script>
+    <script src="/js/CurrentDate.js"></script>
+    <script src="/js/thingy.js"></script>
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

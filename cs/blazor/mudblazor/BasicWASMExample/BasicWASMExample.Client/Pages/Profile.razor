@@ -1,0 +1,127 @@
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+
+<MudCard>
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h5">Profile</MudText>
+        </CardHeaderContent>
+        <CardHeaderActions>
+            <MudMenu Icon="@Icons.Material.Filled.MoreVert">
+                <MudMenuItem>Profile</MudMenuItem>
+                <MudMenuItem>My account</MudMenuItem>
+                <MudMenuItem>Logout</MudMenuItem>
+            </MudMenu>
+        </CardHeaderActions>
+    </MudCardHeader>
+    <MudCardContent>
+        <MudPaper>
+            <div id="panel1" class="pa-4">
+                <h3>Name: @_person.firstname @_person.lastname</h3>
+                <p>TNumber: @_person.tnumber</p>
+                <p>Email: @_person.email</p>
+                <p>Phone: @_person.phone</p>
+            </div>
+            <div id="panel2" style="display: none;">
+                @if (_person is Employee employee)
+                {
+                    <p>Job Title: @employee.employeeJobTitle</p>
+                    <p>Department: @employee.employeeDepartment</p>
+                }
+                else if (_person is Student student)
+                {
+                    <p>Major: @student.studentMajor</p>
+                    <p>Class Standing: @student.studentClassStanding</p>
+                }
+                else
+                {
+                    <p>Unknown person type</p>
+                }
+            </div>
+
+            <div class="center">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="TogglePanel">@ButtonText</MudButton>
+            </div>
+
+        </MudPaper>
+
+    </MudCardContent>
+</MudCard>
+
+
+
+
+@code {
+    private Person _person = null;
+    private bool _showMore = false;
+    private Lazy<IJSObjectReference> _jsmodule = new();
+    private string ButtonText = "Show More";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _person = new Employee()
+            {
+                firstname = "John",
+                lastname = "Doe",
+                email = "jdoe@tntech.edu",
+                phone = "931-555-5555",
+                tnumber = "T00000000",
+                employeeJobTitle = "Professor",
+                employeeDepartment = "Computer Science"
+            };
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _jsmodule = new(await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/Profile.razor.js"));
+        }
+    }
+
+    protected async Task TogglePanel(EventArgs args)
+    {
+        await _jsmodule.Value.InvokeVoidAsync("SlidePanels");
+
+        if (ButtonText == "Show More")
+        {
+            ButtonText = "Back";
+        }
+        else
+        {
+            ButtonText = "Show More";
+        }
+    }
+
+
+
+    private class Person
+    {
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string tnumber { get; set; }
+    }
+
+    private class Employee : Person
+    {
+        public string employeeJobTitle { get; set; }
+        public string employeeDepartment { get; set; }
+    }
+
+    private class Student : Person
+    {
+        public string studentMajor { get; set; }
+        public string studentClassStanding { get; set; }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_jsmodule.IsValueCreated)
+        {
+            await _jsmodule.Value.DisposeAsync();
+        }
+    }
+}
