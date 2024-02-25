@@ -3,8 +3,9 @@ package main
 import (
 	"FirstCliApp/cmd"
 	"FirstCliApp/internal/module1"
+	"bufio"
 	"fmt"
-	"log"
+	"os"
 )
 
 var (
@@ -25,7 +26,22 @@ var (
 */
 
 func main() {
-	log.Fatal("stuff")
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Enter some text (press Ctrl+D or Ctrl+Z to end):")
+
+	for scanner.Scan() {
+		text := scanner.Text()
+		if text == "" {
+			break
+		}
+		fmt.Println("You entered:", text)
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error:", err)
+	}
+
 	fmt.Println("Hello world")
 
 	t := module1.Thingy{Thingy1: "testing", Thingy2: "is this thing on?"}
