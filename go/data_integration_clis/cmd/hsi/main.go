@@ -2,6 +2,7 @@ package main
 
 import (
 	"data_integration_clis/internal/models/hsi"
+	"data_integration_clis/internal/utils"
 	"fmt"
 )
 
@@ -15,4 +16,8 @@ func main() {
 	sd := hsi.SharedData{ServiceName: "suitable"}
 
 	fmt.Println("Service Name:", sd.ServiceName)
+
+	DoStuff()
+
+	utils.Log()
 }
