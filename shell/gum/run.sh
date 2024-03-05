@@ -5,5 +5,5 @@ if [ ! -f $(which gum) ]; then
 	echo "gum is not installed"
 	exit -1
 else
-	echo "gum is installed"
+	gum style --border=thick "gum is installed"
 fi

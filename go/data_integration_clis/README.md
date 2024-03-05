@@ -9,3 +9,5 @@ and before moving the embedded folder into the main folder for the program, it w
 I think it's save to say that the go compiler only compiles the go files specifically linked
 
 with the pdf the final binary size for suitable is 7.8MB and streamlyne is still at 2MB
+
+
