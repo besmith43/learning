@@ -38,11 +38,14 @@
 # if you wanna be selective in what comes back
 #
 
-ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=blakesmith)"
+# looking for a computer object
+# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=clem110-d10)"
+
+# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=blakesmith)"
 
 # gets the group membership
 
-# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=blakesmith)" "memberOf"
+ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(memberUid=ITS ASSG)"
 
 # testing to see if I can get a nested group list of all users in portalfacultystaff
 # it works, but it doesn't show nested groups' members

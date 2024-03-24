@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+
+
+  <ul id="items">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+
+
+  <ul id="daisyItems" class="menu bg-base-200 w-56 rounded-box">
+    <li class="menu-title">Title</li>
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+    <li><a>Item 3</a></li>
+  </ul>
+
+
+
+  <div role="tablist" class="tabs tabs-lifted">
+    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" checked />
+    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+      Tab content 1
+
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Press ESC key or click the button below to close</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
+    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 2" />
+    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+      Tab content 2
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Shoes!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 3" />
+    <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+      Tab content 3
+      <div class="collapse bg-base-200">
+        <input type="checkbox" />
+        <div class="collapse-title text-xl font-medium">
+          Click me to show/hide content
+        </div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="dropdown">
+    <summary class="m-1 btn">open or close</summary>
+    <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+      <li><a>Item 1</a></li>
+      <li><a>Item 2</a></li>
+    </ul>
+  </details>
+
+
+  <button class="btn" hx-get="./stuff/modal2.html" hx-target="body" hx-swap="beforeend">open modal 2</button>
+  <!-- <button class="btn" hx-get="./stuff/modal2.html" hx-target="#modalDiv" hx-swap="innerHTML">open modal 2</button> -->
+  <!-- <div id="modalDiv"></div> -->
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div hx-get="./stuff/table.html" hx-trigger="load">
+  <span class="loading loading-spinner loading-lg"></span>
+</div>
+
+
+
+
+  <script src="../node_modules/sortablejs/Sortable.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script>
+    var el = document.getElementById('items');
+    var sortable = Sortable.create(el);
+  </script>
+
+  <script>
+    var el = document.getElementById('daisyItems');
+    var sortable = Sortable.create(el);
+  </script>
+
+</body>
+
+</html>
