@@ -1,5 +1,0 @@
-C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\Debug\Ijwhost.dll
-C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\Debug\base_vs_project.deps.json
-C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\Debug\base_vs_project.runtimeconfig.json
-C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\base_vs_project\Debug\base_vs_project.vcxprojAssemblyReference.cache
-C:\Users\besmith\Development\learning-c#\CLR-testing\basic-project\base_vs_project\base_vs_project\Debug\base_vs_project.genruntimeconfig.cache

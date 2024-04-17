@@ -1,4 +1,0 @@
-require '../utils/tasks.rb'
-
-CLEAN.include(%w{conflict.txt})
-

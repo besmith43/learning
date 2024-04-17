@@ -1,2 +1,0 @@
-class PetForm < ApplicationRecord
-end

@@ -1,1 +1,0 @@
-File.open("files-lessons/teams.txt" , 'w+') { |f| f.write("Twins, Astros, Mets, Yankees") } 
