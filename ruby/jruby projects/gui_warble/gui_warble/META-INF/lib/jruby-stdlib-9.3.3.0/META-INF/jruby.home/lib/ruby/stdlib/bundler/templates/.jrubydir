@@ -1,8 +1,0 @@
-..
-.
-Gemfile
-Executable.standalone
-Executable.bundler
-newgem
-gems.rb
-Executable
