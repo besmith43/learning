@@ -1,3 +1,0 @@
-[:first, "mama"]
-[:second, "papa"]
-[:third, "baby"]

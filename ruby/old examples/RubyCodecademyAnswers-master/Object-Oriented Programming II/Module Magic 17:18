@@ -1,3 +1,0 @@
-module Languages
-    FAVE = "ruby"
-end

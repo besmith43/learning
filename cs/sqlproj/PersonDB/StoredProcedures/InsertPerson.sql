@@ -1,8 +1,0 @@
-CREATE PROCEDURE InsertPerson
-    @Name VARCHAR(50),
-    @Age INT
-AS
-BEGIN
-    INSERT INTO PERSON (NAME, AGE)
-    VALUES (@Name, @Age);
-END

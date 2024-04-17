@@ -1,2 +1,0 @@
-load './lib/example.rb'
-

@@ -1,6 +1,0 @@
-see this link:
-
-https://learn.microsoft.com/en-us/aspnet/core/blazor/tooling?view=aspnetcore-8.0&pivots=linux-macos
-
-
-

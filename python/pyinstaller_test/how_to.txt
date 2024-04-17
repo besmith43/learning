@@ -1,7 +1,0 @@
-pyinstaller program.py
-
--w no console
-
--F one file
-
--i [icon file] adds custom icon
