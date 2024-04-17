@@ -1,9 +1,0 @@
-..
-.
-tasks
-rake.rb
-target.rb
-ant.rb
-element.rb
-project_converter.rb
-version.rb
