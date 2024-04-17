@@ -1,2 +1,0 @@
-class WorkExperience < ApplicationRecord
-end
