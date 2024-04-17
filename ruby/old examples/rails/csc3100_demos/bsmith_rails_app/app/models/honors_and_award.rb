@@ -1,2 +1,0 @@
-class HonorsAndAward < ApplicationRecord
-end
