@@ -41,13 +41,21 @@
 # looking for a computer object
 # ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=clem110-d10)"
 
-# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=blakesmith)"
+# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(sAMAccountName=v-jhacker)"
 
 # gets the group membership
 
-ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(memberUid=ITS ASSG)"
+# ldapsearch -x -b "dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "(memberUid=ITS ASSG)"
 
 # testing to see if I can get a nested group list of all users in portalfacultystaff
 # it works, but it doesn't show nested groups' members
 
 # ldapsearch -x -b "cn=PortalFacultyStaff,ou=TTU Groups,dc=tntech,dc=edu" -H ldap://one.tntech.edu -D "blakesmith2@tntech.edu" -W "member"
+
+
+
+# https://docs.oracle.com/cd/E19261-01/820-2763/bcaws/index.html
+# needs more work because mech is throwing an error
+
+# ldapsearch -h one.tntech.edu -p 389 -o mech=GSSAPI -o authzid="blakesmith@tntech.edu" -b "dc=tntech,dc=edu" -s base "(objectClass=*)"
+
