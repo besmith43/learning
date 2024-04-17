@@ -1,2 +1,0 @@
-class BadConfigurationError < StandardError
-end

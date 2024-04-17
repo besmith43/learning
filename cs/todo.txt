@@ -1,9 +1,0 @@
-look at custom nuget server
-
-build utility library
-
-powershell-like base64 encoding for exe's
-    https://stackoverflow.com/questions/42592518/encode-decode-exe-into-base64/42592976
-
-
-adding junk
