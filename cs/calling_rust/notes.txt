@@ -1,7 +1,0 @@
-link for how to compile for windows on arm
-
-https://patriksvensson.se/2020/05/targeting-arm-for-windows-in-rust/
-
-compiling dll in rust
-
-https://gist.github.com/CoolOppo/67b452c125bb0db3212a9fbc44c84245

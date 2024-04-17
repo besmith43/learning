@@ -1,8 +1,0 @@
-
-task :default do
-  puts "The code in this directory is mostly outdated"
-end
-
-task :clean do
-  puts "This is as clean as it gets"
-end

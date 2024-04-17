@@ -1,6 +1,0 @@
-to compile in release
-dotnet run -c release -f net48
-
-to publish (can't do single file as it relies on .net framework 4.8 runtime to be already on the machine)
-dotnet publish -c release -f net48
-

@@ -1,9 +1,0 @@
-#!markdown
-
-## Testing
-
-I have no idea how well this is going to work, but I'm testing out the dib, dotnet interactive notebooks.
-
-#!csharp
-
-Console.WriteLine("Hello World from this Notebook");

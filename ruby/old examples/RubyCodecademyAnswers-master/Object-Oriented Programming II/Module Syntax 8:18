@@ -1,3 +1,0 @@
-module MyLibrary
-    FAVE_BOOK = "sofi"
-end

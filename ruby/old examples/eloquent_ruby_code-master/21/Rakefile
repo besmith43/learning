@@ -1,3 +1,0 @@
-require '../utils/tasks.rb'
-
-CLEAN.include(%w{guess.txt document.error repeat.txt})
