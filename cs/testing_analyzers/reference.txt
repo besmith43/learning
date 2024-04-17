@@ -1,2 +1,0 @@
-url that I got these analyzers from
-https://nugetmusthaves.com/Tag/analyzers

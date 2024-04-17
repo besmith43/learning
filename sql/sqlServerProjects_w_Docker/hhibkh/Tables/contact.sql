@@ -1,6 +1,0 @@
-CREATE TABLE contact (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    fname VARCHAR(50) NOT NULL,
-    lname VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL
-);
