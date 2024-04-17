@@ -1,1 +1,0 @@
-load 'cli_warble/bin/example.class'
