@@ -1,9 +1,0 @@
-..
-.
-mapping.rb
-stream.rb
-alias.rb
-scalar.rb
-document.rb
-sequence.rb
-node.rb
