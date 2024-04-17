@@ -1,6 +1,0 @@
-CREATE TABLE pollAnswers (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    poll_id INT NOT NULL,
-    answer VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);

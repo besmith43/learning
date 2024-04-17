@@ -1,2 +1,0 @@
-This file is a test.
-It serves no purpose save to give content to be displayed in a curses application.
