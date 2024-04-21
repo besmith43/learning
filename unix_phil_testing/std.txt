@@ -1,0 +1,6 @@
+/Users/besmith/Developer/Personal/learning-cs/unix_phil_testing/unix_phil_testing.csproj : warning NU1803: You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:3000/api/packages/besmith43/nuget/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source.
+/Users/besmith/Developer/Personal/learning-cs/unix_phil_testing/unix_phil_testing.csproj : warning NU1803: You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:3000/api/packages/besmith43/nuget/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source.
+Input Redirected: False
+Arg: --flag
+Arg: true
+This should go to standard out
