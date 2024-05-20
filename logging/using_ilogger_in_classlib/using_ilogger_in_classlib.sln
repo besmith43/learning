@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAN.Lib", "WAN.Lib\WAN.Lib.csproj", "{EE443202-F83C-4DBF-98F0-C210CA1DCE45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAN", "WAN\WAN.csproj", "{BD8C9CAD-9F05-4176-98D0-080419F1855B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE443202-F83C-4DBF-98F0-C210CA1DCE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE443202-F83C-4DBF-98F0-C210CA1DCE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE443202-F83C-4DBF-98F0-C210CA1DCE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE443202-F83C-4DBF-98F0-C210CA1DCE45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8C9CAD-9F05-4176-98D0-080419F1855B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8C9CAD-9F05-4176-98D0-080419F1855B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8C9CAD-9F05-4176-98D0-080419F1855B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8C9CAD-9F05-4176-98D0-080419F1855B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E2A2BF3-A1D6-4017-A99B-E6971DFC0280}
+	EndGlobalSection
+EndGlobal

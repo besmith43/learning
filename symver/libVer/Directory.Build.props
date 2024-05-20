@@ -1,0 +1,7 @@
+﻿<Project>
+<PropertyGroup>
+    <Company>BSmith</Company>
+    <Version>0.0.3</Version>
+    <AssemblyTitle>LibVer</AssemblyTitle>
+</PropertyGroup>
+</Project>

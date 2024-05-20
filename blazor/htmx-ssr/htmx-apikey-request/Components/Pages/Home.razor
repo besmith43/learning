@@ -1,0 +1,41 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div id="updateMe">You need to press the button</div>
+
+<button class="btn btn-primary" hx-get="/api" hx-target="#updateMe" hx-swap="innerHTML">Click Me!</button>
+
+
+<script>
+	// this example came from the htmx docs at:
+	// https://htmx.org/examples/async-auth/
+
+  // auth is a promise returned by our authentication system
+
+  // await the auth token and store it somewhere
+  let authToken = "1234";
+  //auth.then((token) => {
+    //authToken = token
+  //})
+  
+  // gate htmx requests on the auth token
+  htmx.on("htmx:confirm", (e)=> {
+    // if there is no auth token
+    if(authToken == null) {
+      // stop the regular request from being issued
+      e.preventDefault() 
+      // only issue it once the auth promise has resolved
+      auth.then(() => e.detail.issueRequest()) 
+    }
+  })
+
+  // add the auth token to the request as a header
+  htmx.on("htmx:configRequest", (e)=> {
+    e.detail.headers["SessionID"] = authToken
+  })
+</script>
