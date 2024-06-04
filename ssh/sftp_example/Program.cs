@@ -2,9 +2,15 @@
 
 
 // doesn't use the friendly names defined in the ~/.ssh/config file
-const string host = "10.0.1.37";
+// const string host = "10.0.1.37";
+// const int port = 22;
+// const string username = "besmith";
+
+
+const string host = "ttu-bsmith";
 const int port = 22;
-const string username = "besmith";
+const string username = "blakesmith";
+
 
 // using PrivateKeyFile over a password
 // const string password = "nopass";
@@ -33,10 +39,12 @@ Current Working Directory after connection is made /
 /Developer-4-15-24.tar.gz
 /sftp_test
 */
-const string workingdirectory = "/sftp_test";
+// const string workingdirectory = "/sftp_test/";
+const string workingdirectory = "/C:/Users/blakesmith/";
 const string uploadfile = @"./test.txt";
 
-PrivateKeyFile privateKeyFile = new PrivateKeyFile("/Users/besmith/.ssh/id_rsa");
+PrivateKeyFile privateKeyFile = new PrivateKeyFile("/Users/besmith/.ssh/work");
+// PrivateKeyFile privateKeyFile = new PrivateKeyFile("/Users/besmith/.ssh/id_rsa");
 
 Console.WriteLine("Creating client and connecting");
 using (var client = new SftpClient(host, port, username, privateKeyFile))
