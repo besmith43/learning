@@ -6,6 +6,10 @@
 // but it only kind of works.  Pressing the print button was fine, but the echo button crashed it
 
 
+// example for sf symbol
+// https://swiftwithmajid.com/2021/12/21/sf-symbols-in-swiftui/
+
+
 // Displays UI in an NSWindow which can interact with the commandline
 // Usage: `echo "Bar" | ./swift-ui-commandline-tool.swift`
 
@@ -25,6 +29,7 @@ struct App: SwiftUI.App {
 	// this isn't working
         // Button("Echo Input") { print(CommandLine.input) }
         Button("Done") { exit(0) }
+	Text("Super star \(Image(systemName: "star"))")
       }
         .padding(100)
     }
