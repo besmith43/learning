@@ -1,4 +1,8 @@
+@go.Package { name = "pkl_config/appconfig" }
+
 module example.MyAppConfig
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.8.0#/go.pkl"
 
 /// The hostname for the application
 host: String

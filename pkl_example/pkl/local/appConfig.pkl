@@ -1,0 +1,5 @@
+amends "../schema/AppConfig.pkl"
+
+host = "localhost"
+
+port = 5939
