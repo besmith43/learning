@@ -2,7 +2,7 @@
 
 // scriptisto-begin
 // script_src: hello.go
-// build_cmd: go build hello.go -o hello
+// build_cmd: go build -o hello ./hello.go
 // scriptisto-end
 
 package main
