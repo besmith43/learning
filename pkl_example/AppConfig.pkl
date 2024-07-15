@@ -1,0 +1,7 @@
+module example.MyAppConfig
+
+/// The hostname for the application
+host: String
+
+/// The port to listen on
+port: UInt16(this > 1000)
