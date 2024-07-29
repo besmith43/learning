@@ -32,4 +32,49 @@ func main() {
 	}
 
 	fmt.Printf("Data.txt has %d lines\n", numLines)
+
+	err = os.Mkdir("testdir", 0755)
+	if err != nil {
+		fmt.Println("Error making testdir:", err)
+		os.Exit(1)
+	}
+
+	err = os.Mkdir("testdir2", 0755)
+	if err != nil {
+		fmt.Println("Error making testdir2:", err)
+		os.Exit(1)
+	}
+
+	var testfilecontents = "this is a test of the emergency broadcast system"
+
+	_, err = script.Echo(testfilecontents).WriteFile("./testdir/testfile.txt")
+	if err != nil {
+		fmt.Println("Error write text file to disc:", err)
+		os.Exit(1)
+	}
+
+	err = os.Rename("./testdir/testfile.txt", "./testdir2/testfile.txt")
+	if err != nil {
+		fmt.Println("Error while moving/renaming testfile from testdir to testdir2:", err)
+		os.Exit(1)
+	}
+
+	script.ListFiles("./testdir").Stdout()
+	script.ListFiles("./testdir2").Stdout()
+
+	err = os.RemoveAll("./testdir")
+
+	if err != nil {
+		fmt.Println("Error deleting testdir:", err)
+		os.Exit(1)
+	}
+
+	err = os.RemoveAll("./testdir2")
+
+	if err != nil {
+		fmt.Println("Error deleting testdir2:", err)
+		os.Exit(1)
+	}
+
+	script.ListFiles(".").Stdout()
 }
