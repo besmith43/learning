@@ -1,0 +1,4 @@
+
+
+define(AUTHOR, William Shakespeare)
+
