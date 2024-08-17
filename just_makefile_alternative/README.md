@@ -7,3 +7,9 @@ I'm not a fan of yaml.
 
 [github page](https://github.com/casey/just)
 
+### Concluding Thoughts
+
+Ultimately, while this has alot of options and possibilities.
+I'm lazy and will probably stick to bash scripts until there's a reason not to.
+
+

@@ -1,4 +1,18 @@
 
+# setting it to use the bash shell instead of the default sh
+set shell := ["bash", "-uc"]
+
+# these aliases partain to how you call the steps
+# for example if you wanna call run, here's the shorthand to do it:
+# just r
+# instead of the normal:
+# just run
+alias r := run
+alias b := build
+alias e := exec
+alias c := clean
+
+# you can do comments and they'll show up in the just -l listing
 run:
 	go run main.go
 
