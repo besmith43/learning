@@ -1,0 +1,12 @@
+
+run:
+	go run main.go
+
+build:
+	go build -o example main.go
+
+exec: build
+	./example
+
+clean:
+	rm ./example
