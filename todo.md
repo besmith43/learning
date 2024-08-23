@@ -14,4 +14,5 @@ Someday I'd like to come back and work out how to do the following things:
 [] how to build a pub/sub network
 [] look at kubernetes
 [] look into how rglite (distributed sqlite db implementation) works
+[] can you do golang std lib plugins with web service components?
 
