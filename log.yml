@@ -1,0 +1,6 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - name: make a log entry
+    shell: echo testing
+    # shell: echo testing >> ~/myLog.log
