@@ -77,4 +77,20 @@ func main() {
 	}
 
 	script.ListFiles(".").Stdout()
+
+	_, err = script.ListFiles("../../").Stdout()
+	if err != nil {
+		fmt.Println("Error list home dir files:", err)
+		os.Exit(1)
+	}
+
+	dirs, err := os.ReadDir("../../")
+	if err != nil {
+		fmt.Println("Error list home dir files:", err)
+		os.Exit(1)
+	}
+
+	for _, dir := range dirs {
+		fmt.Println(dir.Name())
+	}
 }
