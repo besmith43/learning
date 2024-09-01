@@ -1,0 +1,6 @@
+mode: dev
+http:
+  host: roses.com
+  port: 5000
+  read-timeout: 15
+  write-timeout: 35
