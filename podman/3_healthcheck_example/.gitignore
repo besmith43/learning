@@ -1,5 +1,5 @@
 
 src/bin
-logs/main.log
+logs/*.log
 
 
