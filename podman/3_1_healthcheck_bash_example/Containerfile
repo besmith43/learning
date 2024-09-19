@@ -1,0 +1,8 @@
+FROM registry.access.redhat.com/ubi9:latest
+
+COPY healthcheck.sh /healthcheck
+COPY entrypoint.sh  /entrypoint
+
+RUN  chmod 755 /healthcheck /entrypoint
+CMD ["/entrypoint"]
+
