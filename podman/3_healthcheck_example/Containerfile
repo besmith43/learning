@@ -18,7 +18,7 @@ COPY --from=0 /src/bin/main /bin/main
 
 COPY healthcheck.sh /healthcheck.sh
 
-HEALTHCHECK CMD /healthcheck.sh
+# HEALTHCHECK CMD /healthcheck.sh
 
 VOLUME /var/logs
 
