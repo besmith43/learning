@@ -1,0 +1,26 @@
+from golang:1.23.1-alpine3.20 as build
+
+RUN apk update && apk add bash
+
+WORKDIR /src
+
+COPY src/* .
+
+RUN /src/build.sh
+
+# CMD /bin/main
+
+FROM alpine:3.20 as runtime
+
+RUN apk update && apk add bash
+
+COPY --from=0 /src/bin/main /bin/main
+
+COPY healthcheck.sh /healthcheck.sh
+
+# HEALTHCHECK CMD /healthcheck.sh
+
+VOLUME /var/logs
+
+CMD /bin/main >> /var/logs/main.log
+
