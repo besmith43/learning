@@ -45,5 +45,14 @@ def main():
     for row in cur.execute("SELECT year, title FROM movie ORDER BY year"):
         print(row)
 
+    con.close()
+    new_con = sqlite3.connect(dbfilename)
+    new_cur = new_con.cursor()
+    res = new_cur.execute("SELECT title, year FROM movie ORDER BY score DESC")
+    title, year = res.fetchone()
+    print(f'The highest scoring Monty Python movie is {title!r}, released in {year}')
+
+    new_con.close()
+
 if __name__ == "__main__":
     main()
