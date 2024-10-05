@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainContainer{
+height:100%;
+background:url(images/signal_splash_bg.png);
+background-repeat:repeat-x;
+background-repeat:repeat-y;
+margin:0;
+overflow:hidden;
+
+}
+body {
+	background-image:url(images/signal_splash_bg.png);
+	background-repeat: repeat;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.midBox{
+width:736px;
+height:436px;
+background:url(images/splash.png) no-repeat;
+margin-left:auto;
+margin-right:auto; margin-top:125px;
+}
+.headTitle{
+	width:660px;
+	height:150px;
+	float:right;
+	padding-right:50px;
+	padding-top:25px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-align:right;
+}
+.formContainer{
+width:500px;
+height:50px;
+float:right;
+padding:30px 40px 0 0;
+}
+.username{
+width:141px;
+height:23px;
+background:url(images/username_bg.jpg) no-repeat;
+border:0px;
+float:right; padding-left:20px;
+font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000;
+}
+.password{
+width:141px;
+height:23px;
+background:url(images/password_bg.jpg) no-repeat;
+border:0px;
+float:right; padding-left:20px;
+font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000;
+}
+.actionBut{
+width:77px;
+height:31px;
+background: url(images/button.png) no-repeat;
+border:0px;
+font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#FFFFFF; line-height:31px; text-align:center;
+float:right; cursor:pointer;  
+}
+.contentContainer{
+width:570px;
+height:90px;
+float:left;
+font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF;
+padding:20px 0 0 110px;
+}

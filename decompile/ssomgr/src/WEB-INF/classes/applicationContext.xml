@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<import resource="classpath*:applicationContext-ws.xml" />
+
+	<bean id="propertyConfigurer"
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	 	<property name="locations">
+	  		<list>
+	  			<value>classpath*:sso-auth-config.properties</value>
+	  		</list>
+	 	</property>
+	</bean>
+
+	<!--bean id="integmgr.dataSource"
+        class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/ssomgr_integmgr_banner" />
+    </bean-->
+	
+	<bean id="sessionInitDao" class="com.ellucian.sso.ssb.dao.impl.SessionInitDaoImpl">
+		<property name="dataSource" ref="integmgr.dataSource"></property>
+	</bean>
+
+	<bean id="udcIdentifierMapDao" class="com.ellucian.sso.inb.dao.impl.UdcIdentifierMapDaoImpl">
+		<property name="dataSource" ref="integmgr.dataSource"></property>
+	</bean>
+	
+	<bean id="passwordPolicyDao" class="com.ellucian.sso.inb.dao.impl.PasswordPolicyDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="databaseDriverClass" value="oracle.jdbc.OracleDriver" />
+	</bean>
+
+	<bean id="ssbFacade" class="com.ellucian.sso.admin.facade.impl.SsbFacadeImpl">
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+	</bean>
+
+	<bean id="inbFacade" class="com.ellucian.sso.admin.facade.impl.InbFacadeImpl">
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+	</bean>
+	
+	<bean id="deleteCredentialsFacade" class="com.ellucian.sso.admin.facade.impl.DeleteCredentialsFacadeImpl">
+		<property name="udcTicketDao" ref="udcTicketDao"></property>
+		<property name="udcCredentialsDao" ref="udcCredentialsDao"></property>
+		<property name="udcCredentialsInfoDao" ref="udcCredentialsInfoDao"></property>
+	</bean>
+	
+	<import resource="classpath*:applicationContext-ws.xml" />
+
+</beans>
