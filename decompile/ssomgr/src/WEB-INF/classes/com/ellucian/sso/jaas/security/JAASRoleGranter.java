@@ -1,3 +1,5 @@
+package com.ellucian.sso.jaas.security;
+
 import java.security.Principal;
 import java.util.Collections;
 import java.util.Set;

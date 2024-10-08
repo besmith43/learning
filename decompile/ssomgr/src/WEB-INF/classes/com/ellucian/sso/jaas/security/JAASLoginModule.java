@@ -1,5 +1,8 @@
-import com.ellucian.sso.jaas.security.JAASRolePrincipal;
-import com.ellucian.sso.jaas.security.JAASUserPrincipal;
+package com.ellucian.sso.jaas.security;
+
+
+// import com.ellucian.sso.jaas.security.JAASRolePrincipal;
+// import com.ellucian.sso.jaas.security.JAASUserPrincipal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -185,7 +188,11 @@ public class JAASLoginModule implements LoginModule {
       Class.forName(str2).newInstance();
       connection = DriverManager.getConnection(str1, this.username, this.password);
     } catch (Exception exception) {
-      LOGGER.error("Error when creating database connection" + exception);
+      LOGGER.error("Error when creating database connection" + exception + "\n" +
+        "dbURL: " + str1 + "\n" +
+        "dbDriver: " + str2 + "\n" + 
+        "Username: " + this.username + "\n"
+      );
       exception.printStackTrace();
     } finally {}
     return connection;

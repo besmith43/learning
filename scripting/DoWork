@@ -1,0 +1,7 @@
+#!/usr/bin/env java --source 11
+
+public final class DoWork {
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+	}
+}

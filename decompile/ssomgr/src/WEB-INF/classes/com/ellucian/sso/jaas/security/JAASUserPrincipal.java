@@ -1,3 +1,5 @@
+package com.ellucian.sso.jaas.security;
+
 import java.io.Serializable;
 import java.security.Principal;
 
@@ -21,8 +23,9 @@ public class JAASUserPrincipal implements Principal, Serializable {
   }
   
   public int hashCode() {
-    null = 1;
-    return 31 * null + ((this.name == null) ? 0 : this.name.hashCode());
+    // null = 1;
+    // return 31 * null + ((this.name == null) ? 0 : this.name.hashCode());
+	return this.name.hashCode();
   }
   
   public boolean equals(Object paramObject) {
