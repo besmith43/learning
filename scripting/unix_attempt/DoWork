@@ -1,0 +1,32 @@
+#!/usr/bin/env java --source 21
+
+import java.util.Scanner;
+import java.util.ArrayList;
+// import java.util.Arrays;
+import java.util.List;
+
+public final class DoWork {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		for (int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
+		}
+
+		Scanner pipedInput = new Scanner(System.in);
+
+		List<String> pipedInputList = new ArrayList<>();
+
+		while (pipedInput.hasNext())
+		{
+			pipedInputList.add(pipedInput.nextLine());
+		}
+
+		System.out.println(pipedInputList);
+		pipedInputList.clear();
+
+		String classPath = System.getenv("CLASS_PATH");
+
+		System.out.println("Class Path - " + classPath);
+	}
+}
