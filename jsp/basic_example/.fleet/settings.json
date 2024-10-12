@@ -1,0 +1,24 @@
+{
+    "plugins": [
+        {
+            "type": "add",
+            "pluginName": "fleet.java"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.shell"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.vim"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.zip"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.git.frontend"
+        }
+    ]
+}
