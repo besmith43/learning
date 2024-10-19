@@ -1,3 +1,0 @@
-Main-Class: JAASRoleGranter.class
-Main-Class: JAASRolePrincipal.class
-Main-Class: JAASUserPrincipal.class

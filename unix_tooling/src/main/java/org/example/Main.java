@@ -10,22 +10,35 @@ public class Main {
         System.out.printf("Hello and welcome!\n");
 
         for (int i = 0; i < args.length; i++) {
-            System.out.println(args[i]);
+            System.out.println("Arg: " + args[i]);
         }
+
+        System.out.println("done with args");
 
         Scanner pipedInput = new Scanner(System.in);
 
        List<String> pipedInputList = new ArrayList<>();
 
-        String input = pipedInput.nextLine();
+        String input;
 
-        while (pipedInput.hasNext())
+        System.out.println("Starting while loop input scan");
+
+        if (pipedInput.hasNext())
         {
-            pipedInputList.add(input);
-            input = pipedInput.nextLine();
+            System.out.println("piped input has something");
+
+            System.out.println("Starting the while loop");
+
+            while (pipedInput.hasNext())
+            {
+                System.out.println("input has next");
+                input = pipedInput.nextLine();
+                pipedInputList.add(input);
+            }
+
+            System.out.println("Piped Input: " + pipedInputList);
+            pipedInputList.clear();
         }
 
-        System.out.println(pipedInputList);
-        pipedInputList.clear();
     }
 }
