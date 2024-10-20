@@ -71,7 +71,8 @@ public class Hello {
     }
 
     /**
-     * @return string
+     * @return string (YES or NO)
+     * This means that you either have permission (YES) or you don't (NO)
      */
     public static String PermissionCheck() {
         String answer = "NO";
