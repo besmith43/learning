@@ -22,6 +22,11 @@
 
         <button id="what" class="button is-primary"><i class="fa-solid fa-comment"></i></button>
 
+        <div id="replaceMe">
+            <button hx-get="/making_a_war_war_exploded/newbie.jsp" hx-trigger="click" hx-target="#replaceMe">Click Me Please</button>
+        </div>
+
+
         <script src="webjars/jquery/3.7.1/dist/jquery.js"></script>
         <script src="webjars/htmx.org/2.0.3/dist/htmx.js"></script>
         <script src="webjars/sweetalert2/11.14.3/dist/sweetalert2.all.js"></script>
