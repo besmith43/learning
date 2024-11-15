@@ -29,11 +29,11 @@
         <artifactId>htmx.org</artifactId>
         <version>2.0.3</version>
     </dependency>
-    <!-- <dependency>
-        <groupId>org.webjars.npm</groupId>
-        <artifactId>github-com-saadeghi-daisyui</artifactId>
-        <version>4.12.10</version>
-    </dependency> -->
+      <dependency>
+          <groupId>org.webjars.npm</groupId>
+          <artifactId>hyperscript.org</artifactId>
+          <version>0.9.12</version>
+      </dependency>
       <dependency>
           <groupId>org.webjars.npm</groupId>
           <artifactId>jquery</artifactId>
@@ -43,11 +43,6 @@
           <groupId>org.webjars.npm</groupId>
           <artifactId>sweetalert2</artifactId>
           <version>11.14.3</version>
-      </dependency>
-      <dependency>
-          <groupId>org.webjars.npm</groupId>
-          <artifactId>bulma</artifactId>
-          <version>1.0.2</version>
       </dependency>
   </dependencies>
   <build>

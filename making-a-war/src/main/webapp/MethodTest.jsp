@@ -7,10 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Method Test</title>
+</head>
+<body>
+    <p>You can only perform GET's and POST's against JSP's</p>
+  <%
+    out.println(request.getMethod());
+  %>
+</body>
 </html>

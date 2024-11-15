@@ -33,6 +33,18 @@ create table if not exists Ingredient (
     );
 
 
+create table if not exists User (
+        id identity,
+        username varchar (25) not null,
+        password varchar (60) not null,
+        fullname varchar (25) not null,
+        street varchar (50) not null,
+        city varchar (50) not null,
+        state varchar (2) not null,
+        zip varchar (10) not null,
+        phone_number varchar (10) not null
+    );
+
 alter table Taco
     add foreign key (taco_order) references Taco_Order(id);
 alter table Ingredient_Ref

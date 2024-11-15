@@ -14,9 +14,13 @@ import tacos.Taco;
 import tacos.TacoOrder;
 import javax.validation.Valid;
 import org.springframework.validation.Errors;
+import tacos.User;
 import tacos.data.IngredientRepository;
+import tacos.data.TacoRepository;
+import tacos.data.UserRepository;
 
 import java.lang.reflect.Type;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,9 +36,18 @@ public class DesignTacoController {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DesignTacoController.class);
     private final IngredientRepository ingredientRepository;
 
+    private TacoRepository tacoRepo;
+
+    private UserRepository userRepo;
+
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepository) {
-        this.ingredientRepository = ingredientRepository;
+    public DesignTacoController(
+            IngredientRepository ingredientRepo,
+            TacoRepository tacoRepo,
+            UserRepository userRepo) {
+        this.ingredientRepository = ingredientRepo;
+        this.tacoRepo = tacoRepo;
+        this.userRepo = userRepo;
     }
 
     @ModelAttribute
@@ -65,6 +78,14 @@ public class DesignTacoController {
         }
     }
 
+    @ModelAttribute(name = "user")
+    public User user(Principal principal) {
+        String username = principal.getName();
+        User user = userRepo.findByUsername(username);
+        return user;
+    }
+
+
     @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
         return new TacoOrder();
@@ -77,11 +98,15 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm() {
+        log.info("design form hit");
+
         return "design";
     }
 
     @PostMapping
     public String processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+        log.info("process taco hit");
+
         if (errors.hasErrors()) {
             log.error(errors.getAllErrors().toString());
             return "design";
