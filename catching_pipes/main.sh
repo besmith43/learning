@@ -6,9 +6,13 @@ echo $*
 echo
 echo
 
-echo outputing piped data
-read pipedText
-echo $pipedText
+if [ -t 0 ]; then
+	echo runnning interactively
+else
+	echo outputing piped data
+	read pipedText
+	echo $pipedText
+fi
 
 echo
 echo
