@@ -5,4 +5,9 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <br>
+    <br>
+    <div id="swapthis">original content</div>
+    <button class="btn btn-primary" hx-get="/Home/NewThing" hx-swap="InnerHTML" hx-target="#swapThis" hx-trigger="click">Testing</button>
 </div>
