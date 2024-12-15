@@ -4,7 +4,7 @@
 
 string env = "PROD";
 
-print();
+print(env);
 
 
 
