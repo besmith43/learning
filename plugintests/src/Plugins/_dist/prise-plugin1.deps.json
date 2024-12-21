@@ -1,0 +1,88 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "prise-plugin1/1.0.0": {
+        "dependencies": {
+          "plugin.contract": "1.0.0",
+          "Prise.Plugin": "6.0.0"
+        },
+        "runtime": {
+          "prise-plugin1.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
+        }
+      },
+      "Prise.Plugin/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "2.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prise.Plugin.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "plugin.contract/1.0.0": {
+        "runtime": {
+          "plugin.contract.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "prise-plugin1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyInjection/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gqQviLfuA31PheEGi+XJoZc1bc9H9RsPa9Gq9XuDct7XGWSR9eVXjK5Sg7CSUPhTFHSuxUFY12wcTYLZ4zM1hg==",
+      "path": "microsoft.extensions.dependencyinjection/2.1.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8/CtASu80UIoyG+r8FstrmZW5GLtXxzoYpjj3jV0FKZCL5CiFgSH3pAmqut/dC68mu7N1bU6v0UtKKL3gCUQGQ==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.1.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+    },
+    "Prise.Plugin/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q5yI/BzWFd3iuo5H8sZCaFMFGDC24mkM0gOYeLUXZ4nNMoG2+hGVJdOW3qufGGBSrc3GVzj/J/b4nmxVqJ/wTg==",
+      "path": "prise.plugin/6.0.0",
+      "hashPath": "prise.plugin.6.0.0.nupkg.sha512"
+    },
+    "plugin.contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

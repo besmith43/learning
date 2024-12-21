@@ -1,0 +1,11 @@
+2023-05-15 15:52:05.404 -05:00 [DBG] pluginsDir: /Users/besmith/Temp/plugintest/mcmaster_src/dist
+2023-05-15 15:52:05.435 -05:00 [DBG] /Users/besmith/Temp/plugintest/mcmaster_src/dist/Plugin1
+2023-05-15 15:52:05.436 -05:00 [DBG] Plugin1
+2023-05-15 15:52:05.436 -05:00 [DBG] /Users/besmith/Temp/plugintest/mcmaster_src/dist/Plugin1/Plugin1.dll
+2023-05-15 15:52:05.495 -05:00 [DBG] /Users/besmith/Temp/plugintest/mcmaster_src/dist/Plugin2
+2023-05-15 15:52:05.495 -05:00 [DBG] Plugin2
+2023-05-15 15:52:05.495 -05:00 [DBG] /Users/besmith/Temp/plugintest/mcmaster_src/dist/Plugin2/Plugin2.dll
+2023-05-15 15:52:59.265 -05:00 [DBG] created plugin instance 'Plugin1'.
+2023-05-15 15:52:59.266 -05:00 [DBG] created plugin instance 'Plugin2 now with more cowbell!'.
+2023-05-15 15:55:17.714 -05:00 [DBG] created plugin instance 'Plugin1'.
+2023-05-15 15:55:17.716 -05:00 [DBG] created plugin instance 'Plugin2 now with more cowbell!'.

@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<package>
+    <metadata>
+        <id>OpenWeather.Plugin</id>
+        <title>OpenWeather.Plugin</title>
+        <version>1.0.0</version>
+        <authors>TODO</authors>
+        <owners>TODO</owners>
+        <description>OpenWeather.Plugin</description>
+        <copyright>Copyright 2023</copyright>
+        <tags></tags>
+    </metadata>
+    <files>
+        <file src='bin/Debug/net6.0/publish/*.*' target='lib/net6.0' />
+    </files>
+</package>
