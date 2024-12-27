@@ -3,8 +3,12 @@ obj
 target
 *.exe
 *.dll
+*.o
 .vs
 .vscode
 .idea
 node_modules
 .DS_Store
+.zig-cache/
+zig-out/
+main
