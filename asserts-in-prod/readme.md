@@ -6,5 +6,16 @@ In this situation, it would be ideal, in a sense, to crash and make it known tha
 Now obviously this can be taken to an extreme, but the basic idea comes from the [tiger beetle team](https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md)
 
 
+### Making your own asserts
+
+So.... you can make your own assert functions.
+However the annoyance involved is real, but it'll give you the ability to be graceful about the failure.
+I don't know which is more useful:
+
+1. gracefully exiting early
+2. immediate crashing due to the assert! macro
+
+Either way, it ain't all rainbows and roses.
+
 
 
