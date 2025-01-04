@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 fs_extra = "1.2.0"
 dialoguer = { version = "0.10.2", features = ["fuzzy-select"] }
+homedir = "0.3.4"

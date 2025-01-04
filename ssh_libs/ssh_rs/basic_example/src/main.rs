@@ -3,12 +3,15 @@ use ssh_rs::ssh;
 fn main() {
     let home_var = std::env::var("HOME").unwrap();
 
+    let host = "10.0.1.2";
+    // let host = "nas"; // doesn't work
+
     ssh::enable_log();
 
     let mut session = ssh::create_session()
         .username("besmith")
         .private_key_path(format!("{}/.ssh/id_rsa", home_var))
-        .connect("10.0.1.2:22")
+        .connect(format!("{}:22", host))
         .unwrap()
         .run_local();
     let exec = session.open_exec().unwrap();

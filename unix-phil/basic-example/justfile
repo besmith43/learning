@@ -1,0 +1,7 @@
+
+
+run:
+    cat input.txt | RUST_BACKTRACE=1 cargo run -- --id 1 | sed 's/Hello/Goodbye/g'
+
+
+

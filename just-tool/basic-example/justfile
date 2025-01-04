@@ -1,0 +1,19 @@
+
+
+build:
+    cargo check
+
+run:
+    cargo run
+
+watch:
+    cargo watch -x test
+
+test:
+    cargo test
+
+multiple:
+    cargo test
+    cargo run
+
+
