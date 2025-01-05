@@ -1,0 +1,8 @@
+[package]
+name = "constime-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+constime = "0.2.2"
+ureq = "2.12.1"

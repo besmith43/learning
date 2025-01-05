@@ -1,0 +1,6 @@
+
+run:
+    cargo +nightly run
+
+
+

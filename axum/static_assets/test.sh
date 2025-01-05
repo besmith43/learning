@@ -5,10 +5,10 @@ echo
 echo
 
 echo calling /
-rh http://localhost:3000/
+rh -v http://localhost:3000/
 
 echo
 echo
 
 echo calling /assets/index.html
-rh http://localhost:3000/assets/index.html
+rh -v http://localhost:3000/assets/index.html
