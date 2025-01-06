@@ -5,5 +5,5 @@ cargo build
 
 cargo build --release
 
-ls -alh ./target/*/stripped_hello
+ls -alh ./target/*/stripped_hello | awk '{ print $9"   "$5 }'
 

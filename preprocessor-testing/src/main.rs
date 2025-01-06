@@ -23,6 +23,10 @@ fn main() {
     check_os();
 
     example();
+
+    let hello = Hello{ name: "Bob".to_string() };
+
+    hello.say_hello();
 }
 
 #[cfg(debug_assertions)]
@@ -61,4 +65,28 @@ fn example() {
 fn example() {
     println!("linux");
 }
+
+
+struct Hello {
+    name: String,
+}
+
+
+impl Hello {
+    #[cfg(target_os = "windows")]
+    fn say_hello(&self) {
+        println!("Hello {} from Windows", self.name);
+    }
+
+    #[cfg(target_os = "linux")]
+    fn say_hello(&self) {
+        println!("Hello {} from Linux", self.name);
+    }
+
+    #[cfg(target_os = "macos")]
+    fn say_hello(&self) {
+        println!("Hello {} from OS X", self.name);
+    }
+}
+
 
