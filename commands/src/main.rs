@@ -15,4 +15,12 @@ fn main() {
     Command::new("ls")
         .status()
         .expect("ls command failed to start");
+
+    let listing = Command::new("ls")
+        .status()
+        .expect("ls command failed to start");
+
+    println!("debug output");
+    dbg!(listing); // this runs in debug and release mode
+                   // also it outputs to stderr
 }
