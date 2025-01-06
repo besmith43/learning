@@ -3,6 +3,7 @@ use chrono::prelude::*;
 use fs_extra::file::{write_all, read_to_string};
 use serde_derive::{Deserialize, Serialize};
 use std::path::Path;
+use std::fs::create_dir_all;
 
 #[derive(Deserialize, Serialize)]
 struct Config {
@@ -10,7 +11,10 @@ struct Config {
 }
 
 fn main() {
-    let config_location = String::from("C:/config/example.toml");
+    dir_setup();
+
+
+    let config_location = String::from("./config/example.toml");
 
     let mut config: Config;
 
@@ -19,12 +23,18 @@ fn main() {
 
         config = toml::from_str(&config_string).unwrap();
     } else {
-        config = Config { log_name: "C:/tmp/toml_config_log.txt".to_string() };
+        config = Config { log_name: "./tmp/toml_config_log.txt".to_string() };
         generate_basic_toml(&config_location, &config);
     }
 
     log_message(&config.log_name, &"new log message");
 }
+
+fn dir_setup() {
+    create_dir_all("./config").unwrap();
+    create_dir_all("./tmp").unwrap();
+}
+
 
 fn generate_basic_toml(filename: &str, conf: &Config) {
     let toml = toml::to_string(&conf).unwrap();
