@@ -1,6 +1,7 @@
 use cmd_lib::*;
-use chrono::prelude::*;
-//use std::process::Command;
+use std::env;
+// use chrono::prelude::*;
+use std::process::Command;
 
 fn main() {
     let msg = "I love rust";
@@ -13,12 +14,12 @@ fn main() {
     //run_cmd!(echo "$time_now - logging" >> log.txt).unwrap();
 
     // control flow tests
-    let file = "~/.bashrc";
+    let file = format!("{}/.bashrc", env::var("HOME").unwrap().to_string());
     let result = run_fun!(cat ${file} | wc -l).unwrap();
 
     println!("{:?}", result);
 
-    if result.parse::<i32>().unwrap() >= 5 {
+    if result.trim().parse::<i32>().unwrap() >= 5 {
         println!("bashrc is huge!");
     }
 
@@ -31,16 +32,14 @@ fn main() {
     }
     */
 
-    /*
-    // even with the old style, gum isn't going to work from a rust program
+    // status let's the child process inheritant stdout, stdin, and stderr from the rust process
     let output = Command::new("gum")
                                     .arg("confirm")
                                     .arg("\"commit changes?\"")
-                                    .output()
+                                    .status()
                                     .expect("failed to execute command");
 
     println!("{:?}", output);
-    */
 
     /*
     // this also fails because this library is designed for handling single line commands and using rust for logic and control flow
