@@ -17,3 +17,5 @@ multiple:
     cargo run
 
 
+dependents: test run
+    cargo check
