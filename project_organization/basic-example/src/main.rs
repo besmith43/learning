@@ -12,7 +12,7 @@ fn main() {
     println!("Hello, from main!");
     local_func();
     // sep_file::seperate_func(); // calling the function from the imported mod
-    seperate_func();
+    seperate_func(); // can call without naming the module because of the use statement
     util_hello();
     helper_hello();
 
@@ -22,6 +22,10 @@ fn main() {
     };
 
     println!("House Struct: {home:?}");
+
+    println!("Year Build: {}", House::get_year_built());
+
+    home.print_owner();
 }
 
 

@@ -10,3 +10,14 @@ pub struct House {
     pub owner: String,
     pub address: String,
 }
+
+
+impl House {
+    pub fn get_year_built() -> u32 {
+        1985
+    }
+
+    pub fn print_owner(&self) {
+        println!("{}", self.owner);
+    }
+}

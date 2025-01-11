@@ -19,3 +19,8 @@ multiple:
 
 dependents: test run
     cargo check
+
+
+var statement:
+    echo {{statement}}
+
