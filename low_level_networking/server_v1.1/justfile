@@ -1,0 +1,10 @@
+
+run:
+    cargo check
+    cargo run
+    # ./scripts/test.sh
+
+stresstest:
+    ab -n 10000 -c 10 http://localhost:7878/
+
+
