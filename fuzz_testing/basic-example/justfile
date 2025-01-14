@@ -1,0 +1,13 @@
+
+
+chx:
+    chmod +x ./scripts/*.sh
+
+check:
+    cargo check
+
+build: check
+    cargo build
+
+fuzz:
+    ./scripts/fuzz.sh
