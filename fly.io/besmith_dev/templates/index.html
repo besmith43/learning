@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link href="assets/css/site.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Hello World</h1> 
+
+        {% include "item.html" %}
+
+        <div hx-get="/btn" hx-trigger="load">
+        </div>
+
+        <div id="replaceMe"></div>
+
+        <script src="assets/js/site.js"></script>
+        <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    </body>
+</html>

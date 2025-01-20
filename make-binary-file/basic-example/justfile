@@ -1,0 +1,10 @@
+
+
+run:
+    cargo run
+    xxd testfile.bin
+
+deploy:
+    ./scripts/publish.sh
+    ./scripts/push.sh
+
