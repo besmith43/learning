@@ -4,9 +4,7 @@ use std::fs::File;
 use std::mem::size_of;
 
 use anyhow::Result;
-use byteorder::BigEndian;
-use byteorder::ByteOrder;
-use byteorder::{NetworkEndian, NativeEndian, ReadBytesExt, WriteBytesExt};
+use byteorder::{NetworkEndian, BigEndian, ByteOrder};
 
 /*
  * things to remember about variable sizes
