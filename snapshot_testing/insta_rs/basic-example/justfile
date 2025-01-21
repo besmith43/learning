@@ -1,0 +1,11 @@
+
+
+test:
+    cargo insta test
+
+review:
+    cargo insta review
+
+accept:
+    cargo insta accept
+
