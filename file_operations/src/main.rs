@@ -12,7 +12,8 @@ enum Opt {
     Append,
     Edit,
     Delete,
-    Replace
+    Replace,
+    Seek,
 }
 
 static FILENAME: &str = "test.txt";
@@ -37,6 +38,9 @@ fn main() {
         },
         Opt::Replace => {
             replace_file();
+        },
+        Opt::Seek => {
+            seek_file();
         },
     }
 }
@@ -96,3 +100,21 @@ fn replace_file() {
     f.write_all(b"replacing the contents of the file with this\n").unwrap();
 }
 
+fn seek_file() {
+    let mut f = OpenOptions::new()
+        .write(true)
+        .read(true)
+        .create(true)
+        .open(FILENAME)
+        .unwrap();
+
+
+    f.write_all(b"this is a new line of text\n").unwrap();
+
+    f.rewind().unwrap();
+
+    f.seek_relative(10).unwrap();
+
+    // this will overwrite at the point that it is
+    write!(f, "NEW").unwrap();
+}
