@@ -1,6 +1,29 @@
-use std::process::Command;
+use std::process::{Command, Stdio};
 
 fn main() {
+    let gum_choice = Command::new("gum")
+        .stdin(Stdio::inherit())
+        .stdout(Stdio::inherit())
+        .stderr(Stdio::inherit())
+        .arg("choose")
+        .arg("file1")
+        .arg("file2")
+        .arg("file3")
+        .arg("file4")
+        .arg("file5")
+        // .spawn() // spawn should inherit stdin, stdout, and stderr just like status, but it's not
+                 // working
+        // .status() // status allows gum to work however I can't get anything but the exit code
+        .output() // as long as stdin, stdout, and stderr are explicity set to inherit, output
+                  // works exactly as I'd like
+        .expect("gum choose command failed to start");
+
+    // dbg!(gum_choice);
+
+    let stdout: String = gum_choice.stdout.iter().map(|d| *d as char).collect();
+
+    println!("{}", stdout);
+
     println!("spawn");
     Command::new("ls")
         .spawn()
