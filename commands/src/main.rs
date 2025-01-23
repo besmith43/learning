@@ -24,6 +24,30 @@ fn main() {
 
     println!("{}", stdout);
 
+
+    // NOTE: fzf can only get choices from piped in data
+    // so.. we're gonna set it up with an echo command first
+    // got the idea for this from here: https://stackoverflow.com/questions/73469520/how-to-pipe-commands-in-rust
+    let data = Command::new("echo")
+        .arg("file1\nfile2\nfile3\nfile4\nfile5\n")
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap();
+
+    let fzf_choice = Command::new("fzf")
+        .stdin(Stdio::from(data.stdout.unwrap()))
+        .stdout(Stdio::inherit())
+        .stderr(Stdio::inherit())
+        .output()
+        .expect("gum choose command failed to start");
+
+    let fzf_stdout: String = fzf_choice.stdout.iter().map(|d| *d as char).collect();
+
+    println!("{}", fzf_stdout);
+
+
+
+
     println!("spawn");
     Command::new("ls")
         .spawn()
