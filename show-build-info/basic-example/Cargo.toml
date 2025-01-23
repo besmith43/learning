@@ -1,0 +1,13 @@
+[package]
+name = "basic-example"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+shadow-rs = "0.38.0"
+
+[build-dependencies]
+shadow-rs = "0.38.0"
+
+
