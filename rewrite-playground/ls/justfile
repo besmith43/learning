@@ -1,0 +1,9 @@
+
+run:
+    cargo run
+    cargo run -- ./target/
+
+
+
+
+

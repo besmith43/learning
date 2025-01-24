@@ -1,0 +1,10 @@
+
+
+run:
+    cargo run -- weather testfile.txt
+
+
+
+
+
+
