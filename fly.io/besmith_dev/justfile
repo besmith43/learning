@@ -1,0 +1,9 @@
+
+
+run:
+    cargo run
+
+deploy:
+    fly deploy --ha=false
+
+

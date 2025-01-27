@@ -1,14 +1,12 @@
 use askama::Template;
 
 use axum::{
-    routing::{get},
     http::StatusCode,
     response::{Html, IntoResponse, Response},
+    routing::get,
     Router,
 };
-use tower_http::{
-    services::{ServeDir},
-};
+use tower_http::services::ServeDir;
 
 #[tokio::main]
 async fn main() {
@@ -21,7 +19,7 @@ async fn main() {
         .route("/", get(root))
         .route("/btn", get(get_button))
         .route("/list", get(get_list))
-        .nest_service("/assets", ServeDir::new("assets"));
+        .nest_service("/assets", ServeDir::new("./assets"));
 
     // run our app with hyper, listening globally on port 3000
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
@@ -38,9 +36,10 @@ async fn root() -> impl IntoResponse {
 #[template(path = "index.html")]
 struct IndexTemplate;
 
-
 async fn get_button() -> impl IntoResponse {
-    let btn_template = ButtonTemplate { label: "does nothing".to_string() };
+    let btn_template = ButtonTemplate {
+        label: "does nothing".to_string(),
+    };
     HtmlTemplate(btn_template)
 }
 
@@ -51,7 +50,13 @@ struct ButtonTemplate {
 }
 
 async fn get_list() -> impl IntoResponse {
-    let list_template = ListTemplate { list: vec!["item 1".to_string(), "item 2".to_string(), "item 3".to_string() ] };
+    let list_template = ListTemplate {
+        list: vec![
+            "item 1".to_string(),
+            "item 2".to_string(),
+            "item 3".to_string(),
+        ],
+    };
     HtmlTemplate(list_template)
 }
 
@@ -60,7 +65,6 @@ async fn get_list() -> impl IntoResponse {
 struct ListTemplate {
     list: Vec<String>,
 }
-
 
 struct HtmlTemplate<T>(T);
 
