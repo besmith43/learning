@@ -1,4 +1,8 @@
+==============================
+C# program starts here
 Input Redirected: False
 Arg: --flag
 Arg: true
 This should go to standard out
+     left path 5 spaces
+Key                              :Value

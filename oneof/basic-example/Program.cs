@@ -31,6 +31,15 @@ Console.WriteLine($"DoThing(true) = {DoThing(true)}");
 
 Console.WriteLine($"DoThing(false) = {DoThing(false)}");
 
+var doThingResult = DoThing(false);
+
+string makeString = doThingResult.Match(
+    num => $"{num}",
+    str => str
+);
+
+Console.WriteLine($"Make String - {makeString}");
+
 OneOf<int, string> DoThing(bool noIdea)
 {
     if (noIdea)
