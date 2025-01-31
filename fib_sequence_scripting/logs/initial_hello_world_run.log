@@ -1,0 +1,13 @@
+
+dotnet
+Hello world!
+
+real    0m7.127s
+user    0m2.738s
+sys     0m1.402s
+rust
+Hello World
+
+real    0m0.654s
+user    0m0.147s
+sys     0m0.090s
