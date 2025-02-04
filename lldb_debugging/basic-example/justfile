@@ -1,0 +1,8 @@
+
+run:
+    cargo run
+
+debug:
+    cargo build
+    rust-lldb ./target/debug/example
+
