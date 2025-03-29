@@ -1,11 +1,25 @@
 #!/usr/bin/env bash
 
 
-mkdir app && cd $_
+if [ ! -d app ]; then
+    mkdir app && cd app
+else
+    cd app
+fi
 
-mkdir plugins
-cp ../simple-plugin/simple-plugin.so plugins
+if [ ! -d plugins ]; then
+    mkdir plugins
+fi
 
-touch main.go
-go mod init example.app
+if [ -f ../simple-plugin/simple-plugin.so ]; then
+    cp ../simple-plugin/simple-plugin.so plugins
+fi
+
+if [ ! -f main.go ]; then
+    touch main.go
+fi
+
+if [ ! -f go.mod ]; then
+    go mod init example.app
+fi
 
