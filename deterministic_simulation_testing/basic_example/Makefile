@@ -1,4 +1,7 @@
 
+sim:
+	scripts/sim.sh
+
 run: clean test
 	scripts/run.sh
 
@@ -11,6 +14,4 @@ build:
 clean:
 	scripts/clean.sh
 
-sim:
-	scripts/sim.sh
 
