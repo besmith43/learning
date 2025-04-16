@@ -2,12 +2,20 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"atomicgo.dev/cursor"
+	"golang.org/x/term"
 )
 
 func main() {
+	area := cursor.NewArea()
+	ClearAll(area)
+	GridUpdate(area)
+}
+
+func main2() {
 	fmt.Println("Cursor area movement demo")
 	fmt.Println("--------------------------")
 
@@ -98,19 +106,40 @@ func GridUpdate(area cursor.Area) {
 
 	// build contents
 
+	area.Top()
+
 	area.Update(fmt.Sprintf("%s    %s", gameMap[0], statusSidebar[0]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[1], statusSidebar[1]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[2], statusSidebar[2]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[3], statusSidebar[3]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[4], statusSidebar[4]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[5], statusSidebar[5]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[6], statusSidebar[6]))
+	area.Down(1)
 	area.Update(fmt.Sprintf("%s    %s", gameMap[7], statusSidebar[7]))
+	area.Down(1)
+	area.Down(1)
 
 	area.Update(mainMenu)
 }
 
 func ClearAll(area cursor.Area) {
-	area.Bottom()
+	_, height, err := term.GetSize(int(os.Stdout.Fd()))
+	if err != nil {
+		panic(fmt.Sprintf("Error getting console size:", err))
+	} else {
+		fmt.Printf("Height: %d\n", height)
+	}
 
+	area.Top()
+
+	area.ClearLinesDown(height)
+
+	area.Top()
 }
