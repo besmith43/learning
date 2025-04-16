@@ -63,4 +63,54 @@ func main() {
 
 	time.Sleep(1 * time.Second)
 	fmt.Println("\n--- DONE")
+
+	GridUpdate(area)
+}
+
+func GridUpdate(area cursor.Area) {
+	var gameMap [8]string
+	gameMap[0] = "------------------------------"
+	gameMap[1] = "|                            |"
+	gameMap[2] = "|                            |"
+	gameMap[3] = "|    <E>                     |"
+	gameMap[4] = "|                            |"
+	gameMap[5] = "|                            |"
+	gameMap[6] = "|                            |"
+	gameMap[7] = "------------------------------"
+
+	var statusSidebar [8]string
+	statusSidebar[0] = fmt.Sprintf("Position: %d,%d\n", 5, 3)
+	statusSidebar[1] = fmt.Sprintf("Torpedoes: %d\n", 10)
+	statusSidebar[2] = fmt.Sprintf("Health: %d\n", 100)
+	statusSidebar[3] = fmt.Sprintf("\n")
+	statusSidebar[4] = fmt.Sprintf("\n")
+	statusSidebar[5] = fmt.Sprintf("\n")
+	statusSidebar[6] = fmt.Sprintf("\n")
+	statusSidebar[7] = fmt.Sprintf("\n")
+
+	mainMenu := ""
+
+	mainMenu = fmt.Sprintf("%stext in the main menu\n", mainMenu)
+	mainMenu = fmt.Sprintf("%stext in the main menu\n", mainMenu)
+	mainMenu = fmt.Sprintf("%stext in the main menu\n", mainMenu)
+	mainMenu = fmt.Sprintf("%stext in the main menu\n", mainMenu)
+	mainMenu = fmt.Sprintf("%stext in the main menu\n", mainMenu)
+
+	// build contents
+
+	area.Update(fmt.Sprintf("%s    %s", gameMap[0], statusSidebar[0]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[1], statusSidebar[1]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[2], statusSidebar[2]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[3], statusSidebar[3]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[4], statusSidebar[4]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[5], statusSidebar[5]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[6], statusSidebar[6]))
+	area.Update(fmt.Sprintf("%s    %s", gameMap[7], statusSidebar[7]))
+
+	area.Update(mainMenu)
+}
+
+func ClearAll(area cursor.Area) {
+	area.Bottom()
+
 }
