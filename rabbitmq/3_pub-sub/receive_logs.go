@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -41,6 +42,9 @@ func main() {
 		nil,   // arguments
 	)
 	failOnError(err, "Failed to declare a queue")
+		
+
+    fmt.Println(q.Name);
 
 	err = ch.QueueBind(
 		q.Name, // queue name
