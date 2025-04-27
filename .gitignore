@@ -8,3 +8,7 @@ target
 .idea
 node_modules
 .DS_Store
+.settings/
+.project
+.gradle/
+.classpath
