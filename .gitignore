@@ -1,5 +1,7 @@
-bin
-obj
+bin/
+obj/
+*.o
+*.obj
 target
 *.exe
 *.dll
