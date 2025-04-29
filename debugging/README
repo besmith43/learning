@@ -1,0 +1,73 @@
+# GDB
+
+1. build the hello binary
+
+```bash
+    make
+```
+
+2. run gdb like so
+
+```bash
+    gdb ./bin/hello
+```
+
+3. set a break point
+
+```
+    break hello.c:9
+```
+
+4. run the program within gdb
+
+```
+    run
+```
+
+### Options
+
+continue / c
+
+next / n
+
+step
+
+print variable
+
+example: print i
+
+
+### Core Files
+
+See lowlevellearn's [video]() for more information, but here's the short and sweet
+
+To get a core file dump when your program seg faults, check the following settings:
+
+1. make sure that the ulimit is unlimited
+    this property sets the upper limit on the number of core dumps that the kernel can make
+
+```bash
+    ulimit -c
+```
+
+if it isn't unlimited, run this to set it that way
+
+```bash
+    ulimit -c unlimited
+```
+
+2. check the core dump naming convention
+
+```bash
+    cat /proc/sys/kernel/core_pattern
+```
+
+my ubuntu system had this value by default
+
+
+|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+
+
+lowlevellearning had it set to "./core"
+
+NOTE: this section is assuming that you're runnning linux
