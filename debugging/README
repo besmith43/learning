@@ -39,7 +39,7 @@ example: print i
 
 ### Core Files
 
-See lowlevellearn's [video]() for more information, but here's the short and sweet
+See lowlevel's [video](https://youtu.be/3T3ZDquDDVg?si=Uxjj5z0lBX3jAui8) for more information, but here's the short and sweet
 
 To get a core file dump when your program seg faults, check the following settings:
 
@@ -71,3 +71,5 @@ my ubuntu system had this value by default
 lowlevellearning had it set to "./core"
 
 NOTE: this section is assuming that you're runnning linux
+
+[GDB CheatSheet](https://github.com/reveng007/GDB-Cheat-Sheet)
