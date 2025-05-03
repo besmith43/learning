@@ -8,3 +8,7 @@ if [ -d target ]; then
 	mkdir target
 fi
 
+if [ -n "*.log" ]; then
+    rm *.log
+fi
+

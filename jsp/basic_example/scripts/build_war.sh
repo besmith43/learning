@@ -14,7 +14,11 @@ mkdir -p dist/META-INF/
 
 
 cp web/*.jsp dist/
-cp lib/*.jar dist/WEB-INF/lib
+
+if [ -d lib ]; then
+    cp lib/*.jar dist/WEB-INF/lib
+fi
+
 cp -r target/* dist/WEB-INF/classes/
 cp src/conf/MANIFEST.MF dist/META-INF
 
