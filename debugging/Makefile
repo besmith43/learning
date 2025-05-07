@@ -5,7 +5,9 @@ OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 SHELL=/bin/bash
 
 run: clean default
+	ulimit -c unlimited
 	./$(TARGET)
+	ulimit -c 0
 
 default: $(TARGET)
 
