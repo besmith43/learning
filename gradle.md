@@ -21,7 +21,7 @@ start a new project
 run a project
 
 ```bash
-    gradle run
+    gradle run --args <whatever your arguments are>
 ```
 
 list all available tasks (sub commands)
