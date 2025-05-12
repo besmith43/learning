@@ -30,6 +30,12 @@ list all available tasks (sub commands)
     gradle tasks --all
 ```
 
+see the order that things get run during build
+
+```bash
+    gradle build --console=verbose
+```
+
 ### make fat jar
 
 
@@ -64,3 +70,21 @@ run the fat jar
     java -jar build/libs/[your-project-name]-all.jar
 ```
 
+
+### fat jar alternative
+
+
+add to the jar task the following:
+
+
+```
+    jar {
+        manifest {
+            attributes 'Main-Class': 'your.package.YourMainClass'
+        }
+
+        from {
+            configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        }
+    }
+```
