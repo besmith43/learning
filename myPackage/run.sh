@@ -9,7 +9,7 @@ elif [ -d bin2 ]; then
 fi
 
 # javac -d bin src/Math.java
-javac -d bin2 src2/math.java src2/main.java
+javac -d bin2 src2/Math.java src2/main.java
 # javac -d bin src/*.java
 # javac -d bin src/main.java
 
