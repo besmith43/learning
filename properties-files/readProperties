@@ -1,0 +1,36 @@
+///usr/bin/env jbang "$0" "$@" ; exit $?
+
+
+import static java.lang.System.*;
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class readProperties {
+
+    public static void main(String... args) {
+        String currentDir = System.getProperty("user.dir");
+        System.out.println("Current directory: " + currentDir);
+        String appConfigPath = currentDir + "/java.properties";
+        // String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        // String appConfigPath = rootPath + "app.properties";
+
+        Properties appProps = new Properties();
+
+        try {
+            appProps.load(new FileInputStream(appConfigPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        String appVersion = appProps.getProperty("version");
+        out.println("App Version: " + appVersion);
+
+        String name = appProps.getProperty("name");
+        out.println("App Name: " + name);
+
+        String appDate = appProps.getProperty("date");
+        out.println("App Date: " + appDate);
+    }
+}
