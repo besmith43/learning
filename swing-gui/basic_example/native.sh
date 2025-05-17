@@ -33,8 +33,18 @@ elif [ -z "$(which native-image)" ]; then
     exit 1
 fi
 
+if [ -f hello ]; then
+    rm hello
+fi
 
-jbang export native -O hello hello.java
+
+jbang export native \
+    # -H:ConfigurationFileDirectories=conf \
+    -Djava.awt.headless=false \
+    -O hello \
+    hello.java
+
+result="$?"
 
 
 if [ -n "$current_jdk" ]; then
@@ -42,4 +52,6 @@ if [ -n "$current_jdk" ]; then
     sdk use java "$current_jdk"
 fi
 
-
+if [ $result -eq 0 ] && [ -f hello ]; then
+    ./hello
+fi
