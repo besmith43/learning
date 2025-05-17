@@ -9,6 +9,6 @@ if [ -d target ]; then
 fi
 
 if [ -n "*.log" ]; then
-    rm *.log
+    rm -f *.log
 fi
 
