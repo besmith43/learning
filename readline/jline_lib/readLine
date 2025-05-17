@@ -1,0 +1,74 @@
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS org.jline:jline:3.30.0
+
+import static java.lang.System.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.function.Supplier;
+import java.io.IOException;
+import org.jline.terminal.Terminal;
+import org.jline.terminal.TerminalBuilder;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+import org.jline.reader.impl.completer.StringsCompleter;
+import org.jline.reader.Completer;
+
+
+
+
+
+
+public class readLine {
+
+    public static void main(String... args) {
+        try {
+            // Create a Completer
+            Completer comp = demonstrateStringsCompleter();
+
+            // Create a terminal
+            Terminal terminal = TerminalBuilder.builder().system(true).build();
+
+            // Create a line reader
+            LineReader reader = LineReaderBuilder.builder().terminal(terminal).completer(comp).build();
+
+            // Read lines from the user
+            while (true) {
+                String line = reader.readLine("prompt> ");
+
+                // Exit if requested
+                if ("exit".equalsIgnoreCase(line)) {
+                    break;
+                }
+
+                // Echo the line back to the user
+                terminal.writer().println("You entered: " + line);
+                terminal.flush();
+            }
+
+            terminal.writer().println("Goodbye!");
+            terminal.close();
+
+        } catch (IOException e) {
+            System.err.println("Error creating terminal: " + e.getMessage());
+        }
+    }
+
+    public static Completer demonstrateStringsCompleter() {
+        // Complete with fixed strings
+        Completer stringsCompleter = new StringsCompleter("add", "remove", "list", "help");
+
+        // Complete with dynamic strings
+        // Supplier<Collection<String>> dynamicStrings = getCurrentCommands();
+        Collection<String> dynamicStrings = getCurrentCommands();
+        Completer dynamicCompleter = new StringsCompleter(dynamicStrings);
+
+        System.out.println("Completers created successfully");
+
+        return dynamicCompleter;
+    }
+
+    private static Collection<String> getCurrentCommands() {
+        // In a real application, this might fetch commands from a registry
+        return Arrays.asList("connect", "disconnect", "status", "help");
+    }
+}
