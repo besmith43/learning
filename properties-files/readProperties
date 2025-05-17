@@ -9,11 +9,18 @@ import java.io.IOException;
 public class readProperties {
 
     public static void main(String... args) {
+
+        String envConfigPath = System.getenv("readLineConfig");
+
         String currentDir = System.getProperty("user.dir");
         System.out.println("Current directory: " + currentDir);
         String appConfigPath = currentDir + "/java.properties";
         // String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         // String appConfigPath = rootPath + "app.properties";
+
+        if (envConfigPath != null) {
+            appConfigPath = envConfigPath;
+        }
 
         Properties appProps = new Properties();
 
