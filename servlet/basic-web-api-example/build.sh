@@ -23,8 +23,9 @@ fi
 
 # javac -d target src/main/java/main/*.java src/main/java/**/*.java
 # javac -d target src/main/java/**/*.java
-javac -d target -cp "./lib/*" src/java/*.java
+# javac -d target -cp "./lib/*" src/java/*.java # works if the servlet-api.jar is in the lib folder
 # javac -d target -cp ./lib/:$CATALINA_HOME/lib/ src/java/*.java
+javac -d target -cp "./lib/*:$CATALINA_HOME/lib/*" src/java/*.java
 
 if [ $? -ne 0 ]; then
     echo "java compile failed"
