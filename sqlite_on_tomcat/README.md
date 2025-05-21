@@ -14,7 +14,8 @@
 
 
 ```bash
-    wget https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.49.1.0/sqlite-jdbc-3.49.1.0.jar -o $CATALINA_BASE/lib/
+    wget https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.49.1.0/sqlite-jdbc-3.49.1.0.jar
+    mv sqlite-jdbc-3.49.1.0.jar $CATALINA_BASE/lib/
 ```
 
 3) use the index.jsp as an example of using the jdbc in the context.xml:
