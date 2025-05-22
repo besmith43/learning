@@ -8,10 +8,13 @@ import org.junit.jupiter.api.Test;
 // see here for more examples
 // https://github.com/CodeIntelligenceTesting/jazzer/tree/main/examples/junit/src/test/java/com/example
 
+// docs: https://codeintelligencetesting.github.io/jazzer-docs/jazzer-api/com/code_intelligence/jazzer/api/FuzzedDataProvider.html
+
 // @RunWith(org.junit.platform.runner.JUnitPlatform.class)
 class MathFuzzTest {
     @FuzzTest
-    void additionFuzzTest(int input1, int input2) {
-        assertEquals(input1 + input2, Math.Add(input1, input2));
+    void additionFuzzTest(FuzzedDataProvider data) {
+        int[] arr = data.ConsumeInts(2);
+        assertEquals(arr[0] + arr[1], Math.Add(arr[0], arr[1]));
     }
 }
