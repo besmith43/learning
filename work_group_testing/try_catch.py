@@ -17,8 +17,14 @@ try:
     print(f"job_title: {user['job_title']}")
     print(f"city: {user['city']}")
     print(f"email: {user['email']}")
+except KeyError as e:
+    print("key error block")
+    print(f"caught exception: {e}")
+    print(f"type of  exception: {type(e)}")
+    print(f"local name variable: {name}")
 except Exception as e:
     print(f"caught exception: {e}")
+    print(f"type of  exception: {type(e)}")
     print(f"local name variable: {name}")
 
 
