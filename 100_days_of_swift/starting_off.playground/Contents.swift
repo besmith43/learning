@@ -166,6 +166,211 @@ heights["Shaquille O'Neal"] = 216
 heights["LeBron James"] = 206
 
 
+// set
+
+let actors = Set([
+    "Denzel Washington",
+    "Tom Cruise",
+    "Nicolas Cage",
+    "Samuel L Jackson"
+])
+
+print(actors)
+
+var actors2 = Set<String>()
+actors2.insert("Denzel Washington")
+actors2.insert("Tom Cruise")
+actors2.insert("Nicolas Cage")
+actors2.insert("Samuel L Jackson")
+print(actors2)
+
+
+// enums
+
+enum WeekDay {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+var day = WeekDay.monday
+day = WeekDay.tuesday
+day = WeekDay.friday
+
+print(day)
+
+
+enum WeekDay2 {
+    case monday, tuesday, wednesday, thursday, friday
+}
+
+
+// type annotations
+
+let surname: String = "Lasso"
+let score3: Int = 0
+let score4: Double = 0
+
+
+// empty array
+
+var teams = [String]()
+// or
+var teams2: [String] = [String]()
+
+
+enum UIStyle {
+    case light, dark, system
+}
+
+var style = UIStyle.light
+style = .dark  // shorthand
+
+
+let username: String
+// do something
+username = "@twostraws"
+// swift lets you declare a constaint before you assign to it
+//       only allowed to assign to a constaint once
+print(username)
+
+
+// checkpoint 2
+
+var check2_arr = [String]()
+check2_arr.append("Bob")
+check2_arr.append("Bob")
+check2_arr.append("Charlie")
+check2_arr.append("Mark")
+check2_arr.append("Mike")
+check2_arr.append("Ryan")
+
+print(check2_arr.count)
+print(Set(check2_arr).count)
+
+
+// if else
+
+if true {
+    print("whatever is true")
+}
+
+
+let if_score = 85
+
+if if_score > 80 {
+    print("great job")
+}
+
+
+// multiple conditions
+
+let mc_age = 16
+
+if mc_age >= 18 {
+    print("you can vote in the next election.")
+} else {
+    print("Sorry, you're too young to vote")
+}
+
+let temp = 25
+
+if temp > 20 && temp < 30 {
+    print("it's a nice day")
+}
+
+
+let userAge = 14
+let hasParentalConsent = true
+
+if age >= 18 || hasParentalConsent {
+    print("you can buy the game!")
+}
+
+
+enum TransportOption {
+    case airplane, helicopter, bicycle, car ,escooter
+}
+
+let transport = TransportOption.airplane
+
+if transport == .airplane || transport == .helicopter {
+    print("let's fly")
+} else if transport == .bicycle {
+    print("I hope there's a bike path...")
+} else if transport == .car {
+    print("Time to get stuck in traffic")
+} else {
+    print("I'm going to hire a scooter now!")
+}
+
+
+// switch statements
+
+
+enum Weather {
+    case sun, rain, wind, snow, unknown
+}
+
+let weather = Weather.sun
+
+switch(weather) {
+case .sun:
+    print("it should be a nice day")
+    break
+case .rain:
+    print("pack an umbrella")
+    break
+case .wind:
+    print("wear something warm")
+    break
+case .snow:
+    print("school is cancelled")
+    break
+case .unknown:
+    print("our forecast generator is broken")
+    break
+}
+
+
+let place = "Metropolis"
+
+switch place {
+case "Gotham":
+    print("you're batman!")
+case "Mega-City One":
+    print("you're judge dredd!")
+case "Wakanda":
+    print("you're black panther!")
+default:
+    print("who are you?")
+}
+
+// 12 days of christmas
+
+let days_of_christmas = 5
+
+print("my true love gave to me...")
+
+switch days_of_christmas {
+case 5:
+    print("5 golden rings")
+    fallthrough
+case 4:
+    print("4 calling birds")
+    fallthrough
+case 3:
+    print("3 French hens")
+    fallthrough
+case 2:
+    print("2 turtle doves")
+    fallthrough
+default:
+    print("A partridge in a pear tree")
+}
+
 
 
 
