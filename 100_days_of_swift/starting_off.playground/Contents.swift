@@ -372,7 +372,284 @@ default:
 }
 
 
+// ternary conditional operator
+
+let myAge = 18
+
+var canVote = age >= 18 ? "Yes" : "No"
+
+// basically if/else
+canVote = ""
+
+if age >= 18 {
+    canVote = "Yes"
+} else {
+    canVote = "No"
+}
+
+
+// loops
+
+let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
+
+for os in platforms {
+    print("Swift works great on \(os).")
+}
+
+// range - 1...12 (inclusive)
+for i in 1...12 {
+    print(i)
+}
+
+for i in 1..<5 {
+    print("counting from 1 up to 5: \(i)")
+}
+
+for _ in 1...5 {
+    print("don't care about the loop var")
+}
+
+var while_count = 0
+while while_count < 10 {
+    print("while loop")
+    while_count += 1
+}
+
+// skipped break and continue... let's face it.. that's easy
+
+// checkpoint 3
+
+// fizzbuzz for 1 through 100
+
+for i in 1...100 {
+    if i.isMultiple(of: 3) && i.isMultiple(of: 5) {
+        print("fizzbuzz")
+    } else if i.isMultiple(of: 3) {
+        print("fizz")
+    } else if i.isMultiple(of: 5) {
+        print("buzz")
+    } else {
+        print(i)
+    }
+}
+
+// functions
+
+// overloading is a thing... interesting
+func hello() {
+    print("Hello world")
+}
+
+func hello(name: String) {
+    print("Hello \(name)")
+}
+
+hello()
+hello(name: "Bob") // must have the variable name in the calling of the function... boo...
+
+// returns
+
+func hello2() -> String {
+    return "Hello World"
+}
+
+print(hello2())
+
+// NOTE: return keyword is optional like in rust
+// I don't like it...
+func getUser() -> [String] {
+    ["Taylor", "Swift"]
+}
+
+let user = getUser()
+print("Name: \(user[0]) \(user[1])")
+
+
+func getUser_dict() -> [String: String] {
+    [
+        "firstName": "Taylor",
+        "lastName": "Swift"
+    ]
+}
+
+let user_dict = getUser_dict()
+print("Name: \(user_dict["firstName", default: "Anonymous"]) \(user_dict["lastName", default: "Anonymous"])")
+
+
+func getUser_tuple() -> (firstName: String, lastName: String) {
+    (firstName: "Taylor", lastName: "Swift")
+}
+
+let user_tuple = getUser_tuple()
+print("Name: \(user_tuple.firstName) \(user_tuple.lastName)")
+
+
+// customize parameter labels
+
+// use _ to make a parameter label default
+
+func printTimesTable(number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+func printTimesTable(_ number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+func printTimesTable(for number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimesTable(5)
+printTimesTable(for: 5)
+// printTimesTable(number: 5) // only good as an internal name unless I make a 3rd overload
+printTimesTable(number: 5)
+
+
+enum PasswordError: Error {
+    case short, obvious
+}
+
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 {
+        throw PasswordError.short
+    }
+    
+    if password == "12345" {
+        throw PasswordError.obvious
+    }
+    
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
+    }
+}
+
+let password = "12345"
+
+do {
+    let result = try checkPassword(password)
+    print("Password rating: \(result)")
+} catch PasswordError.short {
+    print("please use a longer password")
+} catch PasswordError.obvious {
+    print("I have the same combination on my luggage")
+} catch {
+    print("there was an error: \(error.localizedDescription)")
+}
 
 
 
+// checkpoint 4
 
+enum MyError: Error {
+    case outofbounds, notfound
+}
+
+func square_root(_ num: Int) throws -> Int {
+    if num < 1 || num > 10_000 {
+        throw MyError.outofbounds
+    }
+    
+    
+    for i in 1...100 {
+        if i*i == num {
+            return i
+        }
+    }
+    
+    throw MyError.notfound
+}
+
+do {
+    let ans = try square_root(25)
+    print("square root is \(ans)")
+} catch MyError.outofbounds {
+    print("given number was out of bounds")
+} catch MyError.notfound {
+    print("square root not found")
+} catch {
+    print("there was an error: \(error.localizedDescription)")
+}
+
+
+// closures
+// aka function variables
+
+func greetUser() {
+    print("Hi there!")
+}
+
+greetUser()
+
+var greetCopy = greetUser
+greetCopy()
+
+let sayHello = {
+    print("Hi there!")
+}
+
+sayHello()
+
+
+
+let sayHello2 = { (name: String) -> String in
+    "Hi \(name)!"
+}
+
+print(sayHello2("Bob"))
+
+
+
+struct Album {
+    let title: String
+    let artist: String
+    let year: Int
+    
+    func printSummary() {
+        print("\(title) (\(year)) by \(artist)")
+    }
+}
+
+let red = Album(title: "Red", artist: "Taylor Swift", year: 2012)
+let wings = Album(title: "Wings", artist: "BTS", year: 2016)
+
+print(red.title)
+print(wings.artist)
+
+red.printSummary()
+wings.printSummary()
+
+
+struct Employee {
+    let name: String
+    var vacationRemaining: Int
+   
+    /*
+        reading from self is fine
+        but to mutate self, you need the mutating keyword
+     */
+    mutating func takeVacation(days: Int) {
+        if vacationRemaining > days {
+            vacationRemaining -= days
+            print("I'm going on vaction!")
+            print("Days remaining: \(vacationRemaining)")
+        } else {
+            print("Oops! there aren't enough days remaining")
+        }
+    }
+}
+
+var archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
+// let archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
+archer.takeVacation(days: 5)
+print(archer.vacationRemaining)
