@@ -653,3 +653,92 @@ var archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
 // let archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
 archer.takeVacation(days: 5)
 print(archer.vacationRemaining)
+
+
+// computed property
+
+struct cmp_Employee {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+    
+    var vacationRemaining: Int {
+        get {
+            vacationAllocated - vacationTaken
+        }
+        
+        set {
+            vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+
+var archer2 = cmp_Employee(name: "Sterling Archer", vacationAllocated: 14)
+archer2.vacationTaken += 4
+archer2.vacationRemaining = 5
+print(archer2.vacationAllocated)
+
+
+// property observers
+
+struct Game {
+    var score = 0 {
+        didSet {
+            print("Score is now \(score)")
+        }
+    }
+}
+
+var game = Game()
+game.score += 10
+game.score -= 3
+game.score += 1
+
+
+struct App {
+    var contacts = [String]() {
+        willSet {
+            print("Current Value is: \(contacts)")
+            print("New Value will be: \(newValue)")
+        }
+        
+        didSet {
+            print("There are now \(contacts.count) contacts")
+            print("Old Value was: \(oldValue)")
+        }
+    }
+}
+
+
+var app = App()
+app.contacts.append("Adrian E")
+app.contacts.append("Allen W")
+app.contacts.append("Ish S")
+
+
+// custom initializers
+
+
+struct Player {
+    let name: String
+    let number: Int
+   
+    // note that it doesn't have a func keyword
+    // also there's no return value
+    init(name: String, number: Int) {
+        self.name = name
+        self.number = number
+    }
+    
+    init(name: String) {
+        self.name = name
+        number = Int.random(in: 1...99)
+    }
+}
+
+// let player = Player(name: "Megan R", number: 15)
+let player = Player(name: "Megan R")
+print(player.number)
+
+
+
