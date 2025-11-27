@@ -6,3 +6,6 @@ run:
 test:
 	scripts/test.sh
 
+tidy:
+	go mod tidy
+
