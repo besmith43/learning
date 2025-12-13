@@ -6,14 +6,14 @@ fi
 
 touch .env
 
-awsUser="$(aws sts get-caller-identity --query "Account" --output text)"
+awsUser="$(aws sts get-caller-identity --profile personal --query "Account" --output text)"
 
 if [ -z "$awsUser" ]; then
     echo "aws user is blank.  please setup your aws cli" >&2
     exit 1
 fi
 
-awsRegion="$(aws configure get region)"
+awsRegion="$(aws configure get region --profile personal)"
 
 if [ -z "$awsRegion" ]; then
     echo "aws region is blank.  please setup your aws cli" >&2

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-cdk destroy --yes
+cdk destroy --yes --profile personal
 
 if [ -f cdk ]; then
     rm cdk
