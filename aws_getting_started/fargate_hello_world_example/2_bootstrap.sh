@@ -7,8 +7,8 @@ function check_last_command {
     fi
 }
 
-if [ -f cdk ]; then
-    echo "removing cdk binary" >&2
+if [ -f fargate_hello_world_example ]; then
+    echo "removing fargate_hello_world_example binary" >&2
     rm cdk
 fi
 
@@ -27,8 +27,7 @@ cdk bootstrap --profile personal
 
 check_last_command $? "cdk bootstrap command failed"
 
-echo "running go mody tidy && go build" >&2
-go mod tidy
+echo "running go build" >&2
 go build
 
 check_last_command $? "go build command failed"

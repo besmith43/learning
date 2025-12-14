@@ -17,6 +17,7 @@ type HelloCdkStackProps struct {
 	awscdk.StackProps
 }
 
+// NOTE: the lambda function used here is a js function, not golang
 func NewHelloCdkStack(scope constructs.Construct, id string, props *HelloCdkStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {
