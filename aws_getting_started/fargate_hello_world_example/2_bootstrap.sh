@@ -27,10 +27,10 @@ cdk bootstrap --profile personal
 
 check_last_command $? "cdk bootstrap command failed"
 
-echo "running go build" >&2
-go build
+# echo "running go build" >&2
+# go build
 
-check_last_command $? "go build command failed"
+# check_last_command $? "go build command failed"
 
 echo "cdk listing:" >&2
 cdk list --profile personal
