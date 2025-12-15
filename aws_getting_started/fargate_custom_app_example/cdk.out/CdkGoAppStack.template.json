@@ -1,0 +1,1098 @@
+{
+ "Resources": {
+  "AppVpc80F1F7F9": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/Resource"
+   }
+  },
+  "AppVpcPublicSubnet1SubnetDD9E0A08": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1a",
+    "CidrBlock": "10.0.0.0/18",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/Subnet"
+   }
+  },
+  "AppVpcPublicSubnet1RouteTable96CCB335": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/RouteTable"
+   }
+  },
+  "AppVpcPublicSubnet1RouteTableAssociationAFB11A1C": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AppVpcPublicSubnet1RouteTable96CCB335"
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPublicSubnet1SubnetDD9E0A08"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/RouteTableAssociation"
+   }
+  },
+  "AppVpcPublicSubnet1DefaultRouteC1B28749": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "AppVpcIGW826A76F0"
+    },
+    "RouteTableId": {
+     "Ref": "AppVpcPublicSubnet1RouteTable96CCB335"
+    }
+   },
+   "DependsOn": [
+    "AppVpcVPCGW1D33210A"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/DefaultRoute"
+   }
+  },
+  "AppVpcPublicSubnet1EIPF0BFE5AB": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/EIP"
+   }
+  },
+  "AppVpcPublicSubnet1NATGateway0D5C928D": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "AppVpcPublicSubnet1EIPF0BFE5AB",
+      "AllocationId"
+     ]
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPublicSubnet1SubnetDD9E0A08"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet1"
+     }
+    ]
+   },
+   "DependsOn": [
+    "AppVpcPublicSubnet1DefaultRouteC1B28749",
+    "AppVpcPublicSubnet1RouteTableAssociationAFB11A1C"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet1/NATGateway"
+   }
+  },
+  "AppVpcPublicSubnet2SubnetDFE2ABB8": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1b",
+    "CidrBlock": "10.0.64.0/18",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/Subnet"
+   }
+  },
+  "AppVpcPublicSubnet2RouteTable961D28F7": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/RouteTable"
+   }
+  },
+  "AppVpcPublicSubnet2RouteTableAssociationD784754F": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AppVpcPublicSubnet2RouteTable961D28F7"
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPublicSubnet2SubnetDFE2ABB8"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/RouteTableAssociation"
+   }
+  },
+  "AppVpcPublicSubnet2DefaultRoute66E67257": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "AppVpcIGW826A76F0"
+    },
+    "RouteTableId": {
+     "Ref": "AppVpcPublicSubnet2RouteTable961D28F7"
+    }
+   },
+   "DependsOn": [
+    "AppVpcVPCGW1D33210A"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/DefaultRoute"
+   }
+  },
+  "AppVpcPublicSubnet2EIPB481EFAF": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/EIP"
+   }
+  },
+  "AppVpcPublicSubnet2NATGatewayF1049000": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "AppVpcPublicSubnet2EIPB481EFAF",
+      "AllocationId"
+     ]
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPublicSubnet2SubnetDFE2ABB8"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PublicSubnet2"
+     }
+    ]
+   },
+   "DependsOn": [
+    "AppVpcPublicSubnet2DefaultRoute66E67257",
+    "AppVpcPublicSubnet2RouteTableAssociationD784754F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PublicSubnet2/NATGateway"
+   }
+  },
+  "AppVpcPrivateSubnet1Subnet191FA232": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1a",
+    "CidrBlock": "10.0.128.0/18",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PrivateSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet1/Subnet"
+   }
+  },
+  "AppVpcPrivateSubnet1RouteTableEBC6D985": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PrivateSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet1/RouteTable"
+   }
+  },
+  "AppVpcPrivateSubnet1RouteTableAssociation96B40FF1": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AppVpcPrivateSubnet1RouteTableEBC6D985"
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPrivateSubnet1Subnet191FA232"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet1/RouteTableAssociation"
+   }
+  },
+  "AppVpcPrivateSubnet1DefaultRouteF1934EA6": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "AppVpcPublicSubnet1NATGateway0D5C928D"
+    },
+    "RouteTableId": {
+     "Ref": "AppVpcPrivateSubnet1RouteTableEBC6D985"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet1/DefaultRoute"
+   }
+  },
+  "AppVpcPrivateSubnet2Subnet9EA093CC": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "us-east-1b",
+    "CidrBlock": "10.0.192.0/18",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PrivateSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet2/Subnet"
+   }
+  },
+  "AppVpcPrivateSubnet2RouteTableD5D563B7": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc/PrivateSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet2/RouteTable"
+   }
+  },
+  "AppVpcPrivateSubnet2RouteTableAssociationEF520DA2": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AppVpcPrivateSubnet2RouteTableD5D563B7"
+    },
+    "SubnetId": {
+     "Ref": "AppVpcPrivateSubnet2Subnet9EA093CC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet2/RouteTableAssociation"
+   }
+  },
+  "AppVpcPrivateSubnet2DefaultRouteCBAB1884": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "AppVpcPublicSubnet2NATGatewayF1049000"
+    },
+    "RouteTableId": {
+     "Ref": "AppVpcPrivateSubnet2RouteTableD5D563B7"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/PrivateSubnet2/DefaultRoute"
+   }
+  },
+  "AppVpcIGW826A76F0": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/AppVpc"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/IGW"
+   }
+  },
+  "AppVpcVPCGW1D33210A": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "InternetGatewayId": {
+     "Ref": "AppVpcIGW826A76F0"
+    },
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/VPCGW"
+   }
+  },
+  "AppVpcRestrictDefaultSecurityGroupCustomResourceDD8E3F34": {
+   "Type": "Custom::VpcRestrictDefaultSG",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E",
+      "Arn"
+     ]
+    },
+    "DefaultSecurityGroupId": {
+     "Fn::GetAtt": [
+      "AppVpc80F1F7F9",
+      "DefaultSecurityGroup"
+     ]
+    },
+    "Account": "243413538688"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppVpc/RestrictDefaultSecurityGroupCustomResource/Default"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ],
+    "Policies": [
+     {
+      "PolicyName": "Inline",
+      "PolicyDocument": {
+       "Version": "2012-10-17",
+       "Statement": [
+        {
+         "Effect": "Allow",
+         "Action": [
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:RevokeSecurityGroupEgress"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:aws:ec2:us-east-1:243413538688:security-group/",
+             {
+              "Fn::GetAtt": [
+               "AppVpc80F1F7F9",
+               "DefaultSecurityGroup"
+              ]
+             }
+            ]
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-243413538688-us-east-1",
+     "S3Key": "dd5711540f04e06aa955d7f4862fc04e8cdea464cb590dae91ed2976bb78098e.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "__entrypoint__.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Description": "Lambda function for removing all inbound/outbound rules from the VPC default security group"
+   },
+   "DependsOn": [
+    "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.dd5711540f04e06aa955d7f4862fc04e8cdea464cb590dae91ed2976bb78098e",
+    "aws:asset:property": "Code"
+   }
+  },
+  "AppCluster99B78AC1": {
+   "Type": "AWS::ECS::Cluster",
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/AppCluster/Resource"
+   }
+  },
+  "Certificate4E7ABB08": {
+   "Type": "AWS::CertificateManager::Certificate",
+   "Properties": {
+    "DomainName": "besmithaws.click",
+    "DomainValidationOptions": [
+     {
+      "DomainName": "besmithaws.click",
+      "HostedZoneId": "Z06645633RMXN0DJCB4CQ"
+     },
+     {
+      "DomainName": "example.besmithaws.click",
+      "HostedZoneId": "Z06645633RMXN0DJCB4CQ"
+     }
+    ],
+    "SubjectAlternativeNames": [
+     "example.besmithaws.click"
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkGoAppStack/Certificate"
+     }
+    ],
+    "ValidationMethod": "DNS"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/Certificate/Resource"
+   }
+  },
+  "FargateServiceLBB353E155": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Scheme": "internet-facing",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "FargateServiceLBSecurityGroup5F444C78",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Ref": "AppVpcPublicSubnet1SubnetDD9E0A08"
+     },
+     {
+      "Ref": "AppVpcPublicSubnet2SubnetDFE2ABB8"
+     }
+    ],
+    "Type": "application"
+   },
+   "DependsOn": [
+    "AppVpcPublicSubnet1DefaultRouteC1B28749",
+    "AppVpcPublicSubnet1RouteTableAssociationAFB11A1C",
+    "AppVpcPublicSubnet2DefaultRoute66E67257",
+    "AppVpcPublicSubnet2RouteTableAssociationD784754F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/Resource"
+   }
+  },
+  "FargateServiceLBSecurityGroup5F444C78": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB CdkGoAppStackFargateServiceLBF996BEE5",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/SecurityGroup/Resource"
+   }
+  },
+  "FargateServiceLBSecurityGrouptoCdkGoAppStackFargateServiceSecurityGroup6496918180805187EC14": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "Description": "Load balancer to target",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "FargateServiceSecurityGroup262B61DD",
+      "GroupId"
+     ]
+    },
+    "FromPort": 8080,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "FargateServiceLBSecurityGroup5F444C78",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "ToPort": 8080
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/SecurityGroup/to CdkGoAppStackFargateServiceSecurityGroup64969181:8080"
+   }
+  },
+  "FargateServiceLBPublicListener4B4929CA": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "Certificates": [
+     {
+      "CertificateArn": {
+       "Ref": "Certificate4E7ABB08"
+      }
+     }
+    ],
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "FargateServiceLBPublicListenerECSGroupBE57E081"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "FargateServiceLBB353E155"
+    },
+    "Port": 443,
+    "Protocol": "HTTPS"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/PublicListener/Resource"
+   }
+  },
+  "FargateServiceLBPublicListenerECSGroupBE57E081": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "Port": 80,
+    "Protocol": "HTTP",
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "TargetType": "ip",
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/PublicListener/ECSGroup/Resource"
+   }
+  },
+  "FargateServiceLBPublicRedirectListenerB514B794": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "RedirectConfig": {
+       "Port": "443",
+       "Protocol": "HTTPS",
+       "StatusCode": "HTTP_301"
+      },
+      "Type": "redirect"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "FargateServiceLBB353E155"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/LB/PublicRedirectListener/Resource"
+   }
+  },
+  "FargateServiceDNS764E1362": {
+   "Type": "AWS::Route53::RecordSet",
+   "Properties": {
+    "AliasTarget": {
+     "DNSName": {
+      "Fn::Join": [
+       "",
+       [
+        "dualstack.",
+        {
+         "Fn::GetAtt": [
+          "FargateServiceLBB353E155",
+          "DNSName"
+         ]
+        }
+       ]
+      ]
+     },
+     "HostedZoneId": {
+      "Fn::GetAtt": [
+       "FargateServiceLBB353E155",
+       "CanonicalHostedZoneID"
+      ]
+     }
+    },
+    "HostedZoneId": "Z06645633RMXN0DJCB4CQ",
+    "Name": "besmithaws.click.",
+    "Type": "A"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/DNS/Resource"
+   }
+  },
+  "FargateServiceTaskDefTaskRole8CDCF85E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/TaskDef/TaskRole/Resource"
+   }
+  },
+  "FargateServiceTaskDef940E3A80": {
+   "Type": "AWS::ECS::TaskDefinition",
+   "Properties": {
+    "ContainerDefinitions": [
+     {
+      "Essential": true,
+      "Image": {
+       "Fn::Sub": "243413538688.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-243413538688-us-east-1:3a1f0a6d5858a5e98f43d680de1597c84d0d08b252481a1eff272f732f33354e"
+      },
+      "LogConfiguration": {
+       "LogDriver": "awslogs",
+       "Options": {
+        "awslogs-group": {
+         "Ref": "FargateServiceTaskDefwebLogGroup71FAF541"
+        },
+        "awslogs-stream-prefix": "FargateService",
+        "awslogs-region": "us-east-1"
+       }
+      },
+      "Name": "web",
+      "PortMappings": [
+       {
+        "ContainerPort": 8080,
+        "Protocol": "tcp"
+       }
+      ]
+     }
+    ],
+    "Cpu": "256",
+    "ExecutionRoleArn": {
+     "Fn::GetAtt": [
+      "FargateServiceTaskDefExecutionRole9194820E",
+      "Arn"
+     ]
+    },
+    "Family": "CdkGoAppStackFargateServiceTaskDefD4A38202",
+    "Memory": "512",
+    "NetworkMode": "awsvpc",
+    "RequiresCompatibilities": [
+     "FARGATE"
+    ],
+    "TaskRoleArn": {
+     "Fn::GetAtt": [
+      "FargateServiceTaskDefTaskRole8CDCF85E",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/TaskDef/Resource"
+   }
+  },
+  "FargateServiceTaskDefwebLogGroup71FAF541": {
+   "Type": "AWS::Logs::LogGroup",
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/TaskDef/web/LogGroup/Resource"
+   }
+  },
+  "FargateServiceTaskDefExecutionRole9194820E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/TaskDef/ExecutionRole/Resource"
+   }
+  },
+  "FargateServiceTaskDefExecutionRoleDefaultPolicy827E7CA2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:ecr:us-east-1:243413538688:repository/cdk-hnb659fds-container-assets-243413538688-us-east-1"
+      },
+      {
+       "Action": "ecr:GetAuthorizationToken",
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "FargateServiceTaskDefwebLogGroup71FAF541",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "FargateServiceTaskDefExecutionRoleDefaultPolicy827E7CA2",
+    "Roles": [
+     {
+      "Ref": "FargateServiceTaskDefExecutionRole9194820E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/TaskDef/ExecutionRole/DefaultPolicy/Resource"
+   }
+  },
+  "FargateServiceECC8084D": {
+   "Type": "AWS::ECS::Service",
+   "Properties": {
+    "Cluster": {
+     "Ref": "AppCluster99B78AC1"
+    },
+    "DeploymentConfiguration": {
+     "Alarms": {
+      "AlarmNames": [],
+      "Enable": false,
+      "Rollback": false
+     },
+     "MaximumPercent": 200,
+     "MinimumHealthyPercent": 50
+    },
+    "EnableECSManagedTags": false,
+    "HealthCheckGracePeriodSeconds": 60,
+    "LaunchType": "FARGATE",
+    "LoadBalancers": [
+     {
+      "ContainerName": "web",
+      "ContainerPort": 8080,
+      "TargetGroupArn": {
+       "Ref": "FargateServiceLBPublicListenerECSGroupBE57E081"
+      }
+     }
+    ],
+    "NetworkConfiguration": {
+     "AwsvpcConfiguration": {
+      "AssignPublicIp": "DISABLED",
+      "SecurityGroups": [
+       {
+        "Fn::GetAtt": [
+         "FargateServiceSecurityGroup262B61DD",
+         "GroupId"
+        ]
+       }
+      ],
+      "Subnets": [
+       {
+        "Ref": "AppVpcPrivateSubnet1Subnet191FA232"
+       },
+       {
+        "Ref": "AppVpcPrivateSubnet2Subnet9EA093CC"
+       }
+      ]
+     }
+    },
+    "TaskDefinition": {
+     "Ref": "FargateServiceTaskDef940E3A80"
+    }
+   },
+   "DependsOn": [
+    "FargateServiceLBPublicListenerECSGroupBE57E081",
+    "FargateServiceLBPublicListener4B4929CA",
+    "FargateServiceTaskDefTaskRole8CDCF85E"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/Service/Service"
+   }
+  },
+  "FargateServiceSecurityGroup262B61DD": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "CdkGoAppStack/FargateService/Service/SecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "AppVpc80F1F7F9"
+    }
+   },
+   "DependsOn": [
+    "FargateServiceTaskDefTaskRole8CDCF85E"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/Service/SecurityGroup/Resource"
+   }
+  },
+  "FargateServiceSecurityGroupfromCdkGoAppStackFargateServiceLBSecurityGroup0976B6EE808055EBD311": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "Load balancer to target",
+    "FromPort": 8080,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "FargateServiceSecurityGroup262B61DD",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "FargateServiceLBSecurityGroup5F444C78",
+      "GroupId"
+     ]
+    },
+    "ToPort": 8080
+   },
+   "DependsOn": [
+    "FargateServiceTaskDefTaskRole8CDCF85E"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/FargateService/Service/SecurityGroup/from CdkGoAppStackFargateServiceLBSecurityGroup0976B6EE:8080"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31Ty27bMBD8ltxpBnbi3h3nAQNBK0hBrsaaWqtbS6TAhw1D0L93SVmRkwY9cXZ2xNkHtZDz+b2c38DJzVR5mNW0k13hQR0EU9sO1UJ2760S671+z9YiC7uaVBF2Gn3kJpSb4PENdjVO/MStnDOKwJPRH+IInjZZPH6CfwGPJziLzNKR4XTxRnu0jEfBUMklWnmu9XeD2osCVbDkzy/WhDbV8F/iqbLo3D/0Rie+F6ic7NZ1cOweVSN8BltB7ModHnFPmsaevjJGeyCN9oq7fFugPZIa5jTAXii0nvakON2Ahgotu09cqmAKU3nbFnwcjZOrtq0jzx6vBsoHqEErLL/YYQ3Ok6pZsUsK0tWR1/v916npT/G1jngW+qIZ8VX+jZ15Y+Pgr8Je2Lj75R375qiMLdN7SKhA3wuCRna5GZ5ROjPD16a9Dyg2b7fgHHonH406oN00PLFVZGJO5tgaR97Y8wM4FLWpeJevpvooaMR9L3J0Jti4Dd6vaaYwVvVtKrPmSGVsOBryz1LxIKP+V/Bt4BYqM5eLpVzelmBPpG/BNj/ub/44opkN2lODMh/Ov813tlN/AwAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkGoAppStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "FargateServiceLoadBalancerDNS9433D5F6": {
+   "Value": {
+    "Fn::GetAtt": [
+     "FargateServiceLBB353E155",
+     "DNSName"
+    ]
+   }
+  },
+  "FargateServiceServiceURL47701F45": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "FargateServiceDNS764E1362"
+      }
+     ]
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

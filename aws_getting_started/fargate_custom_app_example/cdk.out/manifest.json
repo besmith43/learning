@@ -1,0 +1,335 @@
+{
+  "version": "35.0.0",
+  "artifacts": {
+    "CdkGoAppStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkGoAppStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkGoAppStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://243413538688/us-east-1",
+      "properties": {
+        "templateFile": "CdkGoAppStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::243413538688:role/cdk-hnb659fds-deploy-role-243413538688-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::243413538688:role/cdk-hnb659fds-cfn-exec-role-243413538688-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-243413538688-us-east-1/6f4e78db809fb3e61310530a46261e8baf9ff499bef2a57134351d34dbf2d3f0.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkGoAppStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::243413538688:role/cdk-hnb659fds-lookup-role-243413538688-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkGoAppStack.assets"
+      ],
+      "metadata": {
+        "/CdkGoAppStack/AppVpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpc80F1F7F9"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1SubnetDD9E0A08"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1RouteTable96CCB335"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1RouteTableAssociationAFB11A1C"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1DefaultRouteC1B28749"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1EIPF0BFE5AB"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet1NATGateway0D5C928D"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2SubnetDFE2ABB8"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2RouteTable961D28F7"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2RouteTableAssociationD784754F"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2DefaultRoute66E67257"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2EIPB481EFAF"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPublicSubnet2NATGatewayF1049000"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet1Subnet191FA232"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet1RouteTableEBC6D985"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet1RouteTableAssociation96B40FF1"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet1DefaultRouteF1934EA6"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet2Subnet9EA093CC"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet2RouteTableD5D563B7"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet2RouteTableAssociationEF520DA2"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcPrivateSubnet2DefaultRouteCBAB1884"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcIGW826A76F0"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcVPCGW1D33210A"
+          }
+        ],
+        "/CdkGoAppStack/AppVpc/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVpcRestrictDefaultSecurityGroupCustomResourceDD8E3F34"
+          }
+        ],
+        "/CdkGoAppStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/CdkGoAppStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/CdkGoAppStack/AppCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppCluster99B78AC1"
+          }
+        ],
+        "/CdkGoAppStack/Certificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Certificate4E7ABB08"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBB353E155"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBSecurityGroup5F444C78"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/SecurityGroup/to CdkGoAppStackFargateServiceSecurityGroup64969181:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBSecurityGrouptoCdkGoAppStackFargateServiceSecurityGroup6496918180805187EC14"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBPublicListener4B4929CA"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBPublicListenerECSGroupBE57E081"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LB/PublicRedirectListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLBPublicRedirectListenerB514B794"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/DNS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceDNS764E1362"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceLoadBalancerDNS9433D5F6"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceServiceURL47701F45"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceTaskDefTaskRole8CDCF85E"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceTaskDef940E3A80"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/TaskDef/web/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceTaskDefwebLogGroup71FAF541"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceTaskDefExecutionRole9194820E"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceTaskDefExecutionRoleDefaultPolicy827E7CA2"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceECC8084D"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceSecurityGroup262B61DD"
+          }
+        ],
+        "/CdkGoAppStack/FargateService/Service/SecurityGroup/from CdkGoAppStackFargateServiceLBSecurityGroup0976B6EE:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FargateServiceSecurityGroupfromCdkGoAppStackFargateServiceLBSecurityGroup0976B6EE808055EBD311"
+          }
+        ],
+        "/CdkGoAppStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkGoAppStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkGoAppStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkGoAppStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
