@@ -30,10 +30,27 @@ func NewHelloWorldCdkStack(scope constructs.Construct, id string, props *HelloWo
 	})
 
 	// Create ECR repository
-	repository := awsecr.NewRepository(stack, jsii.String("HelloWorldRepo"), &awsecr.RepositoryProps{
-		RepositoryName: jsii.String("hello-world-app"),
-		RemovalPolicy:  awscdk.RemovalPolicy_DESTROY,
-	})
+	// repository := awsecr.NewRepository(stack, jsii.String("HelloWorldRepo"), &awsecr.RepositoryProps{
+	// RepositoryName: jsii.String("hello-world-app"),
+	// RemovalPolicy:  awscdk.RemovalPolicy_DESTROY,
+	// })
+
+	// Get ECR repository
+	repository := awsecr.Repository_FromRepositoryName(
+		stack,
+		jsii.String("HelloWorldRepo"),
+		jsii.String("hello-world-app"),
+	)
+
+	// dockerImage := awsecrassets.NewDockerImageAsset(stack, jsii.String("hello-world-app"), &awsecrassets.DockerImageAssetProps{
+	// Directory: jsii.String("."),
+	// File:      jsii.String("app/Dockerfile"),
+	// })
+
+	// ecrdeploy.NewECRDeployment(stack, jsii.String("DeployDockerImage1"), &ECRDeploymentProps{
+	// Src:  ecrdeploy.NewDockerImageName(dockerImage.ImageUri),
+	// Dest: ecrdeploy.NewDockerImageName(repository.RepositoryUriForTag(jsii.String("latest"))),
+	// })
 
 	// Create ECS cluster
 	cluster := awsecs.NewCluster(stack, jsii.String("HelloWorldCluster"), &awsecs.ClusterProps{
