@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 
-curl https://example.besmithaws.click
+curl https://besmithaws.click
 

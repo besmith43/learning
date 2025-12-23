@@ -29,16 +29,23 @@ func NewCdkGoAppStack(scope constructs.Construct, id string, props *CdkGoAppStac
 	})
 
 	// Create ECR repository for the container image
-	ecrRepo := awsecr.NewRepository(stack, jsii.String("AppRepository"), &awsecr.RepositoryProps{
-		RepositoryName:  jsii.String("cdk-go-app"),
-		RemovalPolicy:   awscdk.RemovalPolicy_DESTROY, // Use RETAIN for production
-		ImageScanOnPush: jsii.Bool(true),
-		LifecycleRules: &[]*awsecr.LifecycleRule{
-			{
-				MaxImageCount: jsii.Number(10), // Keep only 10 most recent images
-			},
-		},
-	})
+	// ecrRepo := awsecr.NewRepository(stack, jsii.String("AppRepository"), &awsecr.RepositoryProps{
+	// RepositoryName:  jsii.String("cdk-go-app"),
+	// RemovalPolicy:   awscdk.RemovalPolicy_DESTROY, // Use RETAIN for production
+	// ImageScanOnPush: jsii.Bool(true),
+	// LifecycleRules: &[]*awsecr.LifecycleRule{
+	// {
+	// MaxImageCount: jsii.Number(10), // Keep only 10 most recent images
+	// },
+	// },
+	// })
+
+	// Get ECR repository
+	repository := awsecr.Repository_FromRepositoryName(
+		stack,
+		jsii.String("HelloWorldRepo"),
+		jsii.String("hello-world-app"),
+	)
 
 	// Create ECS cluster
 	cluster := awsecs.NewCluster(stack, jsii.String("AppCluster"), &awsecs.ClusterProps{
@@ -60,7 +67,7 @@ func NewCdkGoAppStack(scope constructs.Construct, id string, props *CdkGoAppStac
 	})
 
 	// Build and push container image to ECR
-	containerImage := awsecs.ContainerImage_FromAsset(jsii.String("./app"), nil)
+	// containerImage := awsecs.ContainerImage_FromAsset(jsii.String("./app"), nil)
 
 	// Create Fargate service with ALB
 	fargateService := awsecspatterns.NewApplicationLoadBalancedFargateService(stack, jsii.String("FargateService"), &awsecspatterns.ApplicationLoadBalancedFargateServiceProps{
@@ -68,7 +75,7 @@ func NewCdkGoAppStack(scope constructs.Construct, id string, props *CdkGoAppStac
 		MemoryLimitMiB: jsii.Number(512),
 		Cpu:            jsii.Number(256),
 		TaskImageOptions: &awsecspatterns.ApplicationLoadBalancedTaskImageOptions{
-			Image:         containerImage,
+			Image:         awsecs.ContainerImage_FromEcrRepository(repository, jsii.String("latest")),
 			ContainerPort: jsii.Number(8080),
 		},
 		DomainName:   jsii.String("besmithaws.click"),
@@ -79,7 +86,7 @@ func NewCdkGoAppStack(scope constructs.Construct, id string, props *CdkGoAppStac
 
 	// Output the ECR repository URI
 	awscdk.NewCfnOutput(stack, jsii.String("ECRRepositoryURI"), &awscdk.CfnOutputProps{
-		Value:       ecrRepo.RepositoryUri(),
+		Value:       repository.RepositoryUri(),
 		Description: jsii.String("ECR Repository URI for the container image"),
 	})
 
