@@ -5,6 +5,8 @@ import (
 	"net/http"
 )
 
+// example comes from: https://www.alexedwards.net/blog/making-and-using-middleware
+
 func main() {
 	mux := http.NewServeMux()
 
