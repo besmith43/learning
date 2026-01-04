@@ -51,12 +51,22 @@ templ Counter(count int) {
 
 				<button class="btn btn-primary"
 					hx-post="/minus"
+					hx-headers='{"Accept": "application/json"}'
 					hx-target="#counter"
-					hx-vals="js:{ counter: $('#counter').html() }">
+					hx-vals="js:{ counter: $('#counter').html() }"> // doesn't overrule the htmx:configRequest below
 					<i class="fa-solid fa-circle-minus"></i>
 				</button>
 			</div>
 		</div>
+
+		<script>
+  			document.addEventListener("htmx:configRequest", function(event) {
+				// console.log("accept header: " + event.detail.headers['Accept'])
+				if (event.detail.headers['Accept'] === undefined) {
+    				event.detail.headers['Accept'] = 'text/html';
+				}
+  			});
+		</script>
 
 		<script>
 			$('#plus_btn').on('click', function () {

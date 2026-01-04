@@ -21,6 +21,9 @@ func CounterWebHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PlusWebHandler(w http.ResponseWriter, r *http.Request) {
+	acceptHeader := r.Header.Get("Accept")
+	fmt.Println("Accept Header: ", acceptHeader)
+
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -49,6 +52,9 @@ func PlusWebHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func MinusWebHandler(w http.ResponseWriter, r *http.Request) {
+	acceptHeader := r.Header.Get("Accept")
+	fmt.Println("Accept Header: ", acceptHeader)
+
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
