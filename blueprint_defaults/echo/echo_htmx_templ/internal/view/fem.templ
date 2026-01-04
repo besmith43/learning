@@ -1,0 +1,81 @@
+package view
+
+import (
+	"echo_htmx_templ/internal/database"
+	"strconv"
+)
+
+templ FEM(data *database.ContactList) {
+	@Base()
+
+}
+
+templ Display(contacts []database.Contact) {
+	<div id="contacts">
+		for _, contact := range contacts {
+			@Contact(contact)
+		}
+    </div>
+}
+
+
+templ ContactForm(data database.FormData) {
+	<form id="contact-form" hx-post="/contacts" hx-swap="outerHTML">
+    	<label for="name">Name</label>
+    	<input name="name"
+		if data.Values  != nil {
+			if data.Values.name {
+                value={ data.Values.name }
+			}
+		}
+        placeholder="Name">
+
+		if data.Errors != nil {
+			if data.Errors.name {
+                <div class="error">{ data.Errors.name }</div>
+			}
+		}
+
+    	<label for="email">Email</label>
+    	<input type="email"
+        if data.Values != nil {
+			if data.Values.email {
+                value={ data.Values.email }
+			}
+		}
+        name="email" placeholder="Email">
+
+        if data.Errors != nil {
+			if data.Errors.email {
+                <div class="error">{ data.Errors.email }</div>
+			}
+		}
+
+    	<button type="submit">Submit</button>
+	</form>
+}
+
+templ Contact(contact database.Contact) {
+	<div class="contact" style="display: flex;">
+    	<div hx-indicator={ "#di-" + strconv.Itoa(contact.ID) } hx-delete={ "/contacts/" + strconv.Itoa(contact.ID) } hx-swap="outerHTML swap:500ms" hx-target="closest .contact" style="cursor: pointer; width: 24px; height: 24px">
+        	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            	<path fill="none" d="M0 0h24v24H0z"/>
+            	<path d="M4 2h16a1 1 0 011 1v1a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1zM3 6h18v16a1 1 0 01-1 1H4a1 1 0 01-1-1V6zm3 3v9a1 1 0 002 0v-9a1 1 0 00-2 0zm5 0v9a1 1 0 002 0v-9a1 1 0 00-2 0zm5 0v9a1 1 0 002 0v-9a1 1 0 00-2 0z"/>
+        	</svg>
+    	</div>
+
+    	<b>Name:</b> <span>{ contact.Name }</span>
+    	<b>Email:</b> <span>{ contact.Email }</span>
+
+    	<div id="di-{{ .Id }}" class="htmx-indicator" style="width: 24px; height: 24px">
+        	<img src="/images/bars.svg" alt="loading" style="width: 24px; height: 24px">
+    	</div>
+
+	</div>
+}
+
+templ OobContact(contact database.Contact) {
+	<div hx-swap-oob="afterbegin" id="contacts">
+		@Contact(contact)
+	</div>
+}
