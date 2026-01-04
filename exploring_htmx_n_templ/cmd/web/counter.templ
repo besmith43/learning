@@ -52,7 +52,7 @@ templ Counter(count int) {
 				<button class="btn btn-primary"
 					hx-post="/minus"
 					hx-target="#counter"
-					hx-vals="js:{ counter: document.getElementById('counter').innerHTML }">
+					hx-vals="js:{ counter: $('#counter').html() }">
 					<i class="fa-solid fa-circle-minus"></i>
 				</button>
 			</div>
