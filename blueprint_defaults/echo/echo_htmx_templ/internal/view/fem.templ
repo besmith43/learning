@@ -5,9 +5,37 @@ import (
 	"strconv"
 )
 
-templ FEM(data *database.ContactList) {
+templ FEM(data database.PageData) {
 	@Base()
+	@ContactForm(data.Form)
+	<hr>
+	@Display(data.Data.Contacts)
 
+	    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.body.addEventListener('htmx:beforeSwap', function (evt) {
+                if (evt.detail.xhr.status === 422) {
+                    console.log("setting status to paint");
+                    // allow 422 responses to swap as we are using this as a signal that
+                    // a form was submitted with bad data and want to rerender with the
+                    // errors
+                    //
+                    // set isError to false to avoid error logging in console
+                    evt.detail.shouldSwap = true;
+                    evt.detail.isError = false;
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("htmx:configRequest", function (event) {
+            // console.log("accept header: " + event.detail.headers['Accept'])
+            if (event.detail.headers['Accept'] === undefined) {
+                event.detail.headers['Accept'] = 'text/html';
+            }
+        });
+    </script>
 }
 
 templ Display(contacts []database.Contact) {
@@ -24,30 +52,30 @@ templ ContactForm(data database.FormData) {
     	<label for="name">Name</label>
     	<input name="name"
 		if data.Values  != nil {
-			if data.Values.name {
-                value={ data.Values.name }
+			if data.Values["name"] != "" {
+                value={ data.Values["name"] }
 			}
 		}
         placeholder="Name">
 
 		if data.Errors != nil {
-			if data.Errors.name {
-                <div class="error">{ data.Errors.name }</div>
+			if data.Errors["name"] != "" {
+                <div class="error">{ data.Errors["name"] }</div>
 			}
 		}
 
     	<label for="email">Email</label>
     	<input type="email"
         if data.Values != nil {
-			if data.Values.email {
-                value={ data.Values.email }
+			if data.Values["email"] != "" {
+                value={ data.Values["email"] }
 			}
 		}
         name="email" placeholder="Email">
 
         if data.Errors != nil {
-			if data.Errors.email {
-                <div class="error">{ data.Errors.email }</div>
+			if data.Errors["email"] != "" {
+                <div class="error">{ data.Errors["email"] }</div>
 			}
 		}
 
@@ -67,7 +95,7 @@ templ Contact(contact database.Contact) {
     	<b>Name:</b> <span>{ contact.Name }</span>
     	<b>Email:</b> <span>{ contact.Email }</span>
 
-    	<div id="di-{{ .Id }}" class="htmx-indicator" style="width: 24px; height: 24px">
+    	<div id={ "di-" + strconv.Itoa(contact.ID) } class="htmx-indicator" style="width: 24px; height: 24px">
         	<img src="/images/bars.svg" alt="loading" style="width: 24px; height: 24px">
     	</div>
 

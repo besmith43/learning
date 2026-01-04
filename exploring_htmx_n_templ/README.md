@@ -18,3 +18,6 @@ So we're going to use support_tool_1 and 2 with a main package and a main.go fil
 - [templ docs](https://templ.guide)
 
 - [font awesome free icons](https://fontawesome.com/search?ic=free-collection)
+
+
+					hx-on::response-error='Swal.fire({ title: "Reset Failed", icon: "error", timer: 1500})'>

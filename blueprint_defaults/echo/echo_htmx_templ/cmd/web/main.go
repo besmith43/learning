@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"echo_htmx_templ/internal/server"
-	"embed"
 	"fmt"
 	"log"
 	"net/http"
@@ -13,9 +12,6 @@ import (
 
 	_ "github.com/joho/godotenv/autoload"
 )
-
-//go:embed "assets"
-var Files embed.FS
 
 func gracefulShutdown(apiServer *http.Server, done chan bool) {
 	// Create context that listens for the interrupt signal from the OS.
@@ -44,7 +40,7 @@ func gracefulShutdown(apiServer *http.Server, done chan bool) {
 
 func main() {
 
-	server := server.NewServer(Files)
+	server := server.NewServer()
 
 	// Create a done channel to signal when the shutdown is complete
 	done := make(chan bool, 1)

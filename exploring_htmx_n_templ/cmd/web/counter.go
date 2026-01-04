@@ -74,6 +74,11 @@ func MinusWebHandler(w http.ResponseWriter, r *http.Request) {
 
 	count -= 1
 
+	if acceptHeader == "application/json" && count < -5 {
+		http.Error(w, "this endpoint doesn't return json when the count is less than -5", http.StatusBadRequest)
+		return
+	}
+
 	component := Plus(count)
 	err = component.Render(r.Context(), w)
 	if err != nil {
