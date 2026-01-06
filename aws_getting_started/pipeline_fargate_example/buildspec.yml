@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - REPOSITORY_URI_ALPHA=$AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/fargate-app-alpha
+      - REPOSITORY_URI_BETA=$AWS_ACCOUNT_ID.dkr.ecr.us-east-2.amazonaws.com/fargate-app-beta  
+      - REPOSITORY_URI_PROD=$AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/fargate-app-prod
+      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t fargate-app:$IMAGE_TAG .
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_ALPHA:$IMAGE_TAG
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_BETA:$IMAGE_TAG
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_PROD:$IMAGE_TAG
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_ALPHA:latest
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_BETA:latest
+      - docker tag fargate-app:$IMAGE_TAG $REPOSITORY_URI_PROD:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI_ALPHA:$IMAGE_TAG
+      - docker push $REPOSITORY_URI_ALPHA:latest
+      - docker push $REPOSITORY_URI_BETA:$IMAGE_TAG
+      - docker push $REPOSITORY_URI_BETA:latest
+      - docker push $REPOSITORY_URI_PROD:$IMAGE_TAG
+      - docker push $REPOSITORY_URI_PROD:latest
+      - echo Generating CloudFormation templates...
+      - go run generate-templates.go
+artifacts:
+  files:
+    - alpha-template.yaml
+    - beta-template.yaml
+    - prod-template.yaml

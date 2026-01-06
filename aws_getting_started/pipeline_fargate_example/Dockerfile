@@ -1,0 +1,11 @@
+# Sample Dockerfile for the application
+FROM nginx:alpine
+
+# Copy a simple HTML file
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
