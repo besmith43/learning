@@ -147,5 +147,6 @@ func NewPipelineStack(scope constructs.Construct, id string, props *PipelineStac
 		},
 	})
 
+	construct.Node().AddDependency(pipeline)
 	return construct
 }
