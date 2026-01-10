@@ -12,6 +12,6 @@ cdk bootstrap aws://$ACCOUNT_ID/us-west-2 --profile personal || exit 1
 cdk deploy FargatePipelineStack --require-approval never --profile personal || exit 1
 
 # 4. Deploy environment stacks
-cdk deploy FargateAlphaStack --region us-east-1 --profile personal || exit 1
-cdk deploy FargateBetaStack --region us-east-2 --profile personal || exit 1
-cdk deploy FargateProdStack --region us-west-2 --profile personal || exit 1
+# cdk deploy FargateAlphaStack --region us-east-1 --profile personal || exit 1
+# cdk deploy FargateBetaStack --region us-east-2 --profile personal || exit 1
+# cdk deploy FargateProdStack --region us-west-2 --profile personal || exit 1
