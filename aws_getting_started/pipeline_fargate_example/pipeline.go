@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/awscodepipeline"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awscodepipelineactions"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
+	"github.com/aws/aws-cdk-go/awscdk/v2/awss3"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
 )
@@ -17,6 +18,28 @@ type PipelineStackProps struct {
 
 func NewPipelineStack(scope constructs.Construct, id string, props *PipelineStackProps) constructs.Construct {
 	construct := constructs.NewConstruct(scope, &id)
+
+	// Create cross-region replication buckets for CodePipeline artifacts
+	artifactBucketUsEast1 := awss3.NewBucket(construct, jsii.String("ArtifactBucketUsEast1"), &awss3.BucketProps{
+		BucketName:        jsii.String("fargate-pipeline-artifacts-us-east-1"),
+		Versioned:         jsii.Bool(true),
+		RemovalPolicy:     awscdk.RemovalPolicy_DESTROY,
+		AutoDeleteObjects: jsii.Bool(true),
+	})
+
+	artifactBucketUsEast2 := awss3.NewBucket(construct, jsii.String("ArtifactBucketUsEast2"), &awss3.BucketProps{
+		BucketName:        jsii.String("fargate-pipeline-artifacts-us-east-2"),
+		Versioned:         jsii.Bool(true),
+		RemovalPolicy:     awscdk.RemovalPolicy_DESTROY,
+		AutoDeleteObjects: jsii.Bool(true),
+	})
+
+	artifactBucketUsWest2 := awss3.NewBucket(construct, jsii.String("ArtifactBucketUsWest2"), &awss3.BucketProps{
+		BucketName:        jsii.String("fargate-pipeline-artifacts-us-west-2"),
+		Versioned:         jsii.Bool(true),
+		RemovalPolicy:     awscdk.RemovalPolicy_DESTROY,
+		AutoDeleteObjects: jsii.Bool(true),
+	})
 
 	// Create CodeCommit repository
 	repo := awscodecommit.NewRepository(construct, jsii.String("FargateRepo"), &awscodecommit.RepositoryProps{
@@ -82,9 +105,14 @@ func NewPipelineStack(scope constructs.Construct, id string, props *PipelineStac
 	sourceOutput := awscodepipeline.NewArtifact(jsii.String("SourceOutput"))
 	buildOutput := awscodepipeline.NewArtifact(jsii.String("BuildOutput"))
 
-	// Create pipeline
+	// Create pipeline with cross-region artifact stores
 	pipeline := awscodepipeline.NewPipeline(construct, jsii.String("FargatePipeline"), &awscodepipeline.PipelineProps{
 		PipelineName: jsii.String("fargate-pipeline"),
+		CrossRegionReplicationBuckets: &map[string]awss3.IBucket{
+			"us-east-1": artifactBucketUsEast1,
+			"us-east-2": artifactBucketUsEast2,
+			"us-west-2": artifactBucketUsWest2,
+		},
 		Stages: &[]*awscodepipeline.StageProps{
 			{
 				StageName: jsii.String("Source"),
