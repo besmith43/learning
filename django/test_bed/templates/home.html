@@ -1,0 +1,28 @@
+# templates/home.html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Django Project</title>
+</head>
+
+<body>
+	<h1>Welcome to My Django Project</h1>
+
+	<nav>
+		<a href="/">Home</a> |
+		<a href="/about/">About</a> |
+		<a href="/contact/">Contact</a>
+	</nav>
+
+	{% if STAGE == "Alpha" or STAGE == "BetaCHN" or STAGE == "ProdCHN" %}
+	{% if role == 1 or role == 2 %}
+	<span style="color: red; font-weight: bold;">[ALPHA STAGE]</span>
+	{% endif %}
+	{% endif %}
+
+	<span id="stage" style="color: red; font-weight: bold;">{{ STAGE }}</span>
+</body>
+
+</html>
