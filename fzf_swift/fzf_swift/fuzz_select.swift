@@ -7,15 +7,203 @@
 
 import Foundation
 
+// MARK: - Readline Buffer
+
+/// A readline-style text buffer with cursor support
+struct ReadlineBuffer {
+    private(set) var text: String = ""
+    private(set) var cursorPos: Int = 0
+
+    // MARK: - Cursor Movement
+
+    mutating func moveLeft() {
+        if cursorPos > 0 {
+            cursorPos -= 1
+        }
+    }
+
+    mutating func moveRight() {
+        if cursorPos < text.count {
+            cursorPos += 1
+        }
+    }
+
+    mutating func moveToStart() {
+        cursorPos = 0
+    }
+
+    mutating func moveToEnd() {
+        cursorPos = text.count
+    }
+
+    mutating func moveToPreviousWord() {
+        cursorPos = findPreviousWordBoundary()
+    }
+
+    mutating func moveToNextWord() {
+        cursorPos = findNextWordBoundary()
+    }
+
+    // MARK: - Text Insertion
+
+    mutating func insert(_ char: Character) {
+        let idx = text.index(text.startIndex, offsetBy: cursorPos)
+        text.insert(char, at: idx)
+        cursorPos += 1
+    }
+
+    mutating func insert(_ string: String) {
+        let idx = text.index(text.startIndex, offsetBy: cursorPos)
+        text.insert(contentsOf: string, at: idx)
+        cursorPos += string.count
+    }
+
+    // MARK: - Text Deletion
+
+    /// Delete character before cursor (backspace)
+    mutating func deleteBackward() -> Bool {
+        guard cursorPos > 0 else { return false }
+        let idx = text.index(text.startIndex, offsetBy: cursorPos - 1)
+        text.remove(at: idx)
+        cursorPos -= 1
+        return true
+    }
+
+    /// Delete character at cursor (delete key)
+    mutating func deleteForward() -> Bool {
+        guard cursorPos < text.count else { return false }
+        let idx = text.index(text.startIndex, offsetBy: cursorPos)
+        text.remove(at: idx)
+        return true
+    }
+
+    /// Delete word backward (Ctrl-W)
+    mutating func deleteWordBackward() -> Bool {
+        guard cursorPos > 0 else { return false }
+        let newPos = findPreviousWordBoundary()
+        let start = text.index(text.startIndex, offsetBy: newPos)
+        let end = text.index(text.startIndex, offsetBy: cursorPos)
+        text.removeSubrange(start..<end)
+        cursorPos = newPos
+        return true
+    }
+
+    /// Delete word forward (Alt-D)
+    mutating func deleteWordForward() -> Bool {
+        guard cursorPos < text.count else { return false }
+        let endPos = findNextWordBoundary()
+        guard endPos > cursorPos else { return false }
+        let start = text.index(text.startIndex, offsetBy: cursorPos)
+        let end = text.index(text.startIndex, offsetBy: endPos)
+        text.removeSubrange(start..<end)
+        return true
+    }
+
+    /// Kill to end of line (Ctrl-K)
+    mutating func killToEnd() -> Bool {
+        guard cursorPos < text.count else { return false }
+        let idx = text.index(text.startIndex, offsetBy: cursorPos)
+        text.removeSubrange(idx...)
+        return true
+    }
+
+    /// Kill to beginning of line (Ctrl-U)
+    mutating func killToStart() -> Bool {
+        guard cursorPos > 0 else { return false }
+        let idx = text.index(text.startIndex, offsetBy: cursorPos)
+        text.removeSubrange(text.startIndex..<idx)
+        cursorPos = 0
+        return true
+    }
+
+    /// Clear all text
+    mutating func clear() {
+        text = ""
+        cursorPos = 0
+    }
+
+    // MARK: - Word Boundary Detection
+
+    func findPreviousWordBoundary() -> Int {
+        guard cursorPos > 0 else { return 0 }
+
+        var pos = cursorPos - 1
+
+        // Skip trailing whitespace/punctuation
+        while pos > 0 {
+            let idx = text.index(text.startIndex, offsetBy: pos)
+            let char = text[idx]
+            if char.isLetter || char.isNumber {
+                break
+            }
+            pos -= 1
+        }
+
+        // Find start of word
+        while pos > 0 {
+            let idx = text.index(text.startIndex, offsetBy: pos - 1)
+            let char = text[idx]
+            if !char.isLetter && !char.isNumber {
+                break
+            }
+            pos -= 1
+        }
+
+        return pos
+    }
+
+    func findNextWordBoundary() -> Int {
+        guard cursorPos < text.count else { return text.count }
+
+        var pos = cursorPos
+
+        // Skip current word
+        while pos < text.count {
+            let idx = text.index(text.startIndex, offsetBy: pos)
+            let char = text[idx]
+            if !char.isLetter && !char.isNumber {
+                break
+            }
+            pos += 1
+        }
+
+        // Skip whitespace/punctuation
+        while pos < text.count {
+            let idx = text.index(text.startIndex, offsetBy: pos)
+            let char = text[idx]
+            if char.isLetter || char.isNumber {
+                break
+            }
+            pos += 1
+        }
+
+        return pos
+    }
+
+    // MARK: - Accessors for rendering
+
+    var beforeCursor: String {
+        String(text.prefix(cursorPos))
+    }
+
+    var afterCursor: String {
+        String(text.suffix(text.count - cursorPos))
+    }
+}
+
+// MARK: - Fuzzy Match
+
 struct FuzzyMatch {
     let item: String
     let score: Int
     let matchedIndices: [Int]
 }
 
+// MARK: - Fuzz Select
+
 class FuzzSelect {
     private var items: [String]
-    private var query: String = ""
+    private var buffer = ReadlineBuffer()
     private var selectedIndex: Int = 0
     private var filteredMatches: [FuzzyMatch] = []
     private var originalTermios: termios?
@@ -84,10 +272,10 @@ class FuzzSelect {
     }
 
     private func updateFilteredItems() {
-        if query.isEmpty {
+        if buffer.text.isEmpty {
             filteredMatches = items.map { FuzzyMatch(item: $0, score: 0, matchedIndices: []) }
         } else {
-            filteredMatches = items.compactMap { fuzzyMatch(pattern: query, target: $0) }
+            filteredMatches = items.compactMap { fuzzyMatch(pattern: buffer.text, target: $0) }
                 .sorted { $0.score > $1.score }
         }
 
@@ -154,8 +342,13 @@ class FuzzSelect {
 
         clearScreen()
 
-        // Render prompt
-        print("\u{001B}[36m> \u{001B}[0m\(query)\u{001B}[5m▌\u{001B}[0m")
+        // Render prompt with cursor at correct position
+        print("\u{001B}[36m> \u{001B}[0m\(buffer.beforeCursor)\u{001B}[7m\u{001B}[5m \u{001B}[0m\(buffer.afterCursor)", terminator: "")
+        // Move cursor back to position (after the space we used as cursor)
+        if !buffer.afterCursor.isEmpty {
+            print("\u{001B}[\(buffer.afterCursor.count)D", terminator: "")
+        }
+        print()  // Newline
 
         // Render status line
         print("\u{001B}[90m  \(filteredMatches.count)/\(items.count)\u{001B}[0m")
@@ -216,25 +409,47 @@ class FuzzSelect {
 
             switch char {
             case 27:  // Escape sequence
-                // Check for arrow keys
-                guard let bracket = readKey(), bracket == 91 else {
+                guard let next = readKey() else {
                     // Plain escape - cancel
                     return nil
                 }
 
-                guard let arrow = readKey() else { continue }
+                if next == 91 {  // CSI sequence (arrow keys, etc.)
+                    guard let arrow = readKey() else { continue }
 
-                switch arrow {
-                case 65:  // Up arrow
-                    if selectedIndex > 0 {
-                        selectedIndex -= 1
+                    switch arrow {
+                    case 65:  // Up arrow
+                        if selectedIndex > 0 {
+                            selectedIndex -= 1
+                        }
+                    case 66:  // Down arrow
+                        if selectedIndex < filteredMatches.count - 1 {
+                            selectedIndex += 1
+                        }
+                    case 67:  // Right arrow
+                        buffer.moveRight()
+                    case 68:  // Left arrow
+                        buffer.moveLeft()
+                    case 72:  // Home
+                        buffer.moveToStart()
+                    case 70:  // End
+                        buffer.moveToEnd()
+                    case 51:  // Delete key (sends ESC [ 3 ~)
+                        _ = readKey()  // consume the ~
+                        if buffer.deleteForward() {
+                            updateFilteredItems()
+                        }
+                    default:
+                        break
                     }
-                case 66:  // Down arrow
-                    if selectedIndex < filteredMatches.count - 1 {
-                        selectedIndex += 1
+                } else if next == 98 {  // Alt-B (backward word)
+                    buffer.moveToPreviousWord()
+                } else if next == 102 {  // Alt-F (forward word)
+                    buffer.moveToNextWord()
+                } else if next == 100 {  // Alt-D (delete word forward)
+                    if buffer.deleteWordForward() {
+                        updateFilteredItems()
                     }
-                default:
-                    break
                 }
 
             case 13, 10:  // Enter
@@ -247,8 +462,18 @@ class FuzzSelect {
                 return nil
 
             case 127, 8:  // Backspace
-                if !query.isEmpty {
-                    query.removeLast()
+                if buffer.deleteBackward() {
+                    updateFilteredItems()
+                }
+
+            case 1:  // Ctrl-A (beginning of line)
+                buffer.moveToStart()
+
+            case 5:  // Ctrl-E (end of line)
+                buffer.moveToEnd()
+
+            case 11:  // Ctrl-K (kill to end of line)
+                if buffer.killToEnd() {
                     updateFilteredItems()
                 }
 
@@ -262,8 +487,18 @@ class FuzzSelect {
                     selectedIndex -= 1
                 }
 
+            case 21:  // Ctrl-U (clear line)
+                if buffer.killToStart() {
+                    updateFilteredItems()
+                }
+
+            case 23:  // Ctrl-W (delete word backward)
+                if buffer.deleteWordBackward() {
+                    updateFilteredItems()
+                }
+
             case 32...126:  // Printable characters
-                query.append(Character(UnicodeScalar(char)))
+                buffer.insert(Character(UnicodeScalar(char)))
                 updateFilteredItems()
 
             default:
