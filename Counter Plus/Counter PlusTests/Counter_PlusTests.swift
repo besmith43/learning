@@ -6,11 +6,41 @@
 //
 
 import Testing
+@testable import Counter_Plus
 
 struct Counter_PlusTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func extremesTrackAcrossChanges() async throws {
+        let counter = Counter(isCloudSyncEnabled: false)
+
+        #expect(counter.count == 0)
+        #expect(counter.highestCount == 0)
+        #expect(counter.lowestCount == 0)
+
+        counter.increment()
+        counter.increment()
+        counter.decrement()
+        counter.decrement()
+        counter.decrement()
+
+        #expect(counter.count == -1)
+        #expect(counter.highestCount == 2)
+        #expect(counter.lowestCount == -1)
     }
 
+    @Test func resetDoesNotChangeExtremes() async throws {
+        let counter = Counter(isCloudSyncEnabled: false)
+
+        counter.increment()
+        counter.increment()
+        counter.decrement()
+        counter.decrement()
+        counter.decrement()
+
+        counter.reset()
+
+        #expect(counter.count == 0)
+        #expect(counter.highestCount == 2)
+        #expect(counter.lowestCount == -1)
+    }
 }

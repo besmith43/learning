@@ -6,58 +6,79 @@
 //
 
 import UIKit
-import SwiftData
-
-@Model
-final class HighScoreRecord {
-    var value: Int
-    var updatedAt: Date
-
-    init(value: Int = 0, updatedAt: Date = Date()) {
-        self.value = value
-        self.updatedAt = updatedAt
-    }
-}
+import CloudKit
 
 @MainActor
 final class HighScoreStore {
-    private let container: ModelContainer
-    private let context: ModelContext
+    static let didUpdateNotification = Notification.Name("HighScoreStoreDidUpdate")
 
-    init() throws {
-        let schema = Schema([HighScoreRecord.self])
-        let configuration = ModelConfiguration(schema: schema, cloudKitDatabase: .automatic)
-        container = try ModelContainer(for: schema, configurations: [configuration])
-        context = ModelContext(container)
+    private var database = CKContainer.default().privateCloudDatabase
+    private let recordID = CKRecord.ID(recordName: "HighScore")
+    private let recordType = "HighScore"
+    private let valueKey = "value"
+    private let updatedAtKey = "updatedAt"
+
+    private(set) var cachedHighScore = 0
+
+    init() {
+        refreshFromCloud()
     }
 
     func currentHighScore() -> Int {
-        record().value
+        cachedHighScore
     }
 
     @discardableResult
     func saveIfNeeded(score: Int) -> Int {
-        let current = record()
-        if score > current.value {
-            current.value = score
-            current.updatedAt = Date()
-            try? context.save()
+        guard score > cachedHighScore else {
+            return cachedHighScore
         }
-        return current.value
+
+        cachedHighScore = score
+        postUpdate()
+        saveRecord(value: score)
+        return cachedHighScore
     }
 
-    private func record() -> HighScoreRecord {
-        let descriptor = FetchDescriptor<HighScoreRecord>(
-            sortBy: [SortDescriptor(\.updatedAt, order: .reverse)]
-        )
-        if let existing = try? context.fetch(descriptor).first {
-            return existing
-        }
+    func refreshFromCloud() {
+        database.fetch(withRecordID: recordID) { [weak self] record, error in
+            guard let self else { return }
+            Task { @MainActor in
+                if let record, let value = record[self.valueKey] as? Int {
+                    self.updateCachedScore(value)
+                    return
+                }
 
-        let created = HighScoreRecord()
-        context.insert(created)
-        try? context.save()
-        return created
+                if let cloudError = error as? CKError, cloudError.code != .unknownItem {
+                    return
+                }
+
+                self.saveRecord(value: self.cachedHighScore)
+            }
+        }
+    }
+
+    private func saveRecord(value: Int) {
+        let record = CKRecord(recordType: recordType, recordID: recordID)
+        record[valueKey] = value as NSNumber
+        record[updatedAtKey] = Date() as NSDate
+        database.save(record) { [weak self] _, _ in
+            guard let self else { return }
+            Task { @MainActor in
+                self.postUpdate()
+            }
+        }
+    }
+
+    private func updateCachedScore(_ value: Int) {
+        if value > cachedHighScore {
+            cachedHighScore = value
+            postUpdate()
+        }
+    }
+
+    private func postUpdate() {
+        NotificationCenter.default.post(name: HighScoreStore.didUpdateNotification, object: self)
     }
 }
 
@@ -69,11 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        do {
-            highScoreStore = try HighScoreStore()
-        } catch {
-            print("Failed to initialize SwiftData high score store: \(error)")
-        }
+        highScoreStore = HighScoreStore()
         return true
     }
 

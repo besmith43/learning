@@ -41,6 +41,19 @@ struct ContentView: View {
                         .foregroundStyle(.green)
                 }
             }
+
+            VStack(spacing: 8) {
+                Text("Highest: \(counter.highestCount)")
+                Text("Lowest: \(counter.lowestCount)")
+                if let message = counter.cloudSyncMessage {
+                    Text(message)
+                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .font(.system(size: 18, weight: .semibold, design: .rounded))
+            .foregroundStyle(.secondary)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -6,6 +6,8 @@
 //
 
 import SpriteKit
+import CloudKit
+import UIKit
 
 struct GridPoint: Hashable {
     let x: Int
@@ -37,6 +39,12 @@ enum Direction {
     }
 }
 
+enum GameState {
+    case menu
+    case playing
+    case gameOver
+}
+
 final class GameScene: SKScene {
     var highScoreStore: HighScoreStore?
 
@@ -54,9 +62,9 @@ final class GameScene: SKScene {
     private var direction: Direction = .right
     private var pendingDirection: Direction?
     private var food = GridPoint(x: 0, y: 0)
+    private var gameState: GameState = .menu
     private var score = 0
     private var highScore = 0
-    private var isGameOver = false
     private var swipeStart: CGPoint?
 
     private let boardNode = SKShapeNode()
@@ -64,16 +72,40 @@ final class GameScene: SKScene {
     private let foodNode = SKShapeNode()
     private let scoreLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
     private let highScoreLabel = SKLabelNode(fontNamed: "AvenirNext-DemiBold")
+    private let cloudStatusLabel = SKLabelNode(fontNamed: "AvenirNext-Regular")
     private let statusLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
+    private let menuLayer = SKNode()
+    private let titleLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
+    private let menuHighScoreLabel = SKLabelNode(fontNamed: "AvenirNext-DemiBold")
+    private let startPromptLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
 
     override func didMove(to view: SKView) {
         backgroundColor = SKColor(red: 0.06, green: 0.08, blue: 0.1, alpha: 1)
         configureBoardMetrics()
         configureHUD()
         configureBoard()
+        configureMenu()
 
         highScore = highScoreStore?.currentHighScore() ?? 0
-        startNewGame()
+        showStartMenu()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppDidBecomeActive),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleHighScoreUpdate),
+            name: HighScoreStore.didUpdateNotification,
+            object: nil
+        )
+        refreshICloudStatus()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didChangeSize(_ oldSize: CGSize) {
@@ -81,6 +113,7 @@ final class GameScene: SKScene {
         configureBoardMetrics()
         configureHUD()
         configureBoard()
+        configureMenu()
         renderSnake()
         renderFood()
     }
@@ -94,7 +127,7 @@ final class GameScene: SKScene {
         accumulator += currentTime - lastUpdateTime
         lastUpdateTime = currentTime
 
-        guard !isGameOver else { return }
+        guard gameState == .playing else { return }
 
         while accumulator >= tickDuration {
             accumulator -= tickDuration
@@ -103,11 +136,13 @@ final class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard gameState == .playing else { return }
         guard let touch = touches.first else { return }
         swipeStart = touch.location(in: self)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard gameState == .playing else { return }
         guard let start = swipeStart, let touch = touches.first else { return }
         let current = touch.location(in: self)
         if applySwipe(from: start, to: current) {
@@ -116,7 +151,12 @@ final class GameScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isGameOver {
+        if gameState == .menu {
+            startNewGame()
+            return
+        }
+
+        if gameState == .gameOver {
             startNewGame()
             return
         }
@@ -164,6 +204,18 @@ final class GameScene: SKScene {
             addChild(highScoreLabel)
         }
 
+        cloudStatusLabel.fontSize = 14
+        cloudStatusLabel.fontColor = SKColor(red: 0.72, green: 0.75, blue: 0.82, alpha: 1)
+        cloudStatusLabel.horizontalAlignmentMode = .right
+        cloudStatusLabel.verticalAlignmentMode = .top
+        cloudStatusLabel.position = CGPoint(
+            x: boardOrigin.x + CGFloat(columns) * cellSize,
+            y: boardOrigin.y + CGFloat(rows) * cellSize + 22
+        )
+        if cloudStatusLabel.parent == nil {
+            addChild(cloudStatusLabel)
+        }
+
         statusLabel.fontSize = 28
         statusLabel.fontColor = .white
         statusLabel.numberOfLines = 2
@@ -175,6 +227,51 @@ final class GameScene: SKScene {
         if statusLabel.parent == nil {
             addChild(statusLabel)
         }
+    }
+
+    private func configureMenu() {
+        titleLabel.fontSize = 54
+        titleLabel.fontColor = .white
+        titleLabel.horizontalAlignmentMode = .center
+        titleLabel.verticalAlignmentMode = .center
+        titleLabel.position = CGPoint(x: size.width / 2, y: size.height * 0.62)
+        titleLabel.text = "Snake"
+
+        menuHighScoreLabel.fontSize = 26
+        menuHighScoreLabel.fontColor = SKColor(red: 0.7, green: 0.84, blue: 1, alpha: 1)
+        menuHighScoreLabel.horizontalAlignmentMode = .center
+        menuHighScoreLabel.verticalAlignmentMode = .center
+        menuHighScoreLabel.position = CGPoint(x: size.width / 2, y: size.height * 0.52)
+
+        startPromptLabel.fontSize = 28
+        startPromptLabel.fontColor = SKColor(red: 0.41, green: 0.95, blue: 0.62, alpha: 1)
+        startPromptLabel.horizontalAlignmentMode = .center
+        startPromptLabel.verticalAlignmentMode = .center
+        startPromptLabel.position = CGPoint(x: size.width / 2, y: size.height * 0.42)
+        startPromptLabel.text = "Tap to Start"
+
+        if menuLayer.parent == nil {
+            menuLayer.zPosition = 30
+            menuLayer.addChild(titleLabel)
+            menuLayer.addChild(menuHighScoreLabel)
+            menuLayer.addChild(startPromptLabel)
+            addChild(menuLayer)
+        }
+    }
+
+    private func showStartMenu() {
+        gameState = .menu
+        swipeStart = nil
+        accumulator = 0
+        updateHUD()
+        menuHighScoreLabel.text = "High Score: \(highScore)"
+        menuLayer.isHidden = false
+
+        scoreLabel.isHidden = true
+        highScoreLabel.isHidden = true
+        statusLabel.isHidden = true
+        snakeLayer.isHidden = true
+        foodNode.isHidden = true
     }
 
     private func configureBoard() {
@@ -205,11 +302,17 @@ final class GameScene: SKScene {
     }
 
     private func startNewGame() {
+        gameState = .playing
         score = 0
         tickDuration = 0.16
         accumulator = 0
-        isGameOver = false
-        statusLabel.text = "Swipe to move"
+        statusLabel.text = ""
+        statusLabel.isHidden = false
+        menuLayer.isHidden = true
+        scoreLabel.isHidden = false
+        highScoreLabel.isHidden = false
+        snakeLayer.isHidden = false
+        foodNode.isHidden = false
 
         let centerX = columns / 2
         let centerY = rows / 2
@@ -258,7 +361,7 @@ final class GameScene: SKScene {
     }
 
     private func handleGameOver() {
-        isGameOver = true
+        gameState = .gameOver
         highScore = highScoreStore?.saveIfNeeded(score: score) ?? max(highScore, score)
         statusLabel.text = "Game Over\nTap to restart"
         updateHUD()
@@ -267,6 +370,51 @@ final class GameScene: SKScene {
     private func updateHUD() {
         scoreLabel.text = "Score: \(score)"
         highScoreLabel.text = "High Score: \(highScore)"
+    }
+
+    @objc
+    private func handleHighScoreUpdate() {
+        highScore = highScoreStore?.currentHighScore() ?? highScore
+        updateHUD()
+        menuHighScoreLabel.text = "High Score: \(highScore)"
+    }
+
+    @objc
+    private func handleAppDidBecomeActive() {
+        refreshICloudStatus()
+    }
+
+    private func refreshICloudStatus() {
+        cloudStatusLabel.text = "iCloud: Checking..."
+        Task {
+            let statusText: String
+            do {
+                let status = try await CKContainer.default().accountStatus()
+                statusText = "iCloud: \(mapICloudStatus(status))"
+            } catch {
+                statusText = "iCloud: Unavailable"
+            }
+            await MainActor.run {
+                self.cloudStatusLabel.text = statusText
+            }
+        }
+    }
+
+    private func mapICloudStatus(_ status: CKAccountStatus) -> String {
+        switch status {
+        case .available:
+            return "Available"
+        case .noAccount:
+            return "No Account"
+        case .restricted:
+            return "Restricted"
+        case .couldNotDetermine:
+            return "Unknown"
+        case .temporarilyUnavailable:
+            return "Unavailable"
+        @unknown default:
+            return "Unknown"
+        }
     }
 
     private func spawnFood() {
@@ -325,7 +473,7 @@ final class GameScene: SKScene {
         } else {
             queueDirection(dy > 0 ? .up : .down)
         }
-        statusLabel.text = isGameOver ? "Game Over\nTap to restart" : ""
+        statusLabel.text = gameState == .gameOver ? "Game Over\nTap to restart" : ""
         return true
     }
 
