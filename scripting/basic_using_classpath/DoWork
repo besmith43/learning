@@ -1,0 +1,56 @@
+#!/usr/bin/env java --source 21
+
+import java.util.Properties;
+import java.util.TreeSet;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+
+public final class DoWork {
+	public static void main(String[] args) {
+		// Scanner scanner = new Scanner(System.in);
+
+        System.out.println("starting for loop of args with " + args.length + " number of arguments");
+		for (int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
+		}
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            if (!reader.ready()) {
+                System.out.println("Standard input is empty.");
+            } else {
+                 System.out.println("Standard input is not empty.");
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println("Input: " + line);
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+		String classPath = System.getenv("CLASS_PATH");
+
+		System.out.println("Class Path - " + classPath);
+
+        Properties properties = new Properties();
+        try (InputStream input = ClassLoader.getSystemClassLoader().getResourceAsStream("java.properties")) {
+            if (input == null) {
+                System.out.println("Unable to find java.properties on the classpath.");
+                return;
+            }
+
+            properties.load(input);
+            System.out.println("Loaded java.properties from classpath:");
+            for (String key : new TreeSet<>(properties.stringPropertyNames())) {
+                System.out.println(key + "=" + properties.getProperty(key));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+}
