@@ -6,5 +6,5 @@ javac --release 8 ./GUI.java
 jar --create --file GUI.jar --manifest manifest.txt GUI.class img/
 
 
-native-image --jar ./GUI.jar
+native-image --jar ./GUI.jar -o GUI-native
 
