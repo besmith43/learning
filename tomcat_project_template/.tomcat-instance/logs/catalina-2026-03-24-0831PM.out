@@ -1,0 +1,423 @@
+_______________________________________________________________________________
+                                                                               
+ S T A R T I N G     T O M C A T     I N S T A N C E     test
+_______________________________________________________________________________
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+[2026-03-24 18:47:24.332 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server version name:   Apache Tomcat/9.0.116],[]
+[2026-03-24 18:47:24.332 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server built:          Mar 16 2026 15:05:42 UTC],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server version number: 9.0.116.0],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[OS Name:               Mac OS X],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[OS Version:            26.3.1],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Architecture:          aarch64],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Java Home:             /Users/besmith/.sdkman/candidates/java/25.0.2-graal],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[JVM Version:           25.0.2+10-LTS-jvmci-b01],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[JVM Vendor:            Oracle Corporation],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[CATALINA_BASE:         /Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance],[]
+[2026-03-24 18:47:24.333 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[CATALINA_HOME:         /Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core],[]
+[2026-03-24 18:47:24.334 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:ThreadPriorityPolicy=1],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+UnlockExperimentalVMOptions],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+EnableJVMCIProduct],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+EnableJVMCI],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:-UnlockExperimentalVMOptions],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang.invoke=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.335 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dnop],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Xms512m],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Xmx4g],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.security.egd=file:/dev/./urandom],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.rim.server.hostname=mbpro14.local],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.SimpleFormatter.format=[%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS.%1$tL %1$tz],[%4$s],[%2$s],[%5$s],[%6$s]%n],[]
+[2026-03-24 18:47:24.336 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.awt.headless=true],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:ReservedCodeCacheSize=128m],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+DisableExplicitGC],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.net.preferIPv4Stack=true],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dats-tengine-aio.host=127.0.0.1],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dats-shared-fs.host=127.0.0.1],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dignore.endorsed.dirs=],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dbanner.logging.dir=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/logs],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_APP_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/banner_configuration.groovy],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_INTEGRATION_API_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/IntegrationApi_configuration.groovy],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_STUDENT_API_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/StudentApi_configuration.groovy],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.port=1099],[]
+[2026-03-24 18:47:24.337 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.ssl=false],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.authenticate=false],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djdk.tls.ephemeralDHKeySize=2048],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dsun.io.useCanonCaches=false],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Duser.timezone=America/Chicago],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Duser.timezone=America/Chicago],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dignore.endorsed.dirs=],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcatalina.base=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcatalina.home=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core],[]
+[2026-03-24 18:47:24.338 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.io.tmpdir=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/temp],[]
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core/lib/tomcat-jni.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[2026-03-24 18:47:24.342 -0500],[INFO],[org.apache.catalina.core.AprLifecycleListener lifecycleEvent],[The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/besmith/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]],[]
+[2026-03-24 18:47:24.437 -0500],[INFO],[org.apache.coyote.AbstractProtocol init],[Initializing ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 18:47:24.445 -0500],[INFO],[org.apache.catalina.startup.Catalina load],[Server initialization in [199] milliseconds],[]
+[2026-03-24 18:47:24.535 -0500],[WARNING],[org.apache.naming.NamingContext lookup],[Unexpected exception resolving reference with name [localhost]],[
+java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:648)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:551)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getLogWriter(BasicDataSource.java:1090)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.createDataSource(BasicDataSourceFactory.java:330)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance(BasicDataSourceFactory.java:432)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:91)
+	at java.naming/com.sun.naming.internal.NamingManagerHelper.getObjectInstance(NamingManagerHelper.java:76)
+	at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:207)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:508)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:151)
+	at org.apache.catalina.core.NamingContextListener.addResource(NamingContextListener.java:1005)
+	at org.apache.catalina.core.NamingContextListener.createNamingContext(NamingContextListener.java:540)
+	at org.apache.catalina.core.NamingContextListener.lifecycleEvent(NamingContextListener.java:236)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:859)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693)
+	at org.apache.tomcat.dbcp.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:478)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:113)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:644)
+	... 22 more
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328)
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1267)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1309)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:108)
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288)
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335)
+	... 39 more
+]
+[2026-03-24 18:47:24.535 -0500],[WARNING],[org.apache.catalina.core.NamingContextListener addResource],[Failed to register in JMX: [jdbc/localhost]],[
+javax.naming.NamingException: Unexpected exception resolving reference with name [localhost] [Root exception is java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/)]
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:538)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:151)
+	at org.apache.catalina.core.NamingContextListener.addResource(NamingContextListener.java:1005)
+	at org.apache.catalina.core.NamingContextListener.createNamingContext(NamingContextListener.java:540)
+	at org.apache.catalina.core.NamingContextListener.lifecycleEvent(NamingContextListener.java:236)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:859)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+Caused by: java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:648)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:551)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getLogWriter(BasicDataSource.java:1090)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.createDataSource(BasicDataSourceFactory.java:330)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance(BasicDataSourceFactory.java:432)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:91)
+	at java.naming/com.sun.naming.internal.NamingManagerHelper.getObjectInstance(NamingManagerHelper.java:76)
+	at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:207)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:508)
+	... 14 more
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693)
+	at org.apache.tomcat.dbcp.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:478)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:113)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:644)
+	... 22 more
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=097xPNnvSXalhDaui4s4Uw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328)
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1267)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1309)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:108)
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288)
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335)
+	... 39 more
+]
+[2026-03-24 18:47:24.546 -0500],[WARNING],[org.apache.naming.NamingContext lookup],[Unexpected exception resolving reference with name [localhost]],[
+java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:648)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:551)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getLogWriter(BasicDataSource.java:1090)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.createDataSource(BasicDataSourceFactory.java:330)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance(BasicDataSourceFactory.java:432)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:91)
+	at java.naming/com.sun.naming.internal.NamingManagerHelper.getObjectInstance(NamingManagerHelper.java:76)
+	at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:207)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:508)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:98)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:61)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:30)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:128)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:135)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:104)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:79)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:860)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693)
+	at org.apache.tomcat.dbcp.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:478)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:113)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:644)
+	... 26 more
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328)
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018)
+	... 34 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1274)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1309)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:108)
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288)
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335)
+	... 43 more
+]
+[2026-03-24 18:47:24.546 -0500],[SEVERE],[org.apache.catalina.mbeans.GlobalResourcesLifecycleListener createMBeans],[Exception processing global JNDI Resources],[
+javax.naming.NamingException: Unexpected exception resolving reference with name [localhost] [Root exception is java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/)]
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:538)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:98)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:61)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:30)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:128)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:135)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:104)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:79)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:860)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+Caused by: java.sql.SQLException: Cannot create PoolableConnectionFactory (ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:648)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:551)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getLogWriter(BasicDataSource.java:1090)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.createDataSource(BasicDataSourceFactory.java:330)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance(BasicDataSourceFactory.java:432)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:91)
+	at java.naming/com.sun.naming.internal.NamingManagerHelper.getObjectInstance(NamingManagerHelper.java:76)
+	at java.naming/javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:207)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:508)
+	... 18 more
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693)
+	at org.apache.tomcat.dbcp.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:478)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:113)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:644)
+	... 26 more
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=QrPV8hi/SA2nfSzmYLzVgw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328)
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018)
+	... 34 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1274)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1309)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:108)
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288)
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335)
+	... 43 more
+]
+[2026-03-24 18:47:24.547 -0500],[INFO],[org.apache.catalina.core.StandardService startInternal],[Starting service [Catalina]],[]
+[2026-03-24 18:47:24.547 -0500],[INFO],[org.apache.catalina.core.StandardEngine startInternal],[Starting Servlet engine: [Apache Tomcat/9.0.116]],[]
+[2026-03-24 18:47:24.552 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 18:47:24.557 -0500],[INFO],[org.apache.catalina.startup.ExpandWar expand],[An expanded directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello] was found with a last modified time that did not match the associated WAR. It will be deleted.],[]
+[2026-03-24 18:47:24.845 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 18:47:24.855 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [301] ms],[]
+[2026-03-24 18:47:24.855 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployDirectory],[Deploying web application directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/ROOT]],[]
+[2026-03-24 18:47:25.007 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 18:47:25.008 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployDirectory],[Deployment of web application directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/ROOT] has finished in [153] ms],[]
+[2026-03-24 18:47:25.010 -0500],[INFO],[org.apache.coyote.AbstractProtocol start],[Starting ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 18:47:25.016 -0500],[INFO],[org.apache.catalina.startup.Catalina start],[Server startup in [569] milliseconds],[]
+[2026-03-24 18:51:11.240 -0500],[SEVERE],[org.apache.catalina.core.StandardWrapperValve invoke],[Servlet.service() for servlet [jsp] in context with path [/Hello] threw exception [An exception occurred processing [/index.jsp] at line [31]
+
+28: 				out.println("<br>");
+29: 			}
+30: 
+31: 			DataSource ds = (DataSource) ctx.lookup(DATASOURCE);
+32: 
+33: 			Hello hello = new Hello();
+34: 			out.println("with datasource passed in");
+
+
+Stacktrace:] with root cause],[
+javax.naming.NameNotFoundException: Name [BannerTest] is not bound in this Context. Unable to find [BannerTest].
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:485)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:151)
+	at org.apache.naming.SelectorContext.lookup(SelectorContext.java:138)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:159)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:62)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:349)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:300)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:197)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:491)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:643)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:939)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1832)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+]
+_______________________________________________________________________________
+                                                                               
+ S T O P P I N G     T O M C A T     I N S T A N C E     test
+_______________________________________________________________________________
+[2026-03-24 18:52:24.541 -0500],[INFO],[org.apache.coyote.AbstractProtocol pause],[Pausing ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 18:52:24.547 -0500],[INFO],[org.apache.catalina.core.StandardService stopInternal],[Stopping service [Catalina]],[]
+[2026-03-24 18:52:24.558 -0500],[INFO],[org.apache.coyote.AbstractProtocol stop],[Stopping ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 18:52:24.569 -0500],[INFO],[org.apache.coyote.AbstractProtocol destroy],[Destroying ProtocolHandler ["http-nio-8080"]],[]

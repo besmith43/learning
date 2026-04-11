@@ -1,0 +1,276 @@
+_______________________________________________________________________________
+                                                                               
+ S T A R T I N G     T O M C A T     I N S T A N C E     test
+_______________________________________________________________________________
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+[2026-03-24 19:31:17.959 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server version name:   Apache Tomcat/9.0.116],[]
+[2026-03-24 19:31:17.959 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server built:          Mar 16 2026 15:05:42 UTC],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Server version number: 9.0.116.0],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[OS Name:               Mac OS X],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[OS Version:            26.3.1],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Architecture:          aarch64],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Java Home:             /Users/besmith/.sdkman/candidates/java/25.0.2-graal],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[JVM Version:           25.0.2+10-LTS-jvmci-b01],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[JVM Vendor:            Oracle Corporation],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[CATALINA_BASE:         /Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance],[]
+[2026-03-24 19:31:17.960 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[CATALINA_HOME:         /Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core],[]
+[2026-03-24 19:31:17.961 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:ThreadPriorityPolicy=1],[]
+[2026-03-24 19:31:17.961 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+UnlockExperimentalVMOptions],[]
+[2026-03-24 19:31:17.961 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+EnableJVMCIProduct],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+EnableJVMCI],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:-UnlockExperimentalVMOptions],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang.invoke=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.962 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dnop],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Xms512m],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Xmx4g],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.security.egd=file:/dev/./urandom],[]
+[2026-03-24 19:31:17.963 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.rim.server.hostname=mbpro14.local],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.util.logging.SimpleFormatter.format=[%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS.%1$tL %1$tz],[%4$s],[%2$s],[%5$s],[%6$s]%n],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.awt.headless=true],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:ReservedCodeCacheSize=128m],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -XX:+DisableExplicitGC],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.net.preferIPv4Stack=true],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dats-tengine-aio.host=127.0.0.1],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dats-shared-fs.host=127.0.0.1],[]
+[2026-03-24 19:31:17.964 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dignore.endorsed.dirs=],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dbanner.logging.dir=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/logs],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_APP_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/banner_configuration.groovy],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_INTEGRATION_API_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/IntegrationApi_configuration.groovy],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -DBANNER_STUDENT_API_CONFIG=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/shared_configuration/StudentApi_configuration.groovy],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.port=1099],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.ssl=false],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcom.sun.management.jmxremote.authenticate=false],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djdk.tls.ephemeralDHKeySize=2048],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dsun.io.useCanonCaches=false],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Duser.timezone=America/Chicago],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Duser.timezone=America/Chicago],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dignore.endorsed.dirs=],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcatalina.base=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance],[]
+[2026-03-24 19:31:17.965 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Dcatalina.home=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core],[]
+[2026-03-24 19:31:17.966 -0500],[INFO],[org.apache.catalina.startup.VersionLoggerListener log],[Command line argument: -Djava.io.tmpdir=/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/temp],[]
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-core/lib/tomcat-jni.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[2026-03-24 19:31:17.970 -0500],[INFO],[org.apache.catalina.core.AprLifecycleListener lifecycleEvent],[The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/besmith/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]],[]
+[2026-03-24 19:31:18.063 -0500],[INFO],[org.apache.coyote.AbstractProtocol init],[Initializing ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 19:31:18.070 -0500],[INFO],[org.apache.catalina.startup.Catalina load],[Server initialization in [187] milliseconds],[]
+[2026-03-24 19:31:18.084 -0500],[INFO],[org.apache.catalina.core.StandardService startInternal],[Starting service [Catalina]],[]
+[2026-03-24 19:31:18.084 -0500],[INFO],[org.apache.catalina.core.StandardEngine startInternal],[Starting Servlet engine: [Apache Tomcat/9.0.116]],[]
+[2026-03-24 19:31:18.088 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 19:31:18.094 -0500],[INFO],[org.apache.catalina.startup.ExpandWar expand],[An expanded directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello] was found with a last modified time that did not match the associated WAR. It will be deleted.],[]
+[2026-03-24 19:31:18.389 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:31:18.398 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [309] ms],[]
+[2026-03-24 19:31:18.399 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployDirectory],[Deploying web application directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/ROOT]],[]
+[2026-03-24 19:31:18.549 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:31:18.551 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployDirectory],[Deployment of web application directory [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/ROOT] has finished in [151] ms],[]
+[2026-03-24 19:31:18.552 -0500],[INFO],[org.apache.coyote.AbstractProtocol start],[Starting ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 19:31:18.556 -0500],[INFO],[org.apache.catalina.startup.Catalina start],[Server startup in [485] milliseconds],[]
+[2026-03-24 19:31:24.723 -0500],[SEVERE],[org.apache.catalina.core.StandardWrapperValve invoke],[Servlet.service() for servlet [jsp] in context with path [/Hello] threw exception [An exception occurred processing [/index.jsp] at line [31]
+
+28: 				out.println("<br>");
+29: 			}
+30: 
+31: 			DataSource ds = (DataSource) ctx.lookup(DATASOURCE);
+32: 
+33: 			Hello hello = new Hello();
+34: 			out.println("with datasource passed in");
+
+
+Stacktrace:] with root cause],[
+javax.naming.NameNotFoundException: Name [BannerTest] is not bound in this Context. Unable to find [BannerTest].
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:485)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:151)
+	at org.apache.naming.SelectorContext.lookup(SelectorContext.java:138)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:159)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:62)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:349)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:300)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:197)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:491)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:643)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:939)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1832)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+]
+[2026-03-24 19:31:38.286 -0500],[SEVERE],[org.apache.catalina.core.StandardWrapperValve invoke],[Servlet.service() for servlet [jsp] in context with path [/Hello] threw exception [An exception occurred processing [/index.jsp] at line [31]
+
+28: 				out.println("<br>");
+29: 			}
+30: 
+31: 			DataSource ds = (DataSource) ctx.lookup(DATASOURCE);
+32: 
+33: 			Hello hello = new Hello();
+34: 			out.println("with datasource passed in");
+
+
+Stacktrace:] with root cause],[
+javax.naming.NameNotFoundException: Name [BannerTest] is not bound in this Context. Unable to find [BannerTest].
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:485)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:145)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:494)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:151)
+	at org.apache.naming.SelectorContext.lookup(SelectorContext.java:138)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at org.apache.jsp.index_jsp._jspService(index_jsp.java:159)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:62)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:349)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:300)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:197)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:491)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:643)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:939)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1832)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+]
+[2026-03-24 19:32:48.577 -0500],[INFO],[org.apache.catalina.startup.HostConfig undeploy],[Undeploying context [/Hello]],[]
+[2026-03-24 19:32:48.599 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 19:32:48.746 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:32:48.747 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [148] ms],[]
+[2026-03-24 19:34:28.775 -0500],[INFO],[org.apache.catalina.startup.HostConfig undeploy],[Undeploying context [/Hello]],[]
+[2026-03-24 19:34:28.786 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 19:34:28.972 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:34:28.973 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [188] ms],[]
+[2026-03-24 19:34:29.616 -0500],[SEVERE],[org.apache.catalina.core.StandardWrapperValve invoke],[Servlet.service() for servlet [jsp] in context with path [/Hello] threw exception [org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [29] in the jsp file: [/index.jsp]
+DATASOURCE cannot be resolved to a variable
+26: 				out.println("<br>");
+27: 			}
+28: 
+29: 			DataSource ds = (DataSource) ctx.lookup(DATASOURCE);
+30: 
+31: 			Hello hello = new Hello();
+32: 			out.println("with datasource passed in");
+
+
+Stacktrace:] with root cause],[
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [29] in the jsp file: [/index.jsp]
+DATASOURCE cannot be resolved to a variable
+26: 				out.println("<br>");
+27: 			}
+28: 
+29: 			DataSource ds = (DataSource) ctx.lookup(DATASOURCE);
+30: 
+31: 			Hello hello = new Hello();
+32: 			out.println("with datasource passed in");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:593)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:365)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:337)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:323)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:371)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:349)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:300)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:197)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:142)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:491)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:643)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:939)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1832)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+]
+[2026-03-24 19:35:18.988 -0500],[INFO],[org.apache.catalina.startup.HostConfig undeploy],[Undeploying context [/Hello]],[]
+[2026-03-24 19:35:18.999 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 19:35:19.230 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:35:19.231 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [233] ms],[]
+Hello Class at time Tue Mar 24 19:35:23 CDT 2026 error occurred:
+Hello Class: Error - Cannot load the data resource java:/comp/env/jdbc/BannerTest, reason:javax.naming.NameNotFoundException: Name [BannerTest] is not bound in this Context. Unable to find [BannerTest].
+[2026-03-24 19:39:09.307 -0500],[INFO],[org.apache.catalina.startup.HostConfig undeploy],[Undeploying context [/Hello]],[]
+[2026-03-24 19:39:09.311 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deploying web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war]],[]
+[2026-03-24 19:39:09.446 -0500],[INFO],[org.apache.jasper.servlet.TldScanner scanJars],[At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.],[]
+[2026-03-24 19:39:09.447 -0500],[INFO],[org.apache.catalina.startup.HostConfig deployWAR],[Deployment of web application archive [/Users/besmith/Developer/Personal/learning-java/tomcat_project_template/.tomcat-instance/webapps/Hello.war] has finished in [136] ms],[]
+_______________________________________________________________________________
+                                                                               
+ S T O P P I N G     T O M C A T     I N S T A N C E     test
+_______________________________________________________________________________
+[2026-03-24 19:39:10.096 -0500],[INFO],[org.apache.coyote.AbstractProtocol pause],[Pausing ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 19:39:10.102 -0500],[INFO],[org.apache.catalina.core.StandardService stopInternal],[Stopping service [Catalina]],[]
+[2026-03-24 19:39:10.108 -0500],[INFO],[org.apache.coyote.AbstractProtocol stop],[Stopping ProtocolHandler ["http-nio-8080"]],[]
+[2026-03-24 19:39:10.111 -0500],[INFO],[org.apache.coyote.AbstractProtocol destroy],[Destroying ProtocolHandler ["http-nio-8080"]],[]

@@ -1,0 +1,31 @@
+
+set shell := ["bash", "-c"]
+
+alias b := build
+alias st := start
+alias sp := stop
+alias su := status
+
+download:
+    .build-scripts/download-tomcat-core.sh
+
+clean: stop
+    .build-scripts/clean.sh
+
+stop:
+    .build-scripts/stop-tomcat.sh
+
+
+start: build
+    .build-scripts/start-tomcat.sh
+
+
+status:
+    .build-scripts/tomcat-status.sh
+
+build:
+    .build-scripts/build.sh
+
+
+
+
