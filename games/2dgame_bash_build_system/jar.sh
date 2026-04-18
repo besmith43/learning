@@ -1,37 +1,21 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
 
-if [ -f 2dgame.jar ]; then
-    rm 2dgame.jar
-fi
+readonly BUILD_DIR="target"
+readonly JAR_NAME="2dgame.jar"
+readonly MANIFEST_FILE="manifest.mf"
 
-if [ -d target ]; then
-    rm -r target
-fi
+rm -rf "${BUILD_DIR}" "${JAR_NAME}" "${MANIFEST_FILE}"
+mkdir -p "${BUILD_DIR}"
 
-mkdir target
+javac -d "${BUILD_DIR}" $(find src/main/java -name "*.java")
 
-javac -d target src/main/java/main/*.java src/main/java/**/*.java
+cp -R src/main/resources/. "${BUILD_DIR}/"
 
-if [ $? -ne 0 ]; then
-    echo "java compile failed"
-    exit 1
-fi
+printf "Main-Class: main.Main\n" > "${MANIFEST_FILE}"
 
-cp -r src/main/resources/ target/
+jar cfm "${JAR_NAME}" "${MANIFEST_FILE}" -C "${BUILD_DIR}" .
+rm -f "${MANIFEST_FILE}"
 
-echo "Main-Class: main.Main" > manifest.txt
-
-# jar uvf ./target/2dgame-1.0-SNAPSHOT.jar manifest.txt
-
-cd target
-jar cfvm ../2dgame.jar ../manifest.txt *
-cd ..
-rm manifest.txt
-
-if [ -f 2dgame.jar ]; then
-    java -jar 2dgame.jar
-fi
-
-# java -cp ./target main.Main
-
+java -jar "${JAR_NAME}"
