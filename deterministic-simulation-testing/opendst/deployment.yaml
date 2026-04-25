@@ -1,0 +1,21 @@
+services:
+  inventory:
+    class: com.example.opendst.orders.dst.InventoryNode
+    ip: 10.0.0.1
+    args: ["9001", "6"]
+  payment:
+    class: com.example.opendst.orders.dst.PaymentNode
+    ip: 10.0.0.2
+    args: ["9002"]
+  gateway:
+    class: com.example.opendst.orders.dst.GatewayNode
+    ip: 10.0.0.3
+    args: ["9000", "10.0.0.1", "9001", "10.0.0.2", "9002"]
+  client-a:
+    class: com.example.opendst.orders.dst.ClientNode
+    ip: 10.0.0.4
+    args: ["10.0.0.3", "9000", "10.0.0.1", "9001", "client-a"]
+  client-b:
+    class: com.example.opendst.orders.dst.ClientNode
+    ip: 10.0.0.5
+    args: ["10.0.0.3", "9000", "10.0.0.1", "9001", "client-b"]

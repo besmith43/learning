@@ -1,0 +1,28 @@
+set dotenv-load := false
+
+default:
+    just --list
+
+build:
+    ./scripts/build.sh
+
+unit:
+    ./scripts/test-unit.sh
+
+fuzz:
+    ./scripts/test-fuzz.sh
+
+java:
+    ./scripts/test-java.sh
+
+e2e:
+    ./scripts/test-e2e.sh
+
+opendst-build:
+    ./scripts/build-opendst.sh
+
+opendst-run:
+    ./scripts/run-opendst.sh
+
+local port="18080":
+    ./scripts/run-local.sh {{port}}
