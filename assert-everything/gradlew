@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+CLASSPATH="$DIR/gradle/wrapper/gradle-wrapper-main.jar:$DIR/gradle/wrapper/gradle-wrapper-shared.jar:$DIR/gradle/wrapper/gradle-cli.jar"
+
+exec java ${JAVA_OPTS:-} ${GRADLE_OPTS:-} -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
