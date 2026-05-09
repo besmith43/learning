@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!--ResourceLink name="jdbc/BannerTest" global="jdbc/BannerTest" type="javax.sql.DataSource"/-->
+
+
+	<Resource name="jdbc/person" auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="org.sqlite.JDBC"
+        url="jdbc:sqlite:${catalina.base}/db/person.sqlite"
+	/>
+
+
+    <!--driverClassName="org.xerial.sqlite-jdbc"-->
+    <!--url="jdbc:sqlite:../../../../../db/person.sqlite"-->
+
+
+	<!--
+	<Resource
+											name = "jdbc/BannerTest"
+										username = "besmith"
+										password = "Windowsisawesome#1"
+											auth = "Container"
+											type = "javax.sql.DataSource"
+								driverClassName = "oracle.jdbc.OracleDriver"
+											url="jdbc:oracle:thin:@//bantestdb.mtsu.edu:1521/TEST.MTSU.EDU"
+										maxTotal = "32"
+										maxIdle = "16"
+										factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+									initialSize = "1"
+										minIdle = "0"
+									maxWaitMillis = "-1"
+								validationQuery = "SELECT 1 FROM DUAL"
+							validationQueryTimeout = "600"
+									testOnBorrow = "TRUE"
+									testOnReturn = "FALSE"
+					timeBetweenEvictionRunsMillis = "-1"
+							numTestsPerEvictionRun = "3"
+						minEvictableIdleTimeMillis = "1800000"
+									testWhileIdle = "TRUE"
+						removeAbandonedOnBorrow = "FALSE"
+					removeAbandonedOnMaintenance = "FALSE"
+							removeAbandonedTimeout = "300"
+									logAbandoned = "FALSE"
+								defaultAutoCommit = "TRUE"
+								defaultReadOnly = "FALSE"
+					defaultTransactionIsolation = "SERIALIZABLE"
+							poolPreparedStatements = "FALSE"
+						maxOpenPreparedStatements = "-1"
+			accessToUnderlyingConnectionAllowed = "TRUE"
+	/>
+		-->
+
+
+
+    <!--
+    <Manager pathname="" />
+    -->
+</Context>

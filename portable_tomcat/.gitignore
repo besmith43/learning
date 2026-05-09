@@ -1,0 +1,10 @@
+jdk/
+tomcat-11-home/
+*.jar
+tomcat-instance/db/
+tomcat-instance/logs/*
+tomcat-instance/work/*
+*.db
+*.sqlite
+
+
