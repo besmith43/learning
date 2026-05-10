@@ -6,5 +6,5 @@ tomcat-instance/logs/*
 tomcat-instance/work/*
 *.db
 *.sqlite
-
+tomcat-instance/bin/catalina.pid
 
