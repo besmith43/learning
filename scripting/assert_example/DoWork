@@ -1,0 +1,30 @@
+#!/usr/bin/env java --source 25 -ea
+
+
+public final class DoWork {
+	public static void main(String[] args) {
+        System.out.println("Hello World");
+
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("i = " + i);
+
+            try {
+                IsOdd(i);
+                System.out.println("num is odd");
+            } catch (AssertionError e) {
+                System.out.println("num is even");
+                System.out.println("Error Message: " + e.getMessage());
+            }
+        }
+    }
+
+
+    public static void IsOdd(int num) throws AssertionError {
+        // assert does nothing unless the vm parameter -ea or -enableassertions is passed at runtime
+
+        // assert with colon (:)
+        // assert expression : assertionError message;
+        assert num % 2 == 1 : "num value " + num + " is not odd";
+    }
+}
