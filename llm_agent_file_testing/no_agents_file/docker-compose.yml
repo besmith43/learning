@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: office_time
+      POSTGRES_USER: office_time
+      POSTGRES_PASSWORD: office_time
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U office_time -d office_time"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/office_time
+      SPRING_DATASOURCE_USERNAME: office_time
+      SPRING_DATASOURCE_PASSWORD: office_time
+      APP_SEED_ENABLED: "true"
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres-data:

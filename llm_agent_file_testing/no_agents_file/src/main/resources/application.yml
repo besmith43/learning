@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: office-time
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:office_time;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+app:
+  seed:
+    enabled: ${APP_SEED_ENABLED:true}
+server:
+  servlet:
+    context-path: /
