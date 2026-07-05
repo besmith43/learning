@@ -6,9 +6,37 @@ package org.example;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+
 public class AppTest {
     @Test public void appHasAGreeting() {
         App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+
+        // String model = "lfm2.5-thinking:latest";
+        String model = "nemotron-3-nano:4b";
+        // String model = "gemma4:12b-nvfp4";
+
+        HashMap<String, String> movies = new HashMap<>();
+        movies.put("Katrina Come Hell And High Water [2025] S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy", "Katrina Come Hell And High Water (2025)");
+        movies.put("Obsession.2025.NORDiC.1080p.WEB-DL.H.264-NORViNE", "Obsession (2025)");
+        movies.put("Undertone.2025.2160p.iT.WEB-DL.DV.HDR10-BenTheMen-AsRequested", "Undertone (2025)");
+
+
+        HashMap<String, String> tvShows = new HashMap<>();
+        tvShows.put("My.Adventures.with.Superman.S03E04.1080p.WEB.h264-EDITH", "My Adventures with Superman - s03e04");
+        tvShows.put("12.Monkeys.S04E01.The.End.1080p.BluRay.Dts-HDMa5.1.AVC-PiR8", "12 Monkeys - s04e01");
+        tvShows.put("World.War.II.With.Tom.Hanks.S01E12.Battle.For.The.Skies.1080p.NOW.WEB-DL.AAC2.0.H.264-RAWR", "World War II With Tom Hanks - s01e12");
+        tvShows.put("X-Men.The.Animated.Series.S05E07.Storm.Front.Part.1.480p.DVDRip.DD2.0.x264-SA89-BUYMORE", "X-Men The Animated Serires - s05e07");
+
+
+        for (String directory : movies.keySet()) {
+            assertEquals(movies.get(directory), classUnderTest.AskOllamaMovie(model, directory));
+        }
+
+
+        for (String directory : tvShows.keySet()) {
+            assertEquals(tvShows.get(directory), classUnderTest.AskOllamaTVShow(model, directory));
+        }
     }
 }
