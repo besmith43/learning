@@ -21,10 +21,12 @@ class MenuBarApp(rumps.App):
 
     @rumps.clicked("Trigger Action")
     def run_action(self, _):
-        rumps.alert("Action triggered successfully!")
+        print("trigger action")
+        rumps.alert("Action triggered successfully!") # this hangs
 
     @rumps.clicked("Say Hello")
     def say_hello(self, _):
+        print("say hello")
         rumps.notification("Greeting", "Hello World!", "This is a native macOS notification.")
 
 if __name__ == "__main__":
